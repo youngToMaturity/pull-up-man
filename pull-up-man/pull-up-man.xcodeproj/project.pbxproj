@@ -13,6 +13,8 @@
 		9B99D24527CDE674009F4D31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B99D24427CDE674009F4D31 /* Preview Assets.xcassets */; };
 		9B99D24727CDE674009F4D31 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D24627CDE674009F4D31 /* Persistence.swift */; };
 		9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D24827CDE674009F4D31 /* pull_up_man.xcdatamodeld */; };
+		9B99D25427CDE7C1009F4D31 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D25327CDE7C1009F4D31 /* MainView.swift */; };
+		9B99D25627CDE858009F4D31 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D25527CDE858009F4D31 /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		9B99D24427CDE674009F4D31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9B99D24627CDE674009F4D31 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9B99D24927CDE674009F4D31 /* pull_up_man.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pull_up_man.xcdatamodel; sourceTree = "<group>"; };
+		9B99D25327CDE7C1009F4D31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9B99D25527CDE858009F4D31 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 				9B99D25127CDE691009F4D31 /* View */,
 				9B99D25227CDE696009F4D31 /* ViewModel */,
 				9B99D24627CDE674009F4D31 /* Persistence.swift */,
+				9B99D23F27CDE674009F4D31 /* ContentView.swift */,
 				9B99D24127CDE674009F4D31 /* Assets.xcassets */,
 				9B99D24827CDE674009F4D31 /* pull_up_man.xcdatamodeld */,
 				9B99D24327CDE674009F4D31 /* Preview Content */,
@@ -85,7 +90,8 @@
 		9B99D25127CDE691009F4D31 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9B99D23F27CDE674009F4D31 /* ContentView.swift */,
+				9B99D25327CDE7C1009F4D31 /* MainView.swift */,
+				9B99D25527CDE858009F4D31 /* test.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,8 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */,
+				9B99D25627CDE858009F4D31 /* test.swift in Sources */,
 				9B99D24727CDE674009F4D31 /* Persistence.swift in Sources */,
 				9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */,
+				9B99D25427CDE7C1009F4D31 /* MainView.swift in Sources */,
 				9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = MyGreen;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"pull-up-man/Preview Content\"";
@@ -326,7 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = MyGreen;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"pull-up-man/Preview Content\"";
