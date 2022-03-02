@@ -17,6 +17,8 @@
 		9B99D25627CDE858009F4D31 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D25527CDE858009F4D31 /* test.swift */; };
 		9B99D25927CDF326009F4D31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B99D25B27CDF326009F4D31 /* Localizable.strings */; };
 		9B99D25F27CDF452009F4D31 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B99D26127CDF452009F4D31 /* InfoPlist.strings */; };
+		9B99D26327CDF644009F4D31 /* WorkOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26227CDF644009F4D31 /* WorkOutView.swift */; };
+		9B99D26527CE0335009F4D31 /* WorkOutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26427CE0335009F4D31 /* WorkOutListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		9B99D25A27CDF326009F4D31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B99D25C27CDF3A2009F4D31 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B99D26027CDF452009F4D31 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9B99D26227CDF644009F4D31 /* WorkOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutView.swift; sourceTree = "<group>"; };
+		9B99D26427CE0335009F4D31 /* WorkOutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				9B99D25327CDE7C1009F4D31 /* MainView.swift */,
+				9B99D26227CDF644009F4D31 /* WorkOutView.swift */,
+				9B99D26427CE0335009F4D31 /* WorkOutListView.swift */,
 				9B99D25527CDE858009F4D31 /* test.swift */,
 			);
 			path = View;
@@ -185,7 +191,9 @@
 			files = (
 				9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */,
 				9B99D25627CDE858009F4D31 /* test.swift in Sources */,
+				9B99D26527CE0335009F4D31 /* WorkOutListView.swift in Sources */,
 				9B99D24727CDE674009F4D31 /* Persistence.swift in Sources */,
+				9B99D26327CDF644009F4D31 /* WorkOutView.swift in Sources */,
 				9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */,
 				9B99D25427CDE7C1009F4D31 /* MainView.swift in Sources */,
 				9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */,

@@ -12,7 +12,7 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            test()
+            WorkOutView()
             .tabItem {
                 Image(systemName: "flame")
                 Text("Work out")
@@ -43,5 +43,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environment(\.locale, .init(identifier: "ko"))
     }
 }
