@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkOutView: View {
     init() {
-        UITableView.appearance().backgroundColor = .white
+        UITableView.appearance().backgroundColor = UIColor(named: "MyWhite")
         UINavigationBar.appearance().largeTitleTextAttributes =
         [.font: UIFont.systemFont(ofSize: 34, weight: .regular)]
     }
@@ -55,5 +55,8 @@ struct WorkOutView: View {
 struct WorkOutView_Previews: PreviewProvider {
     static var previews: some View {
         WorkOutView()
+            .environment(\.locale, .init(identifier: "ko"))
+        WorkOutView()
+            .preferredColorScheme(.dark)
     }
 }
