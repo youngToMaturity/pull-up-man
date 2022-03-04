@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WorkOutView: View {
+    let exercise: Exercises = Exercises()
     init() {
         UITableView.appearance().backgroundColor = UIColor(named: "MyWhite")
         UINavigationBar.appearance().largeTitleTextAttributes =
@@ -16,35 +17,21 @@ struct WorkOutView: View {
     var body: some View {
         NavigationView {
             List {
+                Text("Push-up")
+                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 NavigationLink {
                     test()
                 } label: {
-                    WorkOutListView()
+                    WorkOutListView(exercise: exercise.pushUp)
                 }
-                NavigationLink {
-                    test()
-                } label: {
-                    WorkOutListView()
-                }
-                NavigationLink {
-                    test()
-                } label: {
-                    WorkOutListView()
-                }
-                NavigationLink {
-                    test()
-                } label: {
-                    WorkOutListView()
-                }
-                NavigationLink {
-                    test()
-                } label: {
-                    WorkOutListView()
-                }
-                NavigationLink {
-                    test()
-                } label: {
-                    WorkOutListView()
+                Text("Pull-up")
+                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
+                ForEach(exercise.pullUp) { routine in
+                    NavigationLink {
+                        test()
+                    } label: {
+                        WorkOutListView(exercise: routine)
+                    }
                 }
             }
             .navigationTitle("Start Work out")

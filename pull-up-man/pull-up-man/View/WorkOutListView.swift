@@ -8,37 +8,49 @@
 import SwiftUI
 
 struct WorkOutListView: View {
+    let exercise: Exercise
+    
     var body: some View {
-        HStack {
-            Image("pull-up")
-                .resizable()
-                .foregroundColor(.white)
-                .frame(width: 40, height: 40)
-                .aspectRatio(contentMode: .fit)
-                .background(Color.myGreen)
-                .cornerRadius(10)
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text("Open Goal")
+        HStack(alignment: .top) {
+            if exercise.id == 0 {
+                exercise.image
+                    .font(.system(size: 50))
+                    .foregroundColor(.white)
+                    .frame(width: 80, height: 80)
+                    .background(Color.myGreen)
+                    .cornerRadius(10)
+            } else {
+                exercise.image
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 80, height: 80)
+                    .aspectRatio(contentMode: .fit)
+                    .background(Color.myGreen)
+                    .cornerRadius(10)
+            }
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(exercise.goal)
                         .font(.system(size: 15))
                         .fontWeight(.semibold)
-                    Text("Did 24 push-ups before")
+                    Spacer()
+                    Text(exercise.term)
                         .font(.system(size: 13))
                 }
-                Text("30s")
+                Text(exercise.description)
                     .font(.system(size: 13))
             }
         }
-        .frame(height: 60)
+        .frame(height: 100)
     }
     
 }
 
 struct WorkOutListView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkOutListView()
+        WorkOutListView(exercise: Exercises().pushUp)
             .environment(\.locale, .init(identifier: "ko"))
-        WorkOutListView()
+        WorkOutListView(exercise: Exercises().pullUp[1])
             .preferredColorScheme(.dark)
     }
 }

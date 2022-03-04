@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct pull_up_manApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             MainView()
