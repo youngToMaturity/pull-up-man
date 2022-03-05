@@ -10,7 +10,9 @@ import SwiftUI
 struct ExerciseView: View {
     let exercise: Exercise
     @ObservedObject var proximityObserver = ExerciseViewModel()
+    
     func activateProximitySensor() {
+        print("ExerciseView :: activateProximitySensor")
         UIDevice.current.isProximityMonitoringEnabled = true
         if UIDevice.current.isProximityMonitoringEnabled {
             NotificationCenter.default.addObserver(proximityObserver, selector: #selector(proximityObserver.didChange), name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
@@ -18,7 +20,8 @@ struct ExerciseView: View {
     }
     
     func deactivateProximitySensor() {
-        print("MyView::deactivateProximitySensor")
+        print("ExerciseView :: deactivateProximitySensor")
+        proximityObserver.count = 0
         UIDevice.current.isProximityMonitoringEnabled = false
         NotificationCenter.default.removeObserver(proximityObserver, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
     }
@@ -28,18 +31,17 @@ struct ExerciseView: View {
             VStack {
                 Text(exercise.goal)
                     .font(.system(size: 28))
-                    .padding()
                 Text(exercise.description)
                     .padding()
                 Spacer()
                 Text("\(proximityObserver.count)")
                     .font(.system(size: 100))
-                    .padding()
                     .onAppear() {
                         self.activateProximitySensor()
                     } .onDisappear() {
                         self.deactivateProximitySensor()
                     }
+                Spacer()
                 Spacer()
             }
             Spacer()

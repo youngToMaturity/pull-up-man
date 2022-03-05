@@ -16,8 +16,5 @@ class ExerciseViewModel: ObservableObject {
         if tmp % 2 == 0 {
             count += 1
         }
-        if let device = notification.object as? UIDevice {
-            print(device.proximityState)
-        }
     }
 }
