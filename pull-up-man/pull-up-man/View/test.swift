@@ -8,12 +8,27 @@
 import SwiftUI
 
 struct test: View {
-    @ObservedObject var vm = ExerciseViewModel()
+//    var proximityObserver = ExerciseViewModel()
+//    func activateProximitySensor() {
+//        UIDevice.current.isProximityMonitoringEnabled = true
+//        if UIDevice.current.isProximityMonitoringEnabled {
+//            NotificationCenter.default.addObserver(proximityObserver, selector: #selector(proximityObserver.didChange), name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
+//        }
+//    }
+//
+//    func deactivateProximitySensor() {
+//        print("MyView::deactivateProximitySensor")
+//        UIDevice.current.isProximityMonitoringEnabled = false
+//        NotificationCenter.default.removeObserver(proximityObserver, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
+//    }
+
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onTapGesture {
-                vm.testMain()
-            }
+//            .onAppear() {
+//                self.activateProximitySensor()
+//            } .onDisappear() {
+//                self.deactivateProximitySensor()
+//            }
     }
 }
 
