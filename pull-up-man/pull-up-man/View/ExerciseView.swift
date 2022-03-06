@@ -11,7 +11,7 @@ struct ExerciseView: View {
     let exercise: Exercise
     @ObservedObject var proximityObserver = ExerciseViewModel()
     @State var seconds = 5
-    @State var tmp2: Double = 0
+    @State var bar = 0
     
     func activateProximitySensor() {
         print("ExerciseView :: activateProximitySensor")
@@ -33,10 +33,9 @@ struct ExerciseView: View {
             Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
                 if count % 6 == 5 {
                     seconds -= 1
+                    bar += 1
                     count = 0
                 }
-                print(count)
-                tmp2 += 1
                 count += 1
                 if seconds < 0 {
                     timer.invalidate()
@@ -49,10 +48,10 @@ struct ExerciseView: View {
             ZStack {
                 VStack {
                     VStack {
+                        ExerciseHeaderView(secondsElapsed: 0, secondsRemaining: 0)
                         Text(exercise.goal)
                             .font(.system(size: 28))
-                        Text(exercise.description)
-                            .padding()
+                            .padding(.top)
                         Spacer()
                         Spacer()
                         Text("\(proximityObserver.count)")
@@ -83,16 +82,13 @@ struct ExerciseView: View {
                 }
                 VStack {
                     Circle()
-                        .trim(from: 0, to: CGFloat(tmp2) / 30)
+                        .trim(from: 1 - CGFloat(bar) / 5, to: 1)
                         .stroke(Color.myGreen, style: StrokeStyle(lineWidth: 30))
                         .rotationEffect(.init(degrees: -90))
-                        .animation(.easeIn, value: tmp2)
+                        .animation(.easeIn, value: bar)
                         .padding(.init(top: 60, leading: 50, bottom: 50, trailing: 50))
                 }
             }
-//            .onTapGesture {
-//                tmp2 += 1
-//            }
             .onAppear {
                 self.calculateCircleSeconds()
             }

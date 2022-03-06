@@ -22,6 +22,7 @@
 		9B99D26727D0740D009F4D31 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26627D0740D009F4D31 /* Exercise.swift */; };
 		9B99D26927D0D9DF009F4D31 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26827D0D9DE009F4D31 /* ExerciseView.swift */; };
 		9B99D26B27D0DF6E009F4D31 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26A27D0DF6E009F4D31 /* ExerciseViewModel.swift */; };
+		9BCEB28F27D4FE23008FDAA1 /* ExerciseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEB28E27D4FE23008FDAA1 /* ExerciseHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9B99D26627D0740D009F4D31 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		9B99D26827D0D9DE009F4D31 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		9B99D26A27D0DF6E009F4D31 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		9BCEB28E27D4FE23008FDAA1 /* ExerciseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				9B99D26827D0D9DE009F4D31 /* ExerciseView.swift */,
 				9B99D26427CE0335009F4D31 /* WorkOutListView.swift */,
 				9B99D25527CDE858009F4D31 /* test.swift */,
+				9BCEB28E27D4FE23008FDAA1 /* ExerciseHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */,
 				9B99D26B27D0DF6E009F4D31 /* ExerciseViewModel.swift in Sources */,
 				9B99D25627CDE858009F4D31 /* test.swift in Sources */,
+				9BCEB28F27D4FE23008FDAA1 /* ExerciseHeaderView.swift in Sources */,
 				9B99D26527CE0335009F4D31 /* WorkOutListView.swift in Sources */,
 				9B99D24727CDE674009F4D31 /* Persistence.swift in Sources */,
 				9B99D26927D0D9DF009F4D31 /* ExerciseView.swift in Sources */,
