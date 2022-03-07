@@ -22,7 +22,7 @@ struct Exercises {
 struct Exercise: Identifiable {
     let id: Int
     let image: Image
-    let goal: String
-    let description: String
+    let goal: LocalizedStringKey
+    let description: LocalizedStringKey
     let term: String
 }

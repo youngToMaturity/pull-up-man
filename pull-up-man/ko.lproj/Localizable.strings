@@ -6,11 +6,11 @@
   
 */
 
-"Work out" = "운동";
-"Alarm" = "알람";
-"Chart" = "통계";
-"Setting" = "설정";
 "Start Work out" = "운동 시작하기";
+"Push-up" = "푸시업";
+"Pull-up" = "풀업";
 "Open Goal" = "자유 목표";
-"Did 24 push-ups before" = "지난 시도에 24회 반복";
-"30s" = "세트 간 30s";
+"Let your phone on floor, Do push-up to touch your chin to phone / 1 set is 2 mins" = "핸드폰을 바닥에 두고, 턱이 핸드폰과 가까워지도록 푸시업을 진행 / 1세트는 2분";
+"pull-up" = "풀업";
+"Do the best as you can" = "실패지점까지";
+"Seconds Elapsed" = "남은 시간";

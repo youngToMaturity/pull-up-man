@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExerciseHeaderView: View {
+struct PushUpHeaderView: View {
     let secondsElapsed: Int
     let secondsRemaining: Int
     
@@ -51,7 +51,7 @@ struct ExerciseHeaderView: View {
 
 struct ExerciseHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseHeaderView(secondsElapsed: 300, secondsRemaining: 600)
+        PushUpHeaderView(secondsElapsed: 300, secondsRemaining: 600)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ExerciseViewModel: ObservableObject {
+class PushUpViewModel: ObservableObject {
     @Published var count = 0
     var tmp = 0
     @objc func didChange(notification: NSNotification) {

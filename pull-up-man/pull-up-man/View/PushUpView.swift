@@ -1,5 +1,5 @@
 //
-//  ExerciseView.swift
+//  PushUpView.swift
 //  pull-up-man
 //
 //  Created by Young Soo Hwang on 2022/03/03.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ExerciseView: View {
+struct PushUpView: View {
     let exercise: Exercise
-    @ObservedObject var proximityObserver = ExerciseViewModel()
-    @State var seconds = 5
+    @ObservedObject var proximityObserver = PushUpViewModel()
+    @State var seconds = -1
     @State var bar = 0
     
     func activateProximitySensor() {
@@ -48,10 +48,10 @@ struct ExerciseView: View {
             ZStack {
                 VStack {
                     VStack {
-                        ExerciseHeaderView(secondsElapsed: 0, secondsRemaining: 0)
+                        PushUpHeaderView(secondsElapsed: 0, secondsRemaining: 0)
+                            .padding(.top)
                         Text(exercise.goal)
                             .font(.system(size: 28))
-                            .padding(.top)
                         Spacer()
                         Spacer()
                         Text("\(proximityObserver.count)")
@@ -99,6 +99,6 @@ struct ExerciseView: View {
 struct ExerciseView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ExerciseView(exercise: Exercises().pushUp)
+        PushUpView(exercise: Exercises().pushUp)
     }
 }
