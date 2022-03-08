@@ -21,7 +21,7 @@ struct MainView: View {
             test()
             .tabItem {
                 Image(systemName: "alarm")
-                Text("Alarm")
+                Text("Alert")
             }
             .tag(2)
             test()

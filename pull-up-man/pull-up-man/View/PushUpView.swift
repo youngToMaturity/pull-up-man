@@ -10,7 +10,7 @@ import SwiftUI
 struct PushUpView: View {
     let exercise: Exercise
     @ObservedObject var proximityObserver = PushUpViewModel()
-    @State var seconds = -1
+    @State var seconds = 5
     @State var bar = 0
     
     func activateProximitySensor() {
