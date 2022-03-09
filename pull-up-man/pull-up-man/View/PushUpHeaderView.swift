@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PushUpHeaderView: View {
     @State var secondsElapsed: Int
+    @State var isStarted: Bool = false
     @State var isFinished: Bool = false
     let totalSeconds: Int
     
@@ -18,11 +19,14 @@ struct PushUpHeaderView: View {
     }
     
     func calculateSeconds() {
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            secondsElapsed += 1
-            if secondsElapsed == totalSeconds {
-                isFinished = true
-                timer.invalidate()
+        if isStarted == false {
+            isStarted.toggle()
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                secondsElapsed += 1
+                if secondsElapsed == totalSeconds {
+                    isFinished = true
+                    timer.invalidate()
+                }
             }
         }
     }
@@ -48,6 +52,8 @@ struct PushUpHeaderView: View {
             }
             .onAppear() {
                 self.calculateSeconds()
+            } .onDisappear() {
+                secondsElapsed = 0
             }
             .padding(.horizontal)
         }
