@@ -27,6 +27,7 @@ struct PushUpView: View {
         UIDevice.current.isProximityMonitoringEnabled = false
         NotificationCenter.default.removeObserver(proximityObserver, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
     }
+    
 // MARK: Circle Animation Part
     func calculateCircleSeconds() {
         var count = 0
@@ -48,7 +49,7 @@ struct PushUpView: View {
             ZStack {
                 VStack {
                     VStack {
-                        PushUpHeaderView(secondsElapsed: 0, secondsRemaining: 0)
+                        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120)
                             .padding(.top)
                         Text(exercise.goal)
                             .font(.system(size: 28))

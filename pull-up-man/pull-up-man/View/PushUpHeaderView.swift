@@ -8,25 +8,28 @@
 import SwiftUI
 
 struct PushUpHeaderView: View {
-    let secondsElapsed: Int
-    let secondsRemaining: Int
-    
-    private var totalSeconds: Int {
-        secondsElapsed + secondsRemaining
-    }
+    @State var secondsElapsed: Int
+    @State var isFinished: Bool = false
+    let totalSeconds: Int
     
     private var progress: Double {
         guard totalSeconds > 0 else { return 1 }
         return Double(secondsElapsed) / Double(totalSeconds)
     }
     
-    private var minutesRemaining: Int {
-        secondsRemaining / 60
+    func calculateSeconds() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            secondsElapsed += 1
+            if secondsElapsed == totalSeconds {
+                isFinished = true
+                timer.invalidate()
+            }
+        }
     }
     
     var body: some View {
         VStack {
-            ProgressView(value: 5, total: 15)
+            ProgressView(value: progress, total: 1)
             HStack {
                 VStack(alignment: .leading) {
                     Text("Seconds Elapsed")
@@ -36,14 +39,16 @@ struct PushUpHeaderView: View {
                 Spacer()
                 // edit it to push-up counts
                 VStack(alignment: .trailing) {
-                    Text("Seconds Remaining")
+                    Text("Counts")
                         .font(.caption)
-                    Label("\(secondsRemaining)", systemImage: "hourglass.tophalf.fill")
                 }
             }
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Time remaining")
-            .accessibilityValue("\(minutesRemaining)")
+            .sheet(isPresented: $isFinished) {
+                test()
+            }
+            .onAppear() {
+                self.calculateSeconds()
+            }
             .padding(.horizontal)
         }
     }
@@ -51,7 +56,7 @@ struct PushUpHeaderView: View {
 
 struct ExerciseHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PushUpHeaderView(secondsElapsed: 300, secondsRemaining: 600)
+        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120)
             .previewLayout(.sizeThatFits)
     }
 }
