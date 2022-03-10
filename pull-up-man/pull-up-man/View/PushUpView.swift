@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PushUpView: View {
     let exercise: Exercise
+    @Environment(\.presentationMode) var presentation
     @ObservedObject var proximityObserver = PushUpViewModel()
     @State var seconds = 5
     @State var bar = 0
@@ -28,20 +29,31 @@ struct PushUpView: View {
         NotificationCenter.default.removeObserver(proximityObserver, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
     }
     
-// MARK: Circle Animation Part
+    // MARK: Circle Animation Part
     func calculateCircleSeconds() {
         var count = 0
-            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
-                if count % 6 == 5 {
-                    seconds -= 1
-                    bar += 1
-                    count = 0
-                }
-                count += 1
-                if seconds < 0 {
-                    timer.invalidate()
-                }
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
+            if count % 6 == 5 {
+                seconds -= 1
+                bar += 1
+                count = 0
             }
+            count += 1
+            if seconds < 0 {
+                timer.invalidate()
+            }
+        }
+    }
+    
+    var backButton: some View {
+        HStack {
+            Image(systemName: "arrow.left")
+            Text("Stop Work Out")
+        }
+        .foregroundColor(.myGreen)
+        .onTapGesture {
+            self.presentation.wrappedValue.dismiss()
+        }
     }
     
     var body: some View {
@@ -69,8 +81,11 @@ struct PushUpView: View {
                     Spacer()
                 }
             }
+            .navigationBarTitle(Text(""), displayMode: .inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:backButton)
         } else {
-// MARK: Initial Screen, Show Screen after animate
+            // MARK: Initial Screen, Show Screen after animate
             ZStack {
                 VStack{
                     Text("\(seconds)")
@@ -90,12 +105,17 @@ struct PushUpView: View {
                         .padding(.init(top: 60, leading: 50, bottom: 50, trailing: 50))
                 }
             }
+            .navigationBarTitle(Text(""), displayMode: .inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:backButton)
             .onAppear {
                 self.calculateCircleSeconds()
             }
         }
     }
+    
 }
+
 
 struct ExerciseView_Previews: PreviewProvider {
     
