@@ -35,8 +35,9 @@ struct WorkOutView: View {
                     }
                 }
             }
-            .navigationTitle("Start Work out")
+            .navigationBarTitle("Start Work out")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
