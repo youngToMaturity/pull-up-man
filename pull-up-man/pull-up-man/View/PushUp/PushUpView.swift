@@ -11,7 +11,7 @@ struct PushUpView: View {
     let exercise: Exercise
     @Environment(\.presentationMode) var presentation
     @ObservedObject var proximityObserver = PushUpViewModel()
-    @State var seconds = 5
+    @State var seconds = -1
     @State var bar = 0
     
     func activateProximitySensor() {
@@ -76,6 +76,7 @@ struct PushUpView: View {
                             }
                         Spacer()
                         Spacer()
+                        PushUpStopButton()
                         Spacer()
                     }
                     Spacer()

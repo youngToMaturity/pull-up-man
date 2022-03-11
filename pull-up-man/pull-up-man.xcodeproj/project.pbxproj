@@ -21,6 +21,7 @@
 		9B99D26727D0740D009F4D31 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26627D0740D009F4D31 /* Exercise.swift */; };
 		9B99D26927D0D9DF009F4D31 /* PushUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26827D0D9DE009F4D31 /* PushUpView.swift */; };
 		9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */; };
+		9BB75EC727DB50C8007D7CFE /* PushUpStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */; };
 		9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */; };
 		9BCEB29727D6EDB8008FDAA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		9B99D26627D0740D009F4D31 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		9B99D26827D0D9DE009F4D31 /* PushUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpView.swift; sourceTree = "<group>"; };
 		9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpViewModel.swift; sourceTree = "<group>"; };
+		9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpStopButton.swift; sourceTree = "<group>"; };
 		9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpHeaderView.swift; sourceTree = "<group>"; };
 		9BCEB29127D5D2DB008FDAA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -111,11 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				9B99D25327CDE7C1009F4D31 /* MainView.swift */,
-				9B99D26227CDF644009F4D31 /* WorkOutView.swift */,
-				9B99D26827D0D9DE009F4D31 /* PushUpView.swift */,
-				9B99D26427CE0335009F4D31 /* WorkOutListView.swift */,
+				9BB75EC527DB5082007D7CFE /* WorkOut */,
+				9BB75EC427DB5074007D7CFE /* PushUp */,
 				9B99D25527CDE858009F4D31 /* test.swift */,
-				9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +126,25 @@
 				9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9BB75EC427DB5074007D7CFE /* PushUp */ = {
+			isa = PBXGroup;
+			children = (
+				9B99D26827D0D9DE009F4D31 /* PushUpView.swift */,
+				9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */,
+				9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */,
+			);
+			path = PushUp;
+			sourceTree = "<group>";
+		};
+		9BB75EC527DB5082007D7CFE /* WorkOut */ = {
+			isa = PBXGroup;
+			children = (
+				9B99D26227CDF644009F4D31 /* WorkOutView.swift */,
+				9B99D26427CE0335009F4D31 /* WorkOutListView.swift */,
+			);
+			path = WorkOut;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +230,7 @@
 				9B99D26327CDF644009F4D31 /* WorkOutView.swift in Sources */,
 				9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */,
 				9B99D25427CDE7C1009F4D31 /* MainView.swift in Sources */,
+				9BB75EC727DB50C8007D7CFE /* PushUpStopButton.swift in Sources */,
 				9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */,
 				9B99D26727D0740D009F4D31 /* Exercise.swift in Sources */,
 			);
