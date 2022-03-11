@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct PushUpStopButton: View {
+    var pushUpViewModel: PushUpViewModel
+    
+    func finishSet() {
+        let pushUpSet = PushUpSet(
+            id: pushUpViewModel.setNumber, count: pushUpViewModel.count
+        )
+        pushUpViewModel.countList.append(pushUpSet)
+        pushUpViewModel.setNumber += 1
+        pushUpViewModel.count = 0
+    }
+    
     var body: some View {
         Button(action: {
-            // action
+            finishSet()
         }) {
             Text("Finish Set")
         }
@@ -24,6 +35,6 @@ struct PushUpStopButton: View {
 
 struct PushUpStopButton_Previews: PreviewProvider {
     static var previews: some View {
-        PushUpStopButton()
+        PushUpStopButton(pushUpViewModel: PushUpViewModel())
     }
 }

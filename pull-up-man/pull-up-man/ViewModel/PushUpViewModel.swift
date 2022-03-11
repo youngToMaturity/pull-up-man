@@ -10,6 +10,8 @@ import UIKit
 
 class PushUpViewModel: ObservableObject {
     @Published var count = 0
+    @Published var countList: [PushUpSet] = []
+    var setNumber: Int = 1
     var tmp = 0
     @objc func didChange(notification: NSNotification) {
         tmp += 1

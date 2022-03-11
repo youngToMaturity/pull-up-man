@@ -11,7 +11,9 @@ struct PushUpHeaderView: View {
     @State var secondsElapsed: Int
     @State var isStarted: Bool = false
     @State var isFinished: Bool = false
+    
     let totalSeconds: Int
+    var pushUpViewModel: PushUpViewModel
     
     private var progress: Double {
         guard totalSeconds > 0 else { return 1 }
@@ -23,7 +25,7 @@ struct PushUpHeaderView: View {
             isStarted.toggle()
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                 secondsElapsed += 1
-                if secondsElapsed == totalSeconds {
+                if secondsElapsed >= totalSeconds {
                     isFinished = true
                     timer.invalidate()
                 }
@@ -45,6 +47,11 @@ struct PushUpHeaderView: View {
                 VStack(alignment: .trailing) {
                     Text("Counts")
                         .font(.caption)
+                    HStack {
+                        ForEach(pushUpViewModel.countList) { pushUp in
+                            Text(" \(String(pushUp.count))")
+                        }
+                    }
                 }
             }
             .sheet(isPresented: $isFinished) {
@@ -62,7 +69,7 @@ struct PushUpHeaderView: View {
 
 struct ExerciseHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120)
+        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120, pushUpViewModel: PushUpViewModel())
             .previewLayout(.sizeThatFits)
     }
 }

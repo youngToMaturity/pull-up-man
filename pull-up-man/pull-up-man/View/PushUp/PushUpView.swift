@@ -10,23 +10,25 @@ import SwiftUI
 struct PushUpView: View {
     let exercise: Exercise
     @Environment(\.presentationMode) var presentation
-    @ObservedObject var proximityObserver = PushUpViewModel()
+    @ObservedObject var pushUpViewModel = PushUpViewModel()
+    var initSeconds = 5
     @State var seconds = -1
     @State var bar = 0
     
+    // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
     func activateProximitySensor() {
         print("ExerciseView :: activateProximitySensor")
         UIDevice.current.isProximityMonitoringEnabled = true
         if UIDevice.current.isProximityMonitoringEnabled {
-            NotificationCenter.default.addObserver(proximityObserver, selector: #selector(proximityObserver.didChange), name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
+            NotificationCenter.default.addObserver(pushUpViewModel, selector: #selector(pushUpViewModel.didChange), name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
         }
     }
     
     func deactivateProximitySensor() {
         print("ExerciseView :: deactivateProximitySensor")
-        proximityObserver.count = 0
+        pushUpViewModel.count = 0
         UIDevice.current.isProximityMonitoringEnabled = false
-        NotificationCenter.default.removeObserver(proximityObserver, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
+        NotificationCenter.default.removeObserver(pushUpViewModel, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
     }
     
     // MARK: Circle Animation Part
@@ -44,7 +46,8 @@ struct PushUpView: View {
             }
         }
     }
-    
+
+    // MARK: - backButton SetUp: Need Notification to dismiss
     var backButton: some View {
         HStack {
             Image(systemName: "arrow.left")
@@ -58,25 +61,27 @@ struct PushUpView: View {
     
     var body: some View {
         if seconds < 0 {
+            // MARK: - Push Up Work out View: Count Push Ups
             ZStack {
                 VStack {
                     VStack {
-                        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120)
+                        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120, pushUpViewModel: pushUpViewModel)
                             .padding(.top)
                         Text(exercise.goal)
                             .font(.system(size: 28))
                         Spacer()
                         Spacer()
-                        Text("\(proximityObserver.count)")
+                        Text("\(pushUpViewModel.count)")
                             .font(.system(size: 100))
                             .onAppear() {
                                 self.activateProximitySensor()
                             } .onDisappear() {
                                 self.deactivateProximitySensor()
+                                pushUpViewModel.countList = []
                             }
                         Spacer()
                         Spacer()
-                        PushUpStopButton()
+                        PushUpStopButton(pushUpViewModel: pushUpViewModel)
                         Spacer()
                     }
                     Spacer()
@@ -99,7 +104,7 @@ struct PushUpView: View {
                 }
                 VStack {
                     Circle()
-                        .trim(from: 1 - CGFloat(bar) / 5, to: 1)
+                        .trim(from: 1 - CGFloat(bar) / CGFloat(initSeconds), to: 1)
                         .stroke(Color.myGreen, style: StrokeStyle(lineWidth: 30))
                         .rotationEffect(.init(degrees: -90))
                         .animation(.easeIn, value: bar)

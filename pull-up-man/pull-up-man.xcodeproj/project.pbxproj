@@ -22,6 +22,7 @@
 		9B99D26927D0D9DF009F4D31 /* PushUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26827D0D9DE009F4D31 /* PushUpView.swift */; };
 		9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */; };
 		9BB75EC727DB50C8007D7CFE /* PushUpStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */; };
+		9BB75EC927DB8024007D7CFE /* PushUpSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB75EC827DB8024007D7CFE /* PushUpSet.swift */; };
 		9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */; };
 		9BCEB29727D6EDB8008FDAA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		9B99D26827D0D9DE009F4D31 /* PushUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpView.swift; sourceTree = "<group>"; };
 		9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpViewModel.swift; sourceTree = "<group>"; };
 		9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpStopButton.swift; sourceTree = "<group>"; };
+		9BB75EC827DB8024007D7CFE /* PushUpSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpSet.swift; sourceTree = "<group>"; };
 		9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpHeaderView.swift; sourceTree = "<group>"; };
 		9BCEB29127D5D2DB008FDAA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				9B99D26627D0740D009F4D31 /* Exercise.swift */,
+				9BB75EC827DB8024007D7CFE /* PushUpSet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */,
+				9BB75EC927DB8024007D7CFE /* PushUpSet.swift in Sources */,
 				9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */,
 				9B99D25627CDE858009F4D31 /* test.swift in Sources */,
 				9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */,
