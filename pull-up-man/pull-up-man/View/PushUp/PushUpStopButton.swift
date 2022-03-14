@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct PushUpStopButton: View {
-    @Binding var isStarted: Bool
-    var pushUpViewModel: PushUpViewModel
+    @ObservedObject var pushUpViewModel: PushUpViewModel
     
     var body: some View {
         Button(action: {
-            pushUpViewModel.finishSet()
+            pushUpViewModel.finishSet(nil)
         }) {
             Text("Finish Set")
         }
@@ -24,10 +23,3 @@ struct PushUpStopButton: View {
         .cornerRadius(6.0)
     }
 }
-
-//struct PushUpStopButton_Previews: PreviewProvider {
-//    @Binding var seconds
-//    static var previews: some View {
-//        PushUpStopButton(seconds: seconds, pushUpViewModel: PushUpViewModel())
-//    }
-//}

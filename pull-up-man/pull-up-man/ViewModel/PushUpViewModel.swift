@@ -24,14 +24,20 @@ class PushUpViewModel: ObservableObject {
         }
     }
     
-    func finishSet() {
+    func finishSet(_ isFinished: Bool?) {
         let pushUpSet = PushUpSet(
             id: setNumber, count: count
         )
-        seconds = 3
-        initSeconds = 3
         countList.append(pushUpSet)
         setNumber += 1
         count = 0
+        if isFinished != nil {
+            countList = []
+            seconds = 5
+            initSeconds = 5
+        } else {
+            seconds = 3
+            initSeconds = 3
+        }
     }
 }

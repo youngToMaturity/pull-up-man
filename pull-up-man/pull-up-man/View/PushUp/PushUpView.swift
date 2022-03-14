@@ -27,7 +27,6 @@ struct PushUpView: View {
     }
     
     func deactivateProximitySensor() {
-        pushUpViewModel.seconds = -1
         print("ExerciseView :: deactivateProximitySensor")
         UIDevice.current.isProximityMonitoringEnabled = false
         NotificationCenter.default.removeObserver(pushUpViewModel, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
@@ -35,15 +34,19 @@ struct PushUpView: View {
 
     // MARK: Circle Animation Part
     func calculateCircleSeconds() {
-        var count = 0
+        var secondCount = 0
+        var timerCount = 0
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
-            if count % 6 == 5 {
+            if secondCount % 6 == 5 {
                 pushUpViewModel.seconds -= 1
                 bar += 1
-                count = 0
+                timerCount += 1
+                secondCount = 0
+                print("I'm alive")
             }
-            count += 1
-            if pushUpViewModel.seconds < 0 {
+            secondCount += 1
+            if timerCount >= pushUpViewModel.initSeconds + 1 || isFinished == true {
+                bar = 0
                 timer.invalidate()
             }
         }
@@ -58,7 +61,7 @@ struct PushUpView: View {
         .foregroundColor(.myGreen)
         .onTapGesture {
             isFinished = true
-            pushUpViewModel.countList = []
+            pushUpViewModel.finishSet(isFinished)
             self.presentation.wrappedValue.dismiss()
         }
     }
@@ -70,7 +73,7 @@ struct PushUpView: View {
                 VStack {
                     VStack {
                         PushUpHeaderView(
-                            secondsElapsed: 0, isStarted: $isStarted, totalSeconds: 60, pushUpViewModel: pushUpViewModel)
+                            pushUpViewModel: pushUpViewModel)
                             .padding(.top)
                         Text(exercise.goal)
                             .font(.system(size: 28))
@@ -80,7 +83,7 @@ struct PushUpView: View {
                             .font(.system(size: 100))
                         Spacer()
                         Spacer()
-                        PushUpStopButton(isStarted: $isStarted, pushUpViewModel: pushUpViewModel)
+                        PushUpStopButton(pushUpViewModel: pushUpViewModel)
                         Spacer()
                     }
                     Spacer()
@@ -91,9 +94,9 @@ struct PushUpView: View {
             .navigationBarItems(leading:backButton)
             .sheet(isPresented: $isFinished) {
                 test()
-                    .onTapGesture {
-                        self.presentation.wrappedValue.dismiss()
-                    }
+//                    .onTapGesture {
+//                        self.presentation.wrappedValue.dismiss()
+//                    }
             }
             .onAppear() {
                 self.activateProximitySensor()
@@ -127,9 +130,6 @@ struct PushUpView: View {
             .onAppear {
                 pushUpViewModel.seconds = pushUpViewModel.initSeconds
                 self.calculateCircleSeconds()
-            } .onDisappear {
-                bar = 0
-                pushUpViewModel.seconds = -1
             }
         }
     }
