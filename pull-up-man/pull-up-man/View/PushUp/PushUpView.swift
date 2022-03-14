@@ -11,8 +11,9 @@ struct PushUpView: View {
     let exercise: Exercise
     @Environment(\.presentationMode) var presentation
     @ObservedObject var pushUpViewModel = PushUpViewModel()
-    var initSeconds = 5
-    @State var seconds = -1
+    @State var isStarted: Bool = false
+    @State var initSeconds = 5
+    @State var seconds = 5
     @State var bar = 0
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
@@ -56,6 +57,7 @@ struct PushUpView: View {
         .foregroundColor(.myGreen)
         .onTapGesture {
             self.presentation.wrappedValue.dismiss()
+            pushUpViewModel.countList = []
         }
     }
     
@@ -65,7 +67,8 @@ struct PushUpView: View {
             ZStack {
                 VStack {
                     VStack {
-                        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120, pushUpViewModel: pushUpViewModel)
+                        PushUpHeaderView(
+                            secondsElapsed: 0, isStarted: $isStarted, totalSeconds: 120, pushUpViewModel: pushUpViewModel)
                             .padding(.top)
                         Text(exercise.goal)
                             .font(.system(size: 28))
@@ -77,11 +80,10 @@ struct PushUpView: View {
                                 self.activateProximitySensor()
                             } .onDisappear() {
                                 self.deactivateProximitySensor()
-                                pushUpViewModel.countList = []
                             }
                         Spacer()
                         Spacer()
-                        PushUpStopButton(pushUpViewModel: pushUpViewModel)
+                        PushUpStopButton(seconds: $seconds, initSeconds: $initSeconds, isStarted: $isStarted, pushUpViewModel: pushUpViewModel)
                         Spacer()
                     }
                     Spacer()
@@ -90,6 +92,7 @@ struct PushUpView: View {
             .navigationBarTitle(Text(""), displayMode: .inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:backButton)
+
         } else {
             // MARK: Initial Screen, Show Screen after animate
             ZStack {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PushUpHeaderView: View {
     @State var secondsElapsed: Int
-    @State var isStarted: Bool = false
+    @Binding var isStarted: Bool
     @State var isFinished: Bool = false
     
     let totalSeconds: Int
@@ -21,15 +21,19 @@ struct PushUpHeaderView: View {
     }
     
     func calculateSeconds() {
-        if isStarted == false {
-            isStarted.toggle()
+        isStarted.toggle()
+        if isStarted == true {
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                 secondsElapsed += 1
-                if secondsElapsed >= totalSeconds {
+                if secondsElapsed == totalSeconds {
                     isFinished = true
+                    timer.invalidate()
+                } else if secondsElapsed >= 150 {
                     timer.invalidate()
                 }
             }
+        } else {
+            secondsElapsed = 150
         }
     }
     
@@ -67,9 +71,9 @@ struct PushUpHeaderView: View {
     }
 }
 
-struct ExerciseHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120, pushUpViewModel: PushUpViewModel())
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct ExerciseHeaderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PushUpHeaderView(secondsElapsed: 0, totalSeconds: 120, pushUpViewModel: PushUpViewModel())
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

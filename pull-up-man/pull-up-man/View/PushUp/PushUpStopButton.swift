@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct PushUpStopButton: View {
+    @Binding var seconds: Int
+    @Binding var initSeconds: Int
+    @Binding var isStarted: Bool
+    
     var pushUpViewModel: PushUpViewModel
     
     func finishSet() {
         let pushUpSet = PushUpSet(
             id: pushUpViewModel.setNumber, count: pushUpViewModel.count
         )
+        seconds = 30
+        initSeconds = 30
+        isStarted.toggle()
         pushUpViewModel.countList.append(pushUpSet)
         pushUpViewModel.setNumber += 1
         pushUpViewModel.count = 0
@@ -33,8 +40,9 @@ struct PushUpStopButton: View {
     }
 }
 
-struct PushUpStopButton_Previews: PreviewProvider {
-    static var previews: some View {
-        PushUpStopButton(pushUpViewModel: PushUpViewModel())
-    }
-}
+//struct PushUpStopButton_Previews: PreviewProvider {
+//    @Binding var seconds
+//    static var previews: some View {
+//        PushUpStopButton(seconds: seconds, pushUpViewModel: PushUpViewModel())
+//    }
+//}
