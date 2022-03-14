@@ -8,27 +8,12 @@
 import SwiftUI
 
 struct PushUpStopButton: View {
-    @Binding var seconds: Int
-    @Binding var initSeconds: Int
     @Binding var isStarted: Bool
-    
     var pushUpViewModel: PushUpViewModel
-    
-    func finishSet() {
-        let pushUpSet = PushUpSet(
-            id: pushUpViewModel.setNumber, count: pushUpViewModel.count
-        )
-        seconds = 30
-        initSeconds = 30
-        isStarted.toggle()
-        pushUpViewModel.countList.append(pushUpSet)
-        pushUpViewModel.setNumber += 1
-        pushUpViewModel.count = 0
-    }
     
     var body: some View {
         Button(action: {
-            finishSet()
+            pushUpViewModel.finishSet()
         }) {
             Text("Finish Set")
         }

@@ -14,8 +14,7 @@ struct PushUpView: View {
     
     @ObservedObject var pushUpViewModel = PushUpViewModel()
     @State var isStarted: Bool = false
-    @State var initSeconds = 5
-    @State var seconds = 5
+    @State var isFinished: Bool = false
     @State var bar = 0
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
@@ -28,29 +27,28 @@ struct PushUpView: View {
     }
     
     func deactivateProximitySensor() {
+        pushUpViewModel.seconds = -1
         print("ExerciseView :: deactivateProximitySensor")
-        pushUpViewModel.count = 0
         UIDevice.current.isProximityMonitoringEnabled = false
         NotificationCenter.default.removeObserver(pushUpViewModel, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
     }
-    
+
     // MARK: Circle Animation Part
     func calculateCircleSeconds() {
-        bar = 0
         var count = 0
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
             if count % 6 == 5 {
-                seconds -= 1
+                pushUpViewModel.seconds -= 1
                 bar += 1
                 count = 0
             }
             count += 1
-            if seconds < 0 {
+            if pushUpViewModel.seconds < 0 {
                 timer.invalidate()
             }
         }
     }
-
+    
     // MARK: - backButton SetUp: Need Notification to dismiss
     var backButton: some View {
         HStack {
@@ -59,19 +57,20 @@ struct PushUpView: View {
         }
         .foregroundColor(.myGreen)
         .onTapGesture {
-            self.presentation.wrappedValue.dismiss()
+            isFinished = true
             pushUpViewModel.countList = []
+            self.presentation.wrappedValue.dismiss()
         }
     }
     
     var body: some View {
-        if seconds < 0 {
+        if pushUpViewModel.seconds < 0 {
             // MARK: - Push Up Work out View: Count Push Ups
             ZStack {
                 VStack {
                     VStack {
                         PushUpHeaderView(
-                            secondsElapsed: 0, isStarted: $isStarted, totalSeconds: 120, pushUpViewModel: pushUpViewModel)
+                            secondsElapsed: 0, isStarted: $isStarted, totalSeconds: 60, pushUpViewModel: pushUpViewModel)
                             .padding(.top)
                         Text(exercise.goal)
                             .font(.system(size: 28))
@@ -79,14 +78,9 @@ struct PushUpView: View {
                         Spacer()
                         Text("\(pushUpViewModel.count)")
                             .font(.system(size: 100))
-                            .onAppear() {
-                                self.activateProximitySensor()
-                            } .onDisappear() {
-                                self.deactivateProximitySensor()
-                            }
                         Spacer()
                         Spacer()
-                        PushUpStopButton(seconds: $seconds, initSeconds: $initSeconds, isStarted: $isStarted, pushUpViewModel: pushUpViewModel)
+                        PushUpStopButton(isStarted: $isStarted, pushUpViewModel: pushUpViewModel)
                         Spacer()
                     }
                     Spacer()
@@ -95,12 +89,22 @@ struct PushUpView: View {
             .navigationBarTitle(Text(""), displayMode: .inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:backButton)
-
+            .sheet(isPresented: $isFinished) {
+                test()
+                    .onTapGesture {
+                        self.presentation.wrappedValue.dismiss()
+                    }
+            }
+            .onAppear() {
+                self.activateProximitySensor()
+            } .onDisappear() {
+                self.deactivateProximitySensor()
+            }
         } else {
             // MARK: Initial Screen, Show Screen after animate
             ZStack {
                 VStack{
-                    Text("\(seconds)")
+                    Text("\(pushUpViewModel.seconds)")
                         .font(.system(size: 100))
                 }
                 VStack {
@@ -110,7 +114,7 @@ struct PushUpView: View {
                 }
                 VStack {
                     Circle()
-                        .trim(from: 1 - CGFloat(bar) / CGFloat(initSeconds), to: 1)
+                        .trim(from: 1 - CGFloat(bar) / CGFloat(pushUpViewModel.initSeconds), to: 1)
                         .stroke(Color.myGreen, style: StrokeStyle(lineWidth: 30))
                         .rotationEffect(.init(degrees: -90))
                         .animation(.easeIn, value: bar)
@@ -121,11 +125,11 @@ struct PushUpView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:backButton)
             .onAppear {
-                seconds = initSeconds
+                pushUpViewModel.seconds = pushUpViewModel.initSeconds
                 self.calculateCircleSeconds()
             } .onDisappear {
                 bar = 0
-                seconds = -1
+                pushUpViewModel.seconds = -1
             }
         }
     }

@@ -10,7 +10,6 @@ import SwiftUI
 struct PushUpHeaderView: View {
     @State var secondsElapsed: Int
     @Binding var isStarted: Bool
-    @State var isFinished: Bool = false
     
     let totalSeconds: Int
     var pushUpViewModel: PushUpViewModel
@@ -21,19 +20,16 @@ struct PushUpHeaderView: View {
     }
     
     func calculateSeconds() {
-        isStarted.toggle()
-        if isStarted == true {
+        if isStarted == false {
+            secondsElapsed = 0
+            isStarted = true
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                 secondsElapsed += 1
                 if secondsElapsed == totalSeconds {
-                    isFinished = true
-                    timer.invalidate()
-                } else if secondsElapsed >= 150 {
+                    pushUpViewModel.finishSet()
                     timer.invalidate()
                 }
             }
-        } else {
-            secondsElapsed = 150
         }
     }
     
@@ -47,7 +43,6 @@ struct PushUpHeaderView: View {
                     Label("\(secondsElapsed)", systemImage: "clock")
                 }
                 Spacer()
-                // edit it to push-up counts
                 VStack(alignment: .trailing) {
                     Text("Counts")
                         .font(.caption)
@@ -58,13 +53,8 @@ struct PushUpHeaderView: View {
                     }
                 }
             }
-            .sheet(isPresented: $isFinished) {
-                test()
-            }
             .onAppear() {
-                self.calculateSeconds()
-            } .onDisappear() {
-                secondsElapsed = 0
+//                self.calculateSeconds()
             }
             .padding(.horizontal)
         }
