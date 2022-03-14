@@ -9,7 +9,9 @@ import SwiftUI
 
 struct PushUpView: View {
     let exercise: Exercise
+    
     @Environment(\.presentationMode) var presentation
+    
     @ObservedObject var pushUpViewModel = PushUpViewModel()
     @State var isStarted: Bool = false
     @State var initSeconds = 5
@@ -34,6 +36,7 @@ struct PushUpView: View {
     
     // MARK: Circle Animation Part
     func calculateCircleSeconds() {
+        bar = 0
         var count = 0
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
             if count % 6 == 5 {
@@ -118,7 +121,11 @@ struct PushUpView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:backButton)
             .onAppear {
+                seconds = initSeconds
                 self.calculateCircleSeconds()
+            } .onDisappear {
+                bar = 0
+                seconds = -1
             }
         }
     }
