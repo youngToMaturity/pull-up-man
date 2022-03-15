@@ -133,6 +133,8 @@ struct PushUpView: View {
             .onAppear {
 //                pushUpViewModel.seconds = pushUpViewModel.initSeconds
                 self.calculateCircleSeconds()
+            } .onDisappear {
+                bar = 0
             }
         }
     }
