@@ -11,8 +11,6 @@ import UIKit
 class PushUpViewModel: ObservableObject {
     @Published var count = 0
     @Published var countList: [PushUpSet] = []
-    @Published var seconds = 5
-    @Published var initSeconds = 5
     
     var setNumber: Int = 1
     var tmp = 0
@@ -33,11 +31,6 @@ class PushUpViewModel: ObservableObject {
         count = 0
         if isFinished != nil {
             countList = []
-            seconds = 5
-            initSeconds = 5
-        } else {
-            seconds = 3
-            initSeconds = 3
         }
     }
 }

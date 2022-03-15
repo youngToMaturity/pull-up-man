@@ -16,6 +16,8 @@ struct PushUpView: View {
     @State var isStarted: Bool = false
     @State var isFinished: Bool = false
     @State var bar = 0
+    @State var seconds = 5
+    @State var initSeconds = 5
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
     func activateProximitySensor() {
@@ -38,14 +40,15 @@ struct PushUpView: View {
         var timerCount = 0
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
             if secondCount % 6 == 5 {
-                pushUpViewModel.seconds -= 1
+                seconds -= 1
                 bar += 1
                 timerCount += 1
                 secondCount = 0
                 print("I'm alive")
+                print(seconds)
             }
             secondCount += 1
-            if timerCount >= pushUpViewModel.initSeconds + 1 || isFinished == true {
+            if timerCount >= initSeconds + 1 || isFinished == true {
                 bar = 0
                 timer.invalidate()
             }
@@ -67,7 +70,7 @@ struct PushUpView: View {
     }
     
     var body: some View {
-        if pushUpViewModel.seconds < 0 {
+        if seconds < 0 {
             // MARK: - Push Up Work out View: Count Push Ups
             ZStack {
                 VStack {
@@ -83,7 +86,7 @@ struct PushUpView: View {
                             .font(.system(size: 100))
                         Spacer()
                         Spacer()
-                        PushUpStopButton(pushUpViewModel: pushUpViewModel)
+                        PushUpStopButton(pushUpViewModel: pushUpViewModel, seconds: $seconds, initSeconds: $initSeconds)
                         Spacer()
                     }
                     Spacer()
@@ -107,7 +110,7 @@ struct PushUpView: View {
             // MARK: Initial Screen, Show Screen after animate
             ZStack {
                 VStack{
-                    Text("\(pushUpViewModel.seconds)")
+                    Text("\(seconds)")
                         .font(.system(size: 100))
                 }
                 VStack {
@@ -117,7 +120,7 @@ struct PushUpView: View {
                 }
                 VStack {
                     Circle()
-                        .trim(from: 1 - CGFloat(bar) / CGFloat(pushUpViewModel.initSeconds), to: 1)
+                        .trim(from: 1 - CGFloat(bar) / CGFloat(initSeconds), to: 1)
                         .stroke(Color.myGreen, style: StrokeStyle(lineWidth: 30))
                         .rotationEffect(.init(degrees: -90))
                         .animation(.easeIn, value: bar)
@@ -128,7 +131,7 @@ struct PushUpView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:backButton)
             .onAppear {
-                pushUpViewModel.seconds = pushUpViewModel.initSeconds
+//                pushUpViewModel.seconds = pushUpViewModel.initSeconds
                 self.calculateCircleSeconds()
             }
         }

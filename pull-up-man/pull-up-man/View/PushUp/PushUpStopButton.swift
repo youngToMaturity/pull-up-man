@@ -9,10 +9,14 @@ import SwiftUI
 
 struct PushUpStopButton: View {
     @ObservedObject var pushUpViewModel: PushUpViewModel
+    @Binding var seconds: Int
+    @Binding var initSeconds: Int
     
     var body: some View {
         Button(action: {
             pushUpViewModel.finishSet(nil)
+            seconds = 3
+            initSeconds = 3
         }) {
             Text("Finish Set")
         }
