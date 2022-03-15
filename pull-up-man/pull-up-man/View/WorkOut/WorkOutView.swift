@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WorkOutView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
+    var pushUpViewModel = PushUpViewModel()
     let exercise: Exercises = Exercises()
     init() {
         UITableView.appearance().backgroundColor = UIColor(named: "MyWhite")
@@ -21,7 +23,7 @@ struct WorkOutView: View {
                 Text("Push-up")
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 NavigationLink {
-                    PushUpView(exercise: Exercises().pushUp)
+                    PushUpView(exercise: Exercises().pushUp, pushUpViewModel: pushUpViewModel)
                 } label: {
                     WorkOutListView(exercise: exercise.pushUp)
                 }

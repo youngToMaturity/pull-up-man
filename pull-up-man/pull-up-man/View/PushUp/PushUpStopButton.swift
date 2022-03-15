@@ -14,7 +14,7 @@ struct PushUpStopButton: View {
     
     var body: some View {
         Button(action: {
-            pushUpViewModel.finishSet(nil)
+            pushUpViewModel.finishSet()
             seconds = 3
             initSeconds = 3
         }) {

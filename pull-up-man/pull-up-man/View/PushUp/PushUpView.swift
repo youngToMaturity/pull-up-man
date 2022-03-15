@@ -12,8 +12,7 @@ struct PushUpView: View {
     
     @Environment(\.presentationMode) var presentation
     
-    @ObservedObject var pushUpViewModel = PushUpViewModel()
-    @State var isStarted: Bool = false
+    @ObservedObject var pushUpViewModel: PushUpViewModel
     @State var isFinished: Bool = false
     @State var bar = 0
     @State var seconds = 5
@@ -58,13 +57,18 @@ struct PushUpView: View {
     // MARK: - backButton SetUp: Need Notification to dismiss
     var backButton: some View {
         HStack {
-            Image(systemName: "arrow.left")
+            Image(systemName: "xmark")
             Text("Stop Work Out")
         }
         .foregroundColor(.myGreen)
         .onTapGesture {
             isFinished = true
-            pushUpViewModel.finishSet(isFinished)
+            if pushUpViewModel.count != 0 {
+                pushUpViewModel.finishSet()
+            }
+            print(pushUpViewModel.countList)
+            // @Binding 통해 pushUpViewModel.count && countListWorkOutView에 전달
+            pushUpViewModel.finishWorkOut()
             self.presentation.wrappedValue.dismiss()
         }
     }
@@ -95,15 +99,11 @@ struct PushUpView: View {
             .navigationBarTitle(Text(""), displayMode: .inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:backButton)
-            .sheet(isPresented: $isFinished) {
-                test()
-//                    .onTapGesture {
-//                        self.presentation.wrappedValue.dismiss()
-//                    }
-            }
             .onAppear() {
                 self.activateProximitySensor()
-            } .onDisappear() {
+            }
+            .onDisappear() {
+                // Bool을 통해 Alert (@Binding)
                 self.deactivateProximitySensor()
             }
         } else {
@@ -131,7 +131,6 @@ struct PushUpView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:backButton)
             .onAppear {
-//                pushUpViewModel.seconds = pushUpViewModel.initSeconds
                 self.calculateCircleSeconds()
             } .onDisappear {
                 bar = 0
@@ -142,9 +141,9 @@ struct PushUpView: View {
 }
 
 
-struct ExerciseView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        PushUpView(exercise: Exercises().pushUp)
-    }
-}
+//struct ExerciseView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        PushUpView(exercise: Exercises().pushUp)
+//    }
+//}

@@ -22,15 +22,18 @@ class PushUpViewModel: ObservableObject {
         }
     }
     
-    func finishSet(_ isFinished: Bool?) {
+    func finishWorkOut() {
+        self.countList = []
+        self.count = 0
+        self.setNumber = 1
+    }
+    
+    func finishSet() {
         let pushUpSet = PushUpSet(
             id: setNumber, count: count
         )
         countList.append(pushUpSet)
         setNumber += 1
         count = 0
-        if isFinished != nil {
-            countList = []
-        }
     }
 }
