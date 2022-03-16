@@ -23,7 +23,7 @@ struct WorkOutView: View {
                 Text("Push-up")
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 NavigationLink {
-                    PushUpView(exercise: Exercises().pushUp, pushUpViewModel: pushUpViewModel)
+                    PushUpView(exercise: exercise.pushUp, pushUpViewModel: pushUpViewModel)
                 } label: {
                     WorkOutListView(exercise: exercise.pushUp)
                 }

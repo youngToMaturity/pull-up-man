@@ -12,11 +12,11 @@ struct PushUpHeaderView: View {
 
     var body: some View {
         VStack {
-            HStack {
+            HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    Text("Seconds Elapsed")
+                    Text("Total Sets:")
                         .font(.caption)
-                    Label("secondsElapsed", systemImage: "clock")
+                    Label("\(pushUpViewModel.setNumber)", systemImage: "flame.circle")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {

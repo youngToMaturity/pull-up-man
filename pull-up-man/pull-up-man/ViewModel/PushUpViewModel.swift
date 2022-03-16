@@ -23,9 +23,9 @@ class PushUpViewModel: ObservableObject {
     }
     
     func finishWorkOut() {
-        self.countList = []
-        self.count = 0
-        self.setNumber = 1
+        countList = []
+        count = 0
+        setNumber = 1
     }
     
     func finishSet() {

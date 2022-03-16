@@ -15,7 +15,7 @@ struct PushUpView: View {
     @ObservedObject var pushUpViewModel: PushUpViewModel
     @State var isFinished: Bool = false
     @State var bar = 0
-    @State var seconds = 5
+    @State var seconds = -1
     @State var initSeconds = 5
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
@@ -84,6 +84,7 @@ struct PushUpView: View {
                             .padding(.top)
                         Text(exercise.goal)
                             .font(.system(size: 28))
+                            .padding(.top)
                         Spacer()
                         Spacer()
                         Text("\(pushUpViewModel.count)")
@@ -141,9 +142,9 @@ struct PushUpView: View {
 }
 
 
-//struct ExerciseView_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        PushUpView(exercise: Exercises().pushUp)
-//    }
-//}
+struct ExerciseView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        PushUpView(exercise: Exercises().pushUp, pushUpViewModel: PushUpViewModel())
+    }
+}
