@@ -13,6 +13,10 @@ struct PushUpView: View {
     @Environment(\.presentationMode) var presentation
     
     @ObservedObject var pushUpViewModel: PushUpViewModel
+
+    @Binding var pushUpResult: [PushUpSet]
+    @Binding var isPushUpFinished: Bool
+    
     @State var isStarted: Bool = false
     @State var isFinished: Bool = false
     @State var isSkipped: Bool = false
@@ -49,7 +53,7 @@ struct PushUpView: View {
                 print(seconds)
             }
             secondCount += 1
-            if timerCount >= initSeconds + 1 || isFinished == true || isSkipped == true {
+            if timerCount >= initSeconds + 1 || isPushUpFinished == true || isSkipped == true {
                 bar = 0
                 isStarted = false
                 timer.invalidate()
@@ -65,12 +69,12 @@ struct PushUpView: View {
         }
         .foregroundColor(.myGreen)
         .onTapGesture {
-            isFinished = true
+            isPushUpFinished = true
             if pushUpViewModel.count != 0 {
                 pushUpViewModel.finishSet()
             }
+            pushUpResult = pushUpViewModel.countList
             print(pushUpViewModel.countList)
-            // @Binding 통해 pushUpViewModel.count && countListWorkOutView에 전달
             pushUpViewModel.finishWorkOut()
             self.presentation.wrappedValue.dismiss()
         }
@@ -163,7 +167,14 @@ struct PushUpView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
 
+//    var isPushUpFinished: Binding<Bool> = false
+    
     static var previews: some View {
-        PushUpView(exercise: Exercises().pushUp, pushUpViewModel: PushUpViewModel())
+        PushUpView(exercise: Exercises().pushUp, pushUpViewModel: PushUpViewModel(),  pushUpResult: .constant([
+            PushUpSet(id: 1, count: 21),
+            PushUpSet(id: 2, count: 12),
+            PushUpSet(id: 3, count: 14),
+            PushUpSet(id: 4, count: 10),
+        ]), isPushUpFinished: .constant(false))
     }
 }

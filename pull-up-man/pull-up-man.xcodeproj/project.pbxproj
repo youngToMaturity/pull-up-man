@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B052B5027E21A930003953C /* PushUpResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B4F27E21A930003953C /* PushUpResultView.swift */; };
 		9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D23D27CDE674009F4D31 /* pull_up_manApp.swift */; };
 		9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D23F27CDE674009F4D31 /* ContentView.swift */; };
 		9B99D24227CDE674009F4D31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B99D24127CDE674009F4D31 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B052B4F27E21A930003953C /* PushUpResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpResultView.swift; sourceTree = "<group>"; };
 		9B99D23A27CDE674009F4D31 /* pull-up-man.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pull-up-man.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B99D23D27CDE674009F4D31 /* pull_up_manApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pull_up_manApp.swift; sourceTree = "<group>"; };
 		9B99D23F27CDE674009F4D31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				9B99D26827D0D9DE009F4D31 /* PushUpView.swift */,
 				9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */,
 				9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */,
+				9B052B4F27E21A930003953C /* PushUpResultView.swift */,
 			);
 			path = PushUp;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */,
 				9BB75EC927DB8024007D7CFE /* PushUpSet.swift in Sources */,
+				9B052B5027E21A930003953C /* PushUpResultView.swift in Sources */,
 				9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */,
 				9B99D25627CDE858009F4D31 /* test.swift in Sources */,
 				9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */,

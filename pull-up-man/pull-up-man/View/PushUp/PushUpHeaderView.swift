@@ -26,6 +26,7 @@ struct PushUpHeaderView: View {
                         ForEach(pushUpViewModel.countList) { pushUp in
                             Text(" \(String(pushUp.count))")
                         }
+                        Text(" \(pushUpViewModel.count)")
                     }
                 }
             }
