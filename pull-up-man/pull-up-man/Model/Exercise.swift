@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Exercises {
-    let pushUp = Exercise(id: 0, image: Image(systemName: "flame.fill"), goal: "Open Goal", description: "Let your phone on floor, Do push-up to touch your chin to phone / 1 set is 2 mins", term: "30s")
+    let pushUp = Exercise(id: 0, image: Image(systemName: "flame.fill"), goal: "Open Goal", description: "Let your phone on floor, Do push-up to touch your nose to phone", term: "30s")
     let pullUp = [
         Exercise(id: 1, image: Image("pull-up"), goal: "Do the best as you can", description: "Monday Routine, 5 sets", term: "90s"),
         Exercise(id: 2, image: Image("pull-up"), goal: "Pyramid set", description: "Tuesday Routine, start from 1, rest 10s, Repeat peak 2 times", term: "N secs"),

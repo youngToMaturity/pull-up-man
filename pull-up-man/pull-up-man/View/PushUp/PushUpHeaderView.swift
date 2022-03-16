@@ -14,7 +14,7 @@ struct PushUpHeaderView: View {
         VStack {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    Text("Total Sets:")
+                    Text("Current Set")
                         .font(.caption)
                     Label("\(pushUpViewModel.setNumber)", systemImage: "flame.circle")
                 }
