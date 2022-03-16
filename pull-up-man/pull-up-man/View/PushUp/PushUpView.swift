@@ -13,9 +13,11 @@ struct PushUpView: View {
     @Environment(\.presentationMode) var presentation
     
     @ObservedObject var pushUpViewModel: PushUpViewModel
+    @State var isStarted: Bool = false
     @State var isFinished: Bool = false
+    @State var isSkipped: Bool = false
     @State var bar = 0
-    @State var seconds = -1
+    @State var seconds = 5
     @State var initSeconds = 5
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
@@ -47,8 +49,9 @@ struct PushUpView: View {
                 print(seconds)
             }
             secondCount += 1
-            if timerCount >= initSeconds + 1 || isFinished == true {
+            if timerCount >= initSeconds + 1 || isFinished == true || isSkipped == true {
                 bar = 0
+                isStarted = false
                 timer.invalidate()
             }
         }
@@ -127,14 +130,30 @@ struct PushUpView: View {
                         .animation(.easeIn, value: bar)
                         .padding(.init(top: 60, leading: 50, bottom: 50, trailing: 50))
                 }
+                if initSeconds >= 30 {
+                    VStack {
+                        Spacer()
+                        Text("Tab anywhere to skip")
+                            .font(.system(size: 16))
+                            .foregroundColor(Color.gray)
+                            .padding(.init(top: 50, leading: 60, bottom: 60, trailing: 60))
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        seconds = -1
+                        isSkipped = true
+                    }
+                }
             }
             .navigationBarTitle(Text(""), displayMode: .inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:backButton)
             .onAppear {
-                self.calculateCircleSeconds()
-            } .onDisappear {
-                bar = 0
+                if isStarted == false {
+                    isStarted = true
+                    self.calculateCircleSeconds()
+                }
+                isSkipped = false
             }
         }
     }
