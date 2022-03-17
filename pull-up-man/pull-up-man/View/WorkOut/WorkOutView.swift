@@ -36,7 +36,7 @@ struct WorkOutView: View {
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 ForEach(exercise.pullUp) { routine in
                     NavigationLink {
-                        test()
+                        PullUpView(routine: routine)
                     } label: {
                         WorkOutListView(exercise: routine)
                     }
@@ -58,6 +58,7 @@ struct WorkOutView: View {
 }
 
 struct WorkOutView_Previews: PreviewProvider {
+    
     static var previews: some View {
         WorkOutView()
             .environment(\.locale, .init(identifier: "ko"))

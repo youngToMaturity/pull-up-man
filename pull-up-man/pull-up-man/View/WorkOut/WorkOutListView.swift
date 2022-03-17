@@ -34,8 +34,13 @@ struct WorkOutListView: View {
                         .font(.system(size: 15))
                         .fontWeight(.semibold)
                     Spacer()
-                    Text(exercise.term)
-                        .font(.system(size: 13))
+                    if exercise.term > 0 {
+                        Text("\(String(exercise.term))s")
+                            .font(.system(size: 13))
+                    } else {
+                        Text("N secs")
+                            .font(.system(size: 13))
+                    }
                 }
                 Text(exercise.description)
                     .font(.system(size: 13))

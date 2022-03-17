@@ -21,8 +21,8 @@ struct PushUpView: View {
     @State var isFinished: Bool = false
     @State var isSkipped: Bool = false
     @State var bar = 0
-    @State var seconds = 5
-    @State var initSeconds = 5
+    @State var seconds = 3
+    @State var initSeconds = 3
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
     func activateProximitySensor() {
@@ -167,10 +167,8 @@ struct PushUpView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
 
-//    var isPushUpFinished: Binding<Bool> = false
-    
     static var previews: some View {
-        PushUpView(exercise: Exercises().pushUp, pushUpViewModel: PushUpViewModel(),  pushUpResult: .constant([
+        PushUpView(exercise: Exercises().pushUp, pushUpViewModel: PushUpViewModel(), pushUpResult: .constant([
             PushUpSet(id: 1, count: 21),
             PushUpSet(id: 2, count: 12),
             PushUpSet(id: 3, count: 14),
