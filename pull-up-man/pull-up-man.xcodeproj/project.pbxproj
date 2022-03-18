@@ -10,6 +10,7 @@
 		9B052B5027E21A930003953C /* PushUpResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B4F27E21A930003953C /* PushUpResultView.swift */; };
 		9B052B5327E323460003953C /* PullUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B5227E323460003953C /* PullUpView.swift */; };
 		9B052B5527E4967C0003953C /* PullUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B5427E4967C0003953C /* PullUpHeaderView.swift */; };
+		9B052B5727E4B7EB0003953C /* PullUpButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B5627E4B7EB0003953C /* PullUpButtonsView.swift */; };
 		9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D23D27CDE674009F4D31 /* pull_up_manApp.swift */; };
 		9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D23F27CDE674009F4D31 /* ContentView.swift */; };
 		9B99D24227CDE674009F4D31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B99D24127CDE674009F4D31 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		9B052B4F27E21A930003953C /* PushUpResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpResultView.swift; sourceTree = "<group>"; };
 		9B052B5227E323460003953C /* PullUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpView.swift; sourceTree = "<group>"; };
 		9B052B5427E4967C0003953C /* PullUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpHeaderView.swift; sourceTree = "<group>"; };
+		9B052B5627E4B7EB0003953C /* PullUpButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpButtonsView.swift; sourceTree = "<group>"; };
 		9B99D23A27CDE674009F4D31 /* pull-up-man.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pull-up-man.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B99D23D27CDE674009F4D31 /* pull_up_manApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pull_up_manApp.swift; sourceTree = "<group>"; };
 		9B99D23F27CDE674009F4D31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				9B052B5227E323460003953C /* PullUpView.swift */,
+				9B052B5627E4B7EB0003953C /* PullUpButtonsView.swift */,
 				9B052B5427E4967C0003953C /* PullUpHeaderView.swift */,
 			);
 			path = PullUp;
@@ -256,6 +259,7 @@
 				9BB75EC727DB50C8007D7CFE /* PushUpStopButton.swift in Sources */,
 				9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */,
 				9B052B5527E4967C0003953C /* PullUpHeaderView.swift in Sources */,
+				9B052B5727E4B7EB0003953C /* PullUpButtonsView.swift in Sources */,
 				9B99D26727D0740D009F4D31 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

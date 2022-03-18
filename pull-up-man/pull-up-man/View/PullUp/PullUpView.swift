@@ -36,10 +36,12 @@ struct PullUpView: View {
                     .padding()
             }
             Spacer()
+            Spacer()
             Text("0")
                 .font(.system(size: 100))
             Spacer()
             Spacer()
+            PullUpButtonsView()
             Spacer()
         }
         .navigationBarTitle(Text(""), displayMode: .inline)
@@ -50,7 +52,9 @@ struct PullUpView: View {
 
 struct PullUpView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpView(routine: Exercises().pullUp[2])
+        PullUpView(routine: Exercises().pullUp[1])
             .environment(\.locale, .init(identifier: "ko"))
+        PullUpView(routine: Exercises().pullUp[1])
+            .preferredColorScheme(.dark)
     }
 }
