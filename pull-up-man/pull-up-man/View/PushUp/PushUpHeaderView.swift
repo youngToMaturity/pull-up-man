@@ -15,13 +15,13 @@ struct PushUpHeaderView: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text("Current Set")
-                        .font(.caption)
+//                        .font(.caption)
                     Label("\(pushUpViewModel.setNumber)", systemImage: "flame.circle")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Counts")
-                        .font(.caption)
+//                        .font(.caption)
                     HStack {
                         ForEach(pushUpViewModel.countList) { pushUp in
                             Text(" \(String(pushUp.count))")

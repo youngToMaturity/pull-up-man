@@ -13,7 +13,7 @@ struct PushUpView: View {
     @Environment(\.presentationMode) var presentation
     
     @ObservedObject var pushUpViewModel: PushUpViewModel
-
+    
     @Binding var pushUpResult: [PushUpSet]
     @Binding var isPushUpFinished: Bool
     
@@ -21,7 +21,7 @@ struct PushUpView: View {
     @State var isFinished: Bool = false
     @State var isSkipped: Bool = false
     @State var bar = 0
-    @State var seconds = 3
+    @State var seconds = -1
     @State var initSeconds = 3
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
@@ -38,7 +38,7 @@ struct PushUpView: View {
         UIDevice.current.isProximityMonitoringEnabled = false
         NotificationCenter.default.removeObserver(pushUpViewModel, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
     }
-
+    
     // MARK: Circle Animation Part
     func calculateCircleSeconds() {
         var secondCount = 0
@@ -83,26 +83,24 @@ struct PushUpView: View {
     var body: some View {
         if seconds < 0 {
             // MARK: - Push Up Work out View: Count Push Ups
-            ZStack {
+            VStack {
                 VStack {
-                    VStack {
-                        PushUpHeaderView(
-                            pushUpViewModel: pushUpViewModel)
-                            .padding(.top)
-                        Text(exercise.goal)
-                            .font(.system(size: 28))
-                            .padding(.top)
-                        Spacer()
-                        Spacer()
-                        Text("\(pushUpViewModel.count)")
-                            .font(.system(size: 100))
-                        Spacer()
-                        Spacer()
-                        PushUpStopButton(pushUpViewModel: pushUpViewModel, seconds: $seconds, initSeconds: $initSeconds)
-                        Spacer()
-                    }
+                    PushUpHeaderView(
+                        pushUpViewModel: pushUpViewModel)
+                    .padding(.top)
+                    Text(exercise.goal)
+                        .font(.system(size: 28))
+                        .padding(.top)
+                    Spacer()
+                    Spacer()
+                    Text("\(pushUpViewModel.count)")
+                        .font(.system(size: 100))
+                    Spacer()
+                    Spacer()
+                    PushUpStopButton(pushUpViewModel: pushUpViewModel, seconds: $seconds, initSeconds: $initSeconds)
                     Spacer()
                 }
+                Spacer()
             }
             .navigationBarTitle(Text(""), displayMode: .inline)
             .navigationBarBackButtonHidden(true)
@@ -166,7 +164,7 @@ struct PushUpView: View {
 
 
 struct ExerciseView_Previews: PreviewProvider {
-
+    
     static var previews: some View {
         PushUpView(exercise: Exercises().pushUp, pushUpViewModel: PushUpViewModel(), pushUpResult: .constant([
             PushUpSet(id: 1, count: 21),

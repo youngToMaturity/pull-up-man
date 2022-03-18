@@ -32,6 +32,7 @@ struct WorkOutView: View {
                 } label: {
                     WorkOutListView(exercise: exercise.pushUp)
                 }
+                .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 Text("Pull-up")
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 ForEach(exercise.pullUp) { routine in
@@ -40,6 +41,7 @@ struct WorkOutView: View {
                     } label: {
                         WorkOutListView(exercise: routine)
                     }
+                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 }
             }
             .sheet(isPresented: $isPushUpFinished, onDismiss: didDismiss) {

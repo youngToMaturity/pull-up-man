@@ -12,12 +12,39 @@ struct PullUpView: View {
     
     @Environment(\.presentationMode) var presentation
     
+    var backButton: some View {
+        HStack {
+            Image(systemName: "xmark")
+            Text("Stop Work Out")
+        }
+        .foregroundColor(.myGreen)
+        .onTapGesture {
+            self.presentation.wrappedValue.dismiss()
+        }
+    }
+    
     var body: some View {
         VStack {
-            Text(routine.goal)
-            Text(routine.description)
-            Text("\(String(routine.term))s")
+            PullUpHeaderView(term: routine.term)
+                .padding(.bottom)
+            VStack {
+                Text(routine.goal)
+                    .font(.title)
+                Text(routine.description)
+                    .font(.caption)
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
+            Spacer()
+            Text("0")
+                .font(.system(size: 100))
+            Spacer()
+            Spacer()
+            Spacer()
         }
+        .navigationBarTitle(Text(""), displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:backButton)
     }
 }
 
