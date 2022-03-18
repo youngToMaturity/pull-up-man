@@ -14,16 +14,16 @@ struct WorkOutListView: View {
         HStack(alignment: .top) {
             if exercise.id == 0 {
                 exercise.image
-                    .font(.system(size: 50))
+                    .font(.system(size: 60))
                     .foregroundColor(.white)
-                    .frame(width: 80, height: 80)
+                    .frame(width: 100, height: 100)
                     .background(Color.myGreen)
                     .cornerRadius(10)
             } else {
                 exercise.image
                     .resizable()
                     .foregroundColor(.white)
-                    .frame(width: 80, height: 80)
+                    .frame(width: 100, height: 100)
                     .aspectRatio(contentMode: .fit)
                     .background(Color.myGreen)
                     .cornerRadius(10)
@@ -46,7 +46,7 @@ struct WorkOutListView: View {
                     .font(.system(size: 13))
             }
         }
-        .frame(height: 100)
+        .frame(height: 120)
     }
     
 }
@@ -55,7 +55,7 @@ struct WorkOutListView_Previews: PreviewProvider {
     static var previews: some View {
         WorkOutListView(exercise: Exercises().pushUp)
             .environment(\.locale, .init(identifier: "ko"))
-        WorkOutListView(exercise: Exercises().pullUp[1])
+        WorkOutListView(exercise: Exercises().pullUp[2])
             .preferredColorScheme(.dark)
     }
 }

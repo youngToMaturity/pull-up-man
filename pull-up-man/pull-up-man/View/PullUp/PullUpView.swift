@@ -10,6 +10,8 @@ import SwiftUI
 struct PullUpView: View {
     let routine: Exercise
     
+    @Environment(\.presentationMode) var presentation
+    
     var body: some View {
         VStack {
             Text(routine.goal)
@@ -21,7 +23,7 @@ struct PullUpView: View {
 
 struct PullUpView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpView(routine: Exercises().pullUp[0])
+        PullUpView(routine: Exercises().pullUp[2])
             .environment(\.locale, .init(identifier: "ko"))
     }
 }
