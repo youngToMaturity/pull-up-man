@@ -36,10 +36,8 @@ struct PullUpView: View {
                     .padding()
             }
             Spacer()
-            Spacer()
             Text("0")
-                .font(.system(size: 100))
-            Spacer()
+                .font(.system(size: 80))
             Spacer()
             PullUpButtonsView()
             Spacer()
