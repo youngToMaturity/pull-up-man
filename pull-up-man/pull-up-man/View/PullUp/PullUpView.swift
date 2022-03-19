@@ -12,6 +12,9 @@ struct PullUpView: View {
     
     @Environment(\.presentationMode) var presentation
     
+    @State var someToggle = true
+    @State var isToggle = 1
+    
     var backButton: some View {
         HStack {
             Image(systemName: "xmark")
@@ -39,7 +42,7 @@ struct PullUpView: View {
             Text("0")
                 .font(.system(size: 80))
             Spacer()
-            PullUpButtonsView()
+            PullUpButtonsView(someToggle: $someToggle, isToggle: $isToggle)
             Spacer()
         }
         .navigationBarTitle(Text(""), displayMode: .inline)

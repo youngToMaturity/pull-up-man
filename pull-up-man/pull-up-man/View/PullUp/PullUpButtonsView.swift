@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct PullUpButtonsView: View {
-    @State private var someToggle = true
-    @State private var isToggle = 1
+    @Binding var someToggle: Bool
+    @Binding var isToggle: Int
+    
     var body: some View {
         VStack {
             HStack {
@@ -74,6 +75,6 @@ var minusButton: some View {
 
 struct PullUpButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpButtonsView()
+        PullUpButtonsView(someToggle: .constant(true), isToggle: .constant(1))
     }
 }

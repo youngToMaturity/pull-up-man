@@ -21,7 +21,7 @@ struct PushUpView: View {
     @State var isFinished: Bool = false
     @State var isSkipped: Bool = false
     @State var bar = 0
-    @State var seconds = -1
+    @State var seconds = 3
     @State var initSeconds = 3
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
@@ -94,7 +94,7 @@ struct PushUpView: View {
                     Spacer()
                     Spacer()
                     Text("\(pushUpViewModel.count)")
-                        .font(.system(size: 100))
+                        .font(.system(size: 80))
                     Spacer()
                     Spacer()
                     PushUpStopButton(pushUpViewModel: pushUpViewModel, seconds: $seconds, initSeconds: $initSeconds)
@@ -117,7 +117,7 @@ struct PushUpView: View {
             ZStack {
                 VStack{
                     Text("\(seconds)")
-                        .font(.system(size: 100))
+                        .font(.system(size: 80))
                 }
                 VStack {
                     Circle()
