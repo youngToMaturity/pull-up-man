@@ -12,6 +12,7 @@ class PullUpViewModel: ObservableObject {
     @Published var countList: [PullUpSet] = []
     @Published var totalCount: Int = 0
     @Published var term: Int
+    @Published var wasPeakSet: Bool = false
     
     var setNumber = 1
     
@@ -24,9 +25,10 @@ class PullUpViewModel: ObservableObject {
         count = 0
         setNumber = 1
         totalCount = 0
+        wasPeakSet = false
     }
     
-    func finishSet(_ id: Int) {
+    func finishSet(_ id: Int, _ isPeakSet: Bool) {
         let pullUpSet = PullUpSet(
             id: setNumber, count: count, term: term
         )
@@ -36,12 +38,22 @@ class PullUpViewModel: ObservableObject {
         setNumber += 1
         count = 0
         if id == 2 {
-            updateTerm()
+            updateTerm(isPeakSet)
         }
     }
     
-    func updateTerm() {
-        term = setNumber * 10
+    func updateTerm(_ isPeakSet: Bool) {
+        if wasPeakSet {
+            if term > 10 {
+                term -= 10
+            }
+        } else {
+            if isPeakSet {
+                wasPeakSet = true
+            } else {
+                term = setNumber * 10
+            }
+        }
         print(term)
     }
 }
