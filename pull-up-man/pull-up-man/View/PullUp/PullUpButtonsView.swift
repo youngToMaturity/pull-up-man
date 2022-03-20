@@ -9,43 +9,48 @@ import SwiftUI
 
 struct PullUpButtonsView: View {
     @Binding var isPeakSet: Bool
-    @Binding var count: Int
     
     @ObservedObject var pullUpViewModel: PullUpViewModel
     
     var routine: Exercise
     
+    var minusButton: some View {
+        Button(action: {
+            if pullUpViewModel.count > 0 {
+                pullUpViewModel.count -= 1
+            }
+        }) {
+            Image(systemName: "minus")
+        }
+        .frame(width: 45, height: 45)
+        .font(.system(size: 30))
+        .foregroundColor(Color.white)
+        .background(Color.red)
+        .cornerRadius(6.0)
+        .clipShape(Circle())
+    }
+    
+    var plusButton: some View {
+        Button(action: {
+            pullUpViewModel.count += 1
+        }) {
+            Image(systemName: "plus")
+        }
+        .frame(width: 45, height: 45)
+        .font(.system(size: 30))
+        .foregroundColor(Color.white)
+        .background(Color.myGreen)
+        .cornerRadius(6.0)
+        .clipShape(Circle())
+    }
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                // minus button
-                Button(action: {
-                    if count > 0 {
-                        count -= 1
-                    }
-                }) {
-                    Image(systemName: "minus")
-                }
-                .frame(width: 45, height: 45)
-                .font(.system(size: 30))
-                .foregroundColor(Color.white)
-                .background(Color.red)
-                .cornerRadius(6.0)
-                .clipShape(Circle())
+                minusButton
                 Spacer()
-                // plusButton
-                Button(action: {
-                    count += 1
-                }) {
-                    Image(systemName: "plus")
-                }
-                .frame(width: 45, height: 45)
-                .font(.system(size: 30))
-                .foregroundColor(Color.white)
-                .background(Color.myGreen)
-                .cornerRadius(6.0)
-                .clipShape(Circle())
+                plusButton
                 Spacer()
             }
             .padding()
@@ -57,12 +62,17 @@ struct PullUpButtonsView: View {
                         Toggle("", isOn: $isPeakSet)
                             .toggleStyle(SwitchToggleStyle(tint: Color.myGreen))
                     } else {
-                        Text("Goal Set")
-                        Text("\(String(routine.goalSet))")
+                        VStack(alignment: .leading) {
+                            Text("Goal Set")
+                            Text("Total Count")
+                        }
+                        VStack {
+                            Text(": \(String(routine.goalSet))")
+                            Text(": \(String(pullUpViewModel.totalCount))")
+                        }
                     }
                 }
                 .frame(width: 150, height: 45, alignment: .center)
-                
                 Button(action: {
                     pullUpViewModel.finishSet(routine.id)
                 }) {
@@ -80,6 +90,6 @@ struct PullUpButtonsView: View {
 
 struct PullUpButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpButtonsView(isPeakSet: .constant(false), count: .constant(10), pullUpViewModel:PullUpViewModel(Exercises().pullUp[0].term), routine: Exercises().pullUp[0])
+        PullUpButtonsView(isPeakSet: .constant(false), pullUpViewModel:PullUpViewModel(Exercises().pullUp[0].term), routine: Exercises().pullUp[0])
     }
 }
