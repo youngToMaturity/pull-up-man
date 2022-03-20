@@ -11,6 +11,7 @@ struct WorkOutView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
 
     @State var isPushUpFinished: Bool = false
+    @State var isPullUpFinished: Bool = false
     @State var pushUpResult: [PushUpSet] = []
     
     var pushUpViewModel = PushUpViewModel()
@@ -37,7 +38,7 @@ struct WorkOutView: View {
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 ForEach(exercise.pullUp) { routine in
                     NavigationLink {
-                        PullUpView(routine: routine, pullUpViewModel: PullUpViewModel(routine.term))
+                        PullUpView(routine: routine, pullUpViewModel: PullUpViewModel(routine.term), isPullUpFinished: $isPullUpFinished)
                     } label: {
                         WorkOutListView(exercise: routine)
                     }

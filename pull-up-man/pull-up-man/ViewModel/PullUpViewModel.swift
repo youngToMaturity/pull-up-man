@@ -54,6 +54,7 @@ class PullUpViewModel: ObservableObject {
                 term = setNumber * 10
             }
         }
+        count = term / 10
         print(term)
     }
 }

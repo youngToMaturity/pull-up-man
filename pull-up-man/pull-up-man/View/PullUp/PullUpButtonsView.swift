@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct PullUpButtonsView: View {
+    
     @Binding var isPeakSet: Bool
+    @Binding var seconds: Int
+    @Binding var initSeconds: Int
     
     @ObservedObject var pullUpViewModel: PullUpViewModel
     
@@ -45,6 +48,8 @@ struct PullUpButtonsView: View {
                 }
                 .frame(width: 150, height: 45, alignment: .center)
                 Button(action: {
+                    seconds = pullUpViewModel.term
+                    initSeconds = pullUpViewModel.term
                     pullUpViewModel.finishSet(routine.id, isPeakSet)
                 }) {
                     Text("Finish Set")
@@ -91,6 +96,6 @@ struct PullUpButtonsView: View {
 
 struct PullUpButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpButtonsView(isPeakSet: .constant(false), pullUpViewModel:PullUpViewModel(Exercises().pullUp[1].term), routine: Exercises().pullUp[1])
+        PullUpButtonsView(isPeakSet: .constant(false), seconds: .constant(-1), initSeconds: .constant(10), pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), routine: Exercises().pullUp[1])
     }
 }
