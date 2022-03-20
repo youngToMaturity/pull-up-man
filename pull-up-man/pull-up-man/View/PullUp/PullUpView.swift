@@ -12,8 +12,10 @@ struct PullUpView: View {
     
     @Environment(\.presentationMode) var presentation
     
-    @State var someToggle = true
-    @State var isToggle = 1
+    @ObservedObject var pullUpViewModel: PullUpViewModel
+    
+    @State var isPeakSet = false
+    @State var count = 0
     
     var backButton: some View {
         HStack {
@@ -28,7 +30,7 @@ struct PullUpView: View {
     
     var body: some View {
         VStack {
-            PullUpHeaderView(term: routine.term)
+            PullUpHeaderView(pullUpViewModel: pullUpViewModel)
                 .padding(.bottom)
             VStack {
                 Text(routine.goal)
@@ -39,10 +41,10 @@ struct PullUpView: View {
                     .padding()
             }
             Spacer()
-            Text("0")
+            Text("\(count)")
                 .font(.system(size: 80))
             Spacer()
-            PullUpButtonsView(someToggle: $someToggle, isToggle: $isToggle)
+            PullUpButtonsView(isPeakSet: $isPeakSet, count: $count, pullUpViewModel: pullUpViewModel, routine: routine)
             Spacer()
         }
         .navigationBarTitle(Text(""), displayMode: .inline)
@@ -53,9 +55,9 @@ struct PullUpView: View {
 
 struct PullUpView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpView(routine: Exercises().pullUp[1])
+        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term))
             .environment(\.locale, .init(identifier: "ko"))
-        PullUpView(routine: Exercises().pullUp[1])
+        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term))
             .preferredColorScheme(.dark)
     }
 }

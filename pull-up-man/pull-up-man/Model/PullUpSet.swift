@@ -10,5 +10,5 @@ import Foundation
 struct PullUpSet: Identifiable {
     var id: Int
     var count: Int
-    var interval: Int
+    var term: Int
 }

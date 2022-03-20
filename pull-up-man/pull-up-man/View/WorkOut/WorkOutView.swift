@@ -37,7 +37,7 @@ struct WorkOutView: View {
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 ForEach(exercise.pullUp) { routine in
                     NavigationLink {
-                        PullUpView(routine: routine)
+                        PullUpView(routine: routine, pullUpViewModel: PullUpViewModel(routine.term))
                     } label: {
                         WorkOutListView(exercise: routine)
                     }

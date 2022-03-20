@@ -9,20 +9,20 @@ import SwiftUI
 
 struct PullUpHeaderView: View {
     
-    @State var term: Int
+    @ObservedObject var pullUpViewModel: PullUpViewModel
     
     var body: some View {
         VStack {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text("Current Set")
-                    Label("1",
+                    Label("\(String(pullUpViewModel.setNumber))",
                           systemImage: "flame.circle")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Set Interval")
-                    Label("\(String(term)) s",
+                    Label("\(String(pullUpViewModel.term)) s",
                           systemImage: "clock")
                 }
             }
@@ -33,6 +33,6 @@ struct PullUpHeaderView: View {
 
 struct PullUpHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpHeaderView(term: 10)
+        PullUpHeaderView(pullUpViewModel: PullUpViewModel(10))
     }
 }
