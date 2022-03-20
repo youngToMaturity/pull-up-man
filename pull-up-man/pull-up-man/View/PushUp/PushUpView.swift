@@ -69,9 +69,13 @@ struct PushUpView: View {
         }
         .foregroundColor(.myGreen)
         .onTapGesture {
-            isPushUpFinished = true
             if pushUpViewModel.count != 0 {
                 pushUpViewModel.finishSet()
+                isPushUpFinished = true
+            } else {
+                if pushUpViewModel.countList.count != 0 {
+                    isPushUpFinished = true
+                }
             }
             pushUpResult = pushUpViewModel.countList
             print(pushUpViewModel.countList)
