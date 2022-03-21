@@ -11,9 +11,12 @@ import SwiftUI
 struct pull_up_manApp: App {
     let persistenceController = PersistenceController.shared
     
+    @StateObject var notification = NotificationViewModel()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(notification)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

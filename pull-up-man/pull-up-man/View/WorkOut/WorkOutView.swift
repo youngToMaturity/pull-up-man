@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkOutView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
 
+    @EnvironmentObject var notification: NotificationViewModel
     @State var isPushUpFinished: Bool = false
     @State var isPullUpFinished: Bool = false
     @State var pushUpResult: [PushUpSet] = []
@@ -51,6 +52,12 @@ struct WorkOutView: View {
             .navigationBarTitle("Start Work out")
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            // Permissions
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (_, _) in
+                
+            }
+        }
     }
     
     func didDismiss() {

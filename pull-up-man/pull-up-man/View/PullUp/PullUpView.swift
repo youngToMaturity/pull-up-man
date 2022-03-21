@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct PullUpView: View {
     let routine: Exercise
     
     @Environment(\.presentationMode) var presentation
+    @Environment(\.scenePhase) var scenePhase
     
+    @EnvironmentObject var notification: NotificationViewModel
     @ObservedObject var pullUpViewModel: PullUpViewModel
     
     @Binding var isPullUpFinished: Bool
@@ -86,6 +89,15 @@ struct PullUpView: View {
                 VStack{
                     Text("\(seconds)")
                         .font(.system(size: 80))
+                        .onChange(of: scenePhase) { newPhase in
+                            if newPhase == .active {
+                                print("Active")
+                            } else if newPhase == .inactive {
+                                print("Inactive")
+                            } else if newPhase == .background {
+                                print("Background")
+                            }
+                        }
                 }
                 VStack {
                     Circle()
@@ -100,20 +112,20 @@ struct PullUpView: View {
                         .animation(.easeIn, value: bar)
                         .padding(.init(top: 60, leading: 50, bottom: 50, trailing: 50))
                 }
-                if initSeconds >= 10 {
-                    VStack {
-                        Spacer()
-                        Text("Tab anywhere to skip")
-                            .font(.system(size: 16))
-                            .foregroundColor(Color.gray)
-                            .padding(.init(top: 50, leading: 60, bottom: 60, trailing: 60))
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        seconds = -1
-                        isSkipped = true
-                    }
-                }
+//                if initSeconds >= 10 {
+//                    VStack {
+//                        Spacer()
+//                        Text("Tab anywhere to skip")
+//                            .font(.system(size: 16))
+//                            .foregroundColor(Color.gray)
+//                            .padding(.init(top: 50, leading: 60, bottom: 60, trailing: 60))
+//                    }
+//                    .contentShape(Rectangle())
+//                    .onTapGesture {
+//                        seconds = -1
+//                        isSkipped = true
+//                    }
+//                }
             }
             .navigationBarTitle(Text(""), displayMode: .inline)
             .navigationBarBackButtonHidden(true)
@@ -124,6 +136,8 @@ struct PullUpView: View {
                     self.calculateCircleSeconds()
                 }
                 isSkipped = false
+                // Setting Delegate for In-App Notifications
+                UNUserNotificationCenter.current().delegate = notification
             }
         }
     }

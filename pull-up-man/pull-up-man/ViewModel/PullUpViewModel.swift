@@ -19,7 +19,7 @@ class PullUpViewModel: ObservableObject {
     init(_ term: Int) {
         self.term = term
     }
-    
+
     func finishWorkOut() {
         countList = []
         count = 0

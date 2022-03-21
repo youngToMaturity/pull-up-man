@@ -13,6 +13,8 @@ struct PullUpButtonsView: View {
     @Binding var seconds: Int
     @Binding var initSeconds: Int
     
+    @EnvironmentObject var notification: NotificationViewModel
+    
     @ObservedObject var pullUpViewModel: PullUpViewModel
     
     var routine: Exercise
@@ -50,6 +52,7 @@ struct PullUpButtonsView: View {
                 Button(action: {
                     seconds = pullUpViewModel.term
                     initSeconds = pullUpViewModel.term
+                    newSetNotification()
                     pullUpViewModel.finishSet(routine.id, isPeakSet)
                 }) {
                     Text("Finish Set")
@@ -91,6 +94,20 @@ struct PullUpButtonsView: View {
         .background(Color.myGreen)
         .cornerRadius(6.0)
         .clipShape(Circle())
+    }
+    
+    func newSetNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Time's Up!"
+        content.body = "New Set Begin!! You can do it!"
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(pullUpViewModel.term), repeats: false)
+        let request = UNNotificationRequest(identifier: "PullUp", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { (err) in
+            if err != nil {
+                print(err!.localizedDescription)
+            }
+        }
     }
 }
 

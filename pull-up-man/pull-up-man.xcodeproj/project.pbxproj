@@ -27,6 +27,7 @@
 		9B99D26727D0740D009F4D31 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26627D0740D009F4D31 /* Exercise.swift */; };
 		9B99D26927D0D9DF009F4D31 /* PushUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26827D0D9DE009F4D31 /* PushUpView.swift */; };
 		9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */; };
+		9BB4727427E82993007CD4B4 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4727327E82993007CD4B4 /* NotificationViewModel.swift */; };
 		9BB75EC727DB50C8007D7CFE /* PushUpStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */; };
 		9BB75EC927DB8024007D7CFE /* PushUpSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB75EC827DB8024007D7CFE /* PushUpSet.swift */; };
 		9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */; };
@@ -55,6 +56,8 @@
 		9B99D26627D0740D009F4D31 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		9B99D26827D0D9DE009F4D31 /* PushUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpView.swift; sourceTree = "<group>"; };
 		9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpViewModel.swift; sourceTree = "<group>"; };
+		9BB4727327E82993007CD4B4 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		9BB4727527E8309A007CD4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpStopButton.swift; sourceTree = "<group>"; };
 		9BB75EC827DB8024007D7CFE /* PushUpSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpSet.swift; sourceTree = "<group>"; };
 		9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpHeaderView.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		9B99D23C27CDE674009F4D31 /* pull-up-man */ = {
 			isa = PBXGroup;
 			children = (
+				9BB4727527E8309A007CD4B4 /* Info.plist */,
 				9B99D23D27CDE674009F4D31 /* pull_up_manApp.swift */,
 				9B99D25027CDE682009F4D31 /* Model */,
 				9B99D25127CDE691009F4D31 /* View */,
@@ -152,6 +156,7 @@
 			children = (
 				9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */,
 				9B052B5827E5D8950003953C /* PullUpViewModel.swift */,
+				9BB4727327E82993007CD4B4 /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				9B052B5027E21A930003953C /* PushUpResultView.swift in Sources */,
 				9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */,
 				9B99D25627CDE858009F4D31 /* test.swift in Sources */,
+				9BB4727427E82993007CD4B4 /* NotificationViewModel.swift in Sources */,
 				9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */,
 				9B99D26527CE0335009F4D31 /* WorkOutListView.swift in Sources */,
 				9B99D24727CDE674009F4D31 /* Persistence.swift in Sources */,
@@ -416,6 +422,7 @@
 				DEVELOPMENT_TEAM = P25FRW9M7Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "pull-up-man/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,12 +446,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = MyGreen;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"pull-up-man/Preview Content\"";
 				DEVELOPMENT_TEAM = P25FRW9M7Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "pull-up-man/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -457,6 +466,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yohwang.pull-up-man";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
