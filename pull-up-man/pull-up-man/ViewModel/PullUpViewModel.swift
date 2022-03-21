@@ -7,6 +7,16 @@
 
 import Foundation
 
+class PullUpViewModels {
+    var array: [PullUpViewModel] = [
+        PullUpViewModel(Exercises().pullUp[0].term),
+        PullUpViewModel(Exercises().pullUp[1].term),
+        PullUpViewModel(Exercises().pullUp[2].term),
+        PullUpViewModel(Exercises().pullUp[3].term),
+        PullUpViewModel(Exercises().pullUp[4].term),
+    ]
+}
+
 class PullUpViewModel: ObservableObject {
     @Published var count = 0
     @Published var countList: [PullUpSet] = []
@@ -20,12 +30,15 @@ class PullUpViewModel: ObservableObject {
         self.term = term
     }
 
-    func finishWorkOut() {
+    func finishWorkOut(_ id: Int) {
         countList = []
         count = 0
         setNumber = 1
         totalCount = 0
         wasPeakSet = false
+        if id == 2 {
+            term = 10
+        }
     }
     
     func finishSet(_ id: Int, _ isPeakSet: Bool) {

@@ -16,6 +16,7 @@ struct WorkOutView: View {
     @State var pushUpResult: [PushUpSet] = []
     
     var pushUpViewModel = PushUpViewModel()
+    var pullUpViewModels = PullUpViewModels()
     let exercise: Exercises = Exercises()
    
     init() {
@@ -39,7 +40,7 @@ struct WorkOutView: View {
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 ForEach(exercise.pullUp) { routine in
                     NavigationLink {
-                        PullUpView(routine: routine, pullUpViewModel: PullUpViewModel(routine.term), isPullUpFinished: $isPullUpFinished)
+                        PullUpView(routine: routine, pullUpViewModel: pullUpViewModels.array[routine.id - 1], isPullUpFinished: $isPullUpFinished)
                     } label: {
                         WorkOutListView(exercise: routine)
                     }

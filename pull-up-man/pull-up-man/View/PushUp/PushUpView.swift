@@ -18,7 +18,6 @@ struct PushUpView: View {
     @Binding var isPushUpFinished: Bool
     
     @State var isStarted: Bool = false
-    @State var isFinished: Bool = false
     @State var isSkipped: Bool = false
     @State var bar = 0
     @State var seconds = 3

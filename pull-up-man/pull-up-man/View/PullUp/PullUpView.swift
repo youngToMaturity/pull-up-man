@@ -22,7 +22,6 @@ struct PullUpView: View {
     @State var isPeakSet = false
     @State var isStarted: Bool = false
     @State var isFinished: Bool = false
-    @State var isSkipped: Bool = false
     @State var bar = 0
     @State var seconds = 3
     @State var initSeconds = 3
@@ -41,7 +40,7 @@ struct PullUpView: View {
                 print(seconds)
             }
             secondCount += 1
-            if timerCount >= initSeconds + 1 || isPullUpFinished == true || isSkipped == true {
+            if timerCount >= initSeconds + 1 || isPullUpFinished == true {
                 bar = 0
                 isStarted = false
                 timer.invalidate()
@@ -56,7 +55,8 @@ struct PullUpView: View {
         }
         .foregroundColor(.myGreen)
         .onTapGesture {
-            pullUpViewModel.finishWorkOut()
+            isPullUpFinished = true
+            pullUpViewModel.finishWorkOut(routine.id)
             self.presentation.wrappedValue.dismiss()
         }
     }
@@ -112,20 +112,6 @@ struct PullUpView: View {
                         .animation(.easeIn, value: bar)
                         .padding(.init(top: 60, leading: 50, bottom: 50, trailing: 50))
                 }
-//                if initSeconds >= 10 {
-//                    VStack {
-//                        Spacer()
-//                        Text("Tab anywhere to skip")
-//                            .font(.system(size: 16))
-//                            .foregroundColor(Color.gray)
-//                            .padding(.init(top: 50, leading: 60, bottom: 60, trailing: 60))
-//                    }
-//                    .contentShape(Rectangle())
-//                    .onTapGesture {
-//                        seconds = -1
-//                        isSkipped = true
-//                    }
-//                }
             }
             .navigationBarTitle(Text(""), displayMode: .inline)
             .navigationBarBackButtonHidden(true)
@@ -135,7 +121,6 @@ struct PullUpView: View {
                     isStarted = true
                     self.calculateCircleSeconds()
                 }
-                isSkipped = false
                 // Setting Delegate for In-App Notifications
                 UNUserNotificationCenter.current().delegate = notification
             }
