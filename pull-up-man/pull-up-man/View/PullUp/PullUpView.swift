@@ -22,26 +22,18 @@ struct PullUpView: View {
     @State var isPeakSet = false
     @State var isStarted: Bool = false
     @State var isFinished: Bool = false
-    @State var bar = 0
     @State var seconds = 3
     @State var initSeconds = 3
     
     // MARK: Circle Animation Part
     func calculateCircleSeconds() {
-        var secondCount = 0
         var timerCount = 0
-        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
-            if secondCount % 6 == 5 {
-                seconds -= 1
-                bar += 1
-                timerCount += 1
-                secondCount = 0
-                print("I'm alive")
-                print(seconds)
-            }
-            secondCount += 1
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            seconds -= 1
+            timerCount += 1
+            print("I'm alive")
+            print(seconds)
             if timerCount >= initSeconds + 1 || isPullUpFinished == true {
-                bar = 0
                 isStarted = false
                 timer.invalidate()
             }
@@ -106,10 +98,10 @@ struct PullUpView: View {
                 }
                 VStack {
                     Circle()
-                        .trim(from: 1 - CGFloat(bar) / CGFloat(initSeconds), to: 1)
+                        .trim(from:  CGFloat(seconds) / CGFloat(initSeconds), to: 1)
                         .stroke(Color.myGreen, style: StrokeStyle(lineWidth: 30))
                         .rotationEffect(.init(degrees: -90))
-                        .animation(.easeIn, value: bar)
+                        .animation(.easeIn, value: seconds)
                         .padding(.init(top: 60, leading: 50, bottom: 50, trailing: 50))
                 }
             }
@@ -119,6 +111,7 @@ struct PullUpView: View {
             .onAppear {
                 if isStarted == false {
                     isStarted = true
+                    isPullUpFinished = false // 나중에 PullUpResultView에서 처리. 지금은 임시로
                     self.calculateCircleSeconds()
                 }
                 // Setting Delegate for In-App Notifications

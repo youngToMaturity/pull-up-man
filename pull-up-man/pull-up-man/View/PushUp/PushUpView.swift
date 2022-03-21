@@ -124,7 +124,7 @@ struct PushUpView: View {
                         .trim(from: CGFloat(seconds) / CGFloat(initSeconds), to: 1)
                         .stroke(Color.myGreen, style: StrokeStyle(lineWidth: 30))
                         .rotationEffect(.init(degrees: -90))
-                        .animation(.easeIn, value: initSeconds - seconds)
+                        .animation(.easeIn, value: seconds)
                         .padding(.init(top: 60, leading: 50, bottom: 50, trailing: 50))
                 }
                 if initSeconds >= 30 {
