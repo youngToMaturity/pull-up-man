@@ -24,6 +24,9 @@ struct PullUpView: View {
     @State var isFinished: Bool = false
     @State var seconds = 3
     @State var initSeconds = 3
+    @State var backgroundSeconds = 0
+    @State var wasBackground: Bool = false
+    @State var backgroundDate = Date()
     
     // MARK: Circle Animation Part
     func calculateCircleSeconds() {
@@ -31,6 +34,11 @@ struct PullUpView: View {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             seconds -= 1
             timerCount += 1
+            if backgroundSeconds < 0 {
+                seconds += backgroundSeconds
+                timerCount -= backgroundSeconds
+                backgroundSeconds = 0
+            }
             print("I'm alive")
             print(seconds)
             if timerCount >= initSeconds + 1 || isPullUpFinished == true {
@@ -83,10 +91,17 @@ struct PullUpView: View {
                         .font(.system(size: 80))
                         .onChange(of: scenePhase) { newPhase in
                             if newPhase == .active {
+                                if wasBackground {
+                                    backgroundSeconds = Int(backgroundDate.timeIntervalSinceNow)
+                                    print(backgroundSeconds)
+                                    wasBackground = false
+                                }
                                 print("Active")
                             } else if newPhase == .inactive {
                                 print("Inactive")
                             } else if newPhase == .background {
+                                wasBackground = true
+                                backgroundDate = Date()
                                 print("Background")
                             }
                         }
