@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PushUpResultView: View {
-    
     @Binding var isPushUpFinished: Bool
     @Binding var pushUpResult: [PushUpSet]
     

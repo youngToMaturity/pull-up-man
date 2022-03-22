@@ -14,6 +14,7 @@ struct WorkOutView: View {
     @State var isPushUpFinished: Bool = false
     @State var isPullUpFinished: Bool = false
     @State var pushUpResult: [PushUpSet] = []
+    @State var pullUpResult: [PullUpSet] = []
     
     var pushUpViewModel = PushUpViewModel()
     var pullUpViewModels = PullUpViewModels()
@@ -40,7 +41,7 @@ struct WorkOutView: View {
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 ForEach(exercise.pullUp) { routine in
                     NavigationLink {
-                        PullUpView(routine: routine, pullUpViewModel: pullUpViewModels.array[routine.id - 1], isPullUpFinished: $isPullUpFinished)
+                        PullUpView(routine: routine, pullUpViewModel: pullUpViewModels.array[routine.id - 1], pullUpResult: $pullUpResult, isPullUpFinished: $isPullUpFinished)
                     } label: {
                         WorkOutListView(exercise: routine)
                     }
@@ -49,6 +50,9 @@ struct WorkOutView: View {
             }
             .sheet(isPresented: $isPushUpFinished, onDismiss: didDismiss) {
                 PushUpResultView(isPushUpFinished: $isPushUpFinished, pushUpResult: $pushUpResult)
+            }
+            .sheet(isPresented: $isPullUpFinished, onDismiss: didDismiss) {
+                PullUpResultView(isPullUpFinished: $isPullUpFinished, pullUpResult: $pullUpResult)
             }
             .navigationBarTitle("Start Work out")
         }
@@ -63,6 +67,7 @@ struct WorkOutView: View {
     
     func didDismiss() {
         pushUpResult = []
+        pullUpResult = []
         print(pushUpResult)
         print(isPushUpFinished)
     }

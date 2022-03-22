@@ -17,11 +17,11 @@ struct PullUpView: View {
     @EnvironmentObject var notification: NotificationViewModel
     @ObservedObject var pullUpViewModel: PullUpViewModel
     
+    @Binding var pullUpResult: [PullUpSet]
     @Binding var isPullUpFinished: Bool
     
     @State var isPeakSet = false
     @State var isStarted: Bool = false
-    @State var isFinished: Bool = false
     @State var seconds = 3
     @State var initSeconds = 3
     @State var backgroundSeconds = 0
@@ -55,7 +55,15 @@ struct PullUpView: View {
         }
         .foregroundColor(.myGreen)
         .onTapGesture {
-            isPullUpFinished = true
+            if pullUpViewModel.count != 0 {
+                pullUpViewModel.finishSet(routine.id, false)
+                isPullUpFinished = true
+            } else {
+                if pullUpViewModel.countList.count != 0 {
+                    isPullUpFinished = true
+                }
+            }
+            pullUpResult = pullUpViewModel.countList
             pullUpViewModel.finishWorkOut(routine.id)
             self.presentation.wrappedValue.dismiss()
         }
@@ -138,9 +146,9 @@ struct PullUpView: View {
 
 struct PullUpView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), isPullUpFinished: .constant(false))
+        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), pullUpResult: .constant([]), isPullUpFinished: .constant(false))
             .environment(\.locale, .init(identifier: "ko"))
-        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), isPullUpFinished: .constant(false))
+        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), pullUpResult: .constant([]), isPullUpFinished: .constant(false))
             .preferredColorScheme(.dark)
     }
 }
