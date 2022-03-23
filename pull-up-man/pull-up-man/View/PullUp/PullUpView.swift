@@ -145,10 +145,13 @@ struct PullUpView: View {
 }
 
 struct PullUpView_Previews: PreviewProvider {
+    static let notification = NotificationViewModel()
     static var previews: some View {
         PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), pullUpResult: .constant([]), isPullUpFinished: .constant(false))
+            .environmentObject(notification)
             .environment(\.locale, .init(identifier: "ko"))
         PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), pullUpResult: .constant([]), isPullUpFinished: .constant(false))
+            .environmentObject(notification)
             .preferredColorScheme(.dark)
     }
 }

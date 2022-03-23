@@ -14,11 +14,24 @@
 //"Push-up" = "푸시업";
 //"Pull-up" = "풀업";
 "Open Goal" = "자유 목표";
-"Let your phone on floor,\nDo push-up to touch your nose to phone" = "핸드폰을 바닥에 두고,\n코가 핸드폰과 가까워지도록 푸시업을 진행";
+"Let your phone on floor,\nDo push-up to touch your nose to phone"
+= "핸드폰을 바닥에 두고,\n코가 핸드폰과 가까워지도록 푸시업을 진행";
 "pull-up" = "풀업";
 "Do the best as you can" = "실패지점까지";
 "Current Set" = "현재 세트";
+"Set Interval" = "세트 간격";
 "Counts" = "푸시업 횟수";
 "Stop Work Out" = "운동 종료하기";
 "Finish Set" = "세트 완료하기";
 "Do at least one" = "1회 이상 완료하세요";
+"Monday Routine, 5 sets" = "월요일 루틴, 5세트";
+"Pyramid set" = "피라미드 세트";
+"Tuesday Routine,\nstart from 1, rest 10s,\nRepeat peak 2 times"
+= "화요일 루틴,\n1회부터 시작, 10초 휴식\n피크 세트를 두번 반복";
+"3 Grips" = "3 그립";
+"Wednesday Routine,\nRepeat half of Monday Routine's 1set,\npull-up / chin-up / wide-pull-up each grip 3 sets"
+= "수요일 루틴,\n월요일 1세트 횟수의 절반만큼,\n풀업 / 친업 / 와이드 풀업 각 3세트";
+"Maximum sets" = "최대 세트";
+"Thursday Routine,\nDo Wednesday's count per set,\nDo Maximum sets repeat"
+= "목요일 루틴,\n수요일 루틴과 같은 횟수,\n최대한 많은 세트 반복,\n9세트 달성시 다음주부터 횟수 추가";
+"Do the hardest Routine of week again" = "금요일 루틴,\n월~목요일 루틴 중 가장 힘들었던 루틴 반복";
