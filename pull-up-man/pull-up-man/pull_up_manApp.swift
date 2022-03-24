@@ -6,18 +6,35 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct pull_up_manApp: App {
     let persistenceController = PersistenceController.shared
     
+    @StateObject var userViewModel = UserViewModel(UIDevice.current.identifierForVendor!.uuidString)
     @StateObject var notification = NotificationViewModel()
+    
+    init() {
+        FirebaseApp.configure() // 코드 추가
+    }
     
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environmentObject(notification)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if userViewModel.isFirst {
+                FirstView()
+                    .environmentObject(userViewModel)
+            } else {
+                MainView()
+                    .environmentObject(notification)
+                    .environmentObject(userViewModel)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
+}
+
+extension Color {
+    static let myWhite = Color("MyWhite")
+    static let myGreen = Color("MyGreen")
 }

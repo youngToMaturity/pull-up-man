@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var selection = 1
+    @EnvironmentObject var userViewModel: UserViewModel
     
     var body: some View {
         TabView(selection: $selection) {
@@ -40,10 +41,10 @@ struct MainView: View {
     }
 }
 
-extension Color {
-    static let myWhite = Color("MyWhite")
-    static let myGreen = Color("MyGreen")
-}
+//extension Color {
+//    static let myWhite = Color("MyWhite")
+//    static let myGreen = Color("MyGreen")
+//}
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

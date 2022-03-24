@@ -60,7 +60,6 @@ struct WorkOutView: View {
         .onAppear {
             // Permissions
             UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (_, _) in
-                
             }
         }
     }
