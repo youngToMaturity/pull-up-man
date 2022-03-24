@@ -18,7 +18,7 @@ class UserViewModel: ObservableObject {
     
     init(_ uuid: String) {
         self.uuid = uuid
-        self.nickname = "nil"
+        self.nickname = ""
         self.id = "undefined"
         db.collection("user").document(uuid).getDocument { document, error in
             guard error == nil, let document = document, document.exists, let nickname = document.get("nickname") as? String
