@@ -13,6 +13,8 @@ struct FirstView: View {
     @State var age: String = ""
     let counts = ["0","1","2","3","4","5","6","7","8","9","10"]
     @State var selectedCount = "0"
+    @State var isInvalidNickname = false
+    @State var isInvalidAge = false
     
     var body: some View {
         ScrollView {
@@ -24,6 +26,12 @@ struct FirstView: View {
                     Text("How should i call you?")
                         .font(.subheadline)
                     TextField("Nickname", text: $nickname)
+                        .disableAutocorrection(true)
+                    if isInvalidNickname {
+                        Text("Nickname is Necessary")
+                            .font(.subheadline)
+                            .foregroundColor(Color.red)
+                    }
                 }
                 Divider()
                     .padding(.init(top: 1, leading: 0, bottom: 20, trailing: 0))
@@ -33,6 +41,12 @@ struct FirstView: View {
                     Spacer()
                     TextField("Age", text: $age)
                         .keyboardType(.decimalPad)
+                        .disableAutocorrection(true)
+                }
+                if isInvalidAge {
+                    Text("Age is Necessary")
+                        .font(.subheadline)
+                        .foregroundColor(Color.red)
                 }
                 Divider()
                     .padding(.init(top: 1, leading: 0, bottom: 20, trailing: 0))
@@ -52,8 +66,23 @@ struct FirstView: View {
                 Spacer()
             }
             .padding(.init(top: 10, leading: 10, bottom: 50, trailing: 0))
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
             Spacer()
             Button(action: {
+                if nickname != "" && age != "" {
+                    isInvalidNickname = false
+                    isInvalidAge = false
+                    userViewModel.updateInfo(nickname, age, selectedCount)
+                } else {
+                    if nickname == "" {
+                        isInvalidNickname = true
+                    }
+                    if age == "" {
+                        isInvalidAge = true
+                    }
+                }
             }) {
                 Text("Submit")
             }

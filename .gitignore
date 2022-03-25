@@ -2,6 +2,10 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## FireBase
+GoogleService-Info.plist
+*.plist
+
 ## User settings
 xcuserdata/
 
