@@ -35,3 +35,5 @@
 "Thursday Routine,\nDo Wednesday's count per set,\nDo Maximum sets repeat"
 = "목요일 루틴,\n수요일 루틴과 같은 횟수,\n최대한 많은 세트 반복,\n9세트 달성시 다음주부터 횟수 추가";
 "Do the hardest Routine of week again" = "금요일 루틴,\n월~목요일 루틴 중 가장 힘들었던 루틴 반복";
+"Hello, %@!" = "%@님, 안녕하세요!";
+"Comming Soon!" = "해당 기능은 준비중입니다!";
