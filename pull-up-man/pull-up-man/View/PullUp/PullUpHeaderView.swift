@@ -33,6 +33,6 @@ struct PullUpHeaderView: View {
 
 struct PullUpHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpHeaderView(pullUpViewModel: PullUpViewModel(10))
+        PullUpHeaderView(pullUpViewModel: PullUpViewModel(Exercises().pullUp[1]))
     }
 }

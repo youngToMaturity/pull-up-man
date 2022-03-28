@@ -8,31 +8,52 @@
 import SwiftUI
 
 struct PullUpResultView: View {
+    @EnvironmentObject var userViewModel: UserViewModel
+    
     @Binding var isPullUpFinished: Bool
     @Binding var pullUpResult: [PullUpSet]
+    @Binding var pullUpGoal: LocalizedStringKey
     
     var body: some View {
-        VStack {
-            Text("Pull-up result")
-                    .padding()
-            ForEach(pullUpResult) { pullUp in
-                HStack {
-                    Text("Set \(pullUp.id)")
-                    Text(": \(pullUp.count)")
+        ScrollView {
+            VStack {
+                Spacer()
+                Text(pullUpGoal)
+                    .font(.bold(.system(size: 28))())
+                    .padding(.top, 50)
+                Text("Good job, \(userViewModel.nickname)!")
+                    .padding(.bottom, 50)
+                Spacer()
+                ForEach(pullUpResult) { result in
+                    HStack {
+                        Text("Set \(result.id)")
+                        Text(": \(result.count)")
+                    }
+                    Divider()
                 }
-            }
-            .padding()
-            Button(action: {
-                isPullUpFinished = false
-            }) {
-                Text("Close")
+                .padding()
+                Spacer()
+                Button(action: {
+                    isPullUpFinished = false
+                }) {
+                    Text("Close")
+                }
             }
         }
     }
 }
 
-//struct PullUpResultView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PullUpResultView()
-//    }
-//}
+struct PullUpResultView_Previews: PreviewProvider {
+    static var previews: some View {
+        PullUpResultView(isPullUpFinished: .constant(true), pullUpResult: .constant([
+            PullUpSet(id: 1, count: 1, term: 10),
+            PullUpSet(id: 2, count: 2, term: 20),
+            PullUpSet(id: 3, count: 3, term: 30),
+            PullUpSet(id: 4, count: 3, term: 30),
+            PullUpSet(id: 5, count: 2, term: 20),
+            PullUpSet(id: 6, count: 1, term: 10),
+        ]), pullUpGoal: .constant(Exercises().pullUp[1].goal))
+        .environmentObject(UserViewModel("8880CD65-302C-4C57-AA26-421AEFC9456C"))
+        .environment(\.locale, .init(identifier: "ko"))
+    }
+}

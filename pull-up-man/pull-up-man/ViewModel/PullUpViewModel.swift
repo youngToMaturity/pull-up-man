@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import SwiftUI
 
 class PullUpViewModels {
     var array: [PullUpViewModel] = [
-        PullUpViewModel(Exercises().pullUp[0].term),
-        PullUpViewModel(Exercises().pullUp[1].term),
-        PullUpViewModel(Exercises().pullUp[2].term),
-        PullUpViewModel(Exercises().pullUp[3].term),
-        PullUpViewModel(Exercises().pullUp[4].term),
+        PullUpViewModel(Exercises().pullUp[0]),
+        PullUpViewModel(Exercises().pullUp[1]),
+        PullUpViewModel(Exercises().pullUp[2]),
+        PullUpViewModel(Exercises().pullUp[3]),
+        PullUpViewModel(Exercises().pullUp[4]),
     ]
 }
 
@@ -21,13 +22,17 @@ class PullUpViewModel: ObservableObject {
     @Published var count = 0
     @Published var countList: [PullUpSet] = []
     @Published var totalCount: Int = 0
-    @Published var term: Int
+    @Published var routine: Exercise
     @Published var wasPeakSet: Bool = false
     
     var setNumber = 1
+    var goal: LocalizedStringKey
+    var term: Int
     
-    init(_ term: Int) {
-        self.term = term
+    init(_ routine: Exercise) {
+        self.routine = routine
+        self.goal = routine.goal
+        self.term = routine.term
     }
 
     func finishWorkOut(_ id: Int) {
@@ -67,7 +72,8 @@ class PullUpViewModel: ObservableObject {
                 term = setNumber * 10
             }
         }
-        count = term / 10
+//        count = term / 10
+        // count를 하는것 대신에 목표 count를 표시해주는게 어떨지?
         print(term)
     }
 }

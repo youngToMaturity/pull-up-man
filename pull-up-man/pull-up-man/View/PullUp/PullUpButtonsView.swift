@@ -98,8 +98,8 @@ struct PullUpButtonsView: View {
     
     func newSetNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "Time's Up!"
-        content.body = "New Set Begin!! You can do it!"
+        content.title = NSLocalizedString("Time's Up!👍", comment: "")
+        content.body = NSLocalizedString("New Set Begin!! You can do it!🔥", comment: "")
         content.sound = UNNotificationSound.default
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(pullUpViewModel.term), repeats: false)
         let request = UNNotificationRequest(identifier: "PullUp", content: content, trigger: trigger)
@@ -113,6 +113,6 @@ struct PullUpButtonsView: View {
 
 struct PullUpButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        PullUpButtonsView(isPeakSet: .constant(false), seconds: .constant(-1), initSeconds: .constant(10), pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), routine: Exercises().pullUp[1])
+        PullUpButtonsView(isPeakSet: .constant(false), seconds: .constant(-1), initSeconds: .constant(10), pullUpViewModel: PullUpViewModel(Exercises().pullUp[1]), routine: Exercises().pullUp[1])
     }
 }

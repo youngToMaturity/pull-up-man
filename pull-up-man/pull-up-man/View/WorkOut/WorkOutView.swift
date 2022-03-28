@@ -11,10 +11,13 @@ struct WorkOutView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
 
     @EnvironmentObject var notification: NotificationViewModel
+    @EnvironmentObject var userViewModel: UserViewModel
+    
     @State var isPushUpFinished: Bool = false
     @State var isPullUpFinished: Bool = false
     @State var pushUpResult: [PushUpSet] = []
     @State var pullUpResult: [PullUpSet] = []
+    @State var pullUpGoal: LocalizedStringKey = Exercises().pullUp[0].goal
     
     var pushUpViewModel = PushUpViewModel()
     var pullUpViewModels = PullUpViewModels()
@@ -41,7 +44,7 @@ struct WorkOutView: View {
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 ForEach(exercise.pullUp) { routine in
                     NavigationLink {
-                        PullUpView(routine: routine, pullUpViewModel: pullUpViewModels.array[routine.id - 1], pullUpResult: $pullUpResult, isPullUpFinished: $isPullUpFinished)
+                        PullUpView(routine: routine, pullUpViewModel: pullUpViewModels.array[routine.id - 1], pullUpResult: $pullUpResult, isPullUpFinished: $isPullUpFinished, pullUpGoal: $pullUpGoal)
                     } label: {
                         WorkOutListView(exercise: routine)
                     }
@@ -52,7 +55,7 @@ struct WorkOutView: View {
                 PushUpResultView(isPushUpFinished: $isPushUpFinished, pushUpResult: $pushUpResult)
             }
             .sheet(isPresented: $isPullUpFinished, onDismiss: didDismiss) {
-                PullUpResultView(isPullUpFinished: $isPullUpFinished, pullUpResult: $pullUpResult)
+                PullUpResultView(isPullUpFinished: $isPullUpFinished, pullUpResult: $pullUpResult, pullUpGoal: $pullUpGoal)
             }
             .navigationBarTitle("Start Work out")
         }

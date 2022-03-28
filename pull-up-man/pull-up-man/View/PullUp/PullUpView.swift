@@ -19,6 +19,7 @@ struct PullUpView: View {
     
     @Binding var pullUpResult: [PullUpSet]
     @Binding var isPullUpFinished: Bool
+    @Binding var pullUpGoal: LocalizedStringKey
     
     @State var isPeakSet = false
     @State var isStarted: Bool = false
@@ -55,6 +56,7 @@ struct PullUpView: View {
         }
         .foregroundColor(.myGreen)
         .onTapGesture {
+            pullUpGoal = pullUpViewModel.goal
             if pullUpViewModel.count != 0 {
                 pullUpViewModel.finishSet(routine.id, false)
                 isPullUpFinished = true
@@ -147,10 +149,10 @@ struct PullUpView: View {
 struct PullUpView_Previews: PreviewProvider {
     static let notification = NotificationViewModel()
     static var previews: some View {
-        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), pullUpResult: .constant([]), isPullUpFinished: .constant(false))
+        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1]), pullUpResult: .constant([]), isPullUpFinished: .constant(false), pullUpGoal: .constant(Exercises().pullUp[1].goal))
             .environmentObject(notification)
             .environment(\.locale, .init(identifier: "ko"))
-        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1].term), pullUpResult: .constant([]), isPullUpFinished: .constant(false))
+        PullUpView(routine: Exercises().pullUp[1], pullUpViewModel: PullUpViewModel(Exercises().pullUp[1]), pullUpResult: .constant([]), isPullUpFinished: .constant(false), pullUpGoal: .constant(Exercises().pullUp[1].goal))
             .environmentObject(notification)
             .preferredColorScheme(.dark)
     }
