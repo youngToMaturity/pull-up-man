@@ -16,6 +16,7 @@ struct PushUpView: View {
     
     @Binding var pushUpResult: [PushUpSet]
     @Binding var isPushUpFinished: Bool
+    @Binding var pullUpGoal: LocalizedStringKey
     
     @State var isStarted: Bool = false
     @State var isSkipped: Bool = false
@@ -68,6 +69,7 @@ struct PushUpView: View {
                     isPushUpFinished = true
                 }
             }
+            pullUpGoal = exercise.goal
             pushUpResult = pushUpViewModel.countList
             print(pushUpViewModel.countList)
             pushUpViewModel.finishWorkOut()
@@ -166,6 +168,6 @@ struct ExerciseView_Previews: PreviewProvider {
             PushUpSet(id: 2, count: 12),
             PushUpSet(id: 3, count: 14),
             PushUpSet(id: 4, count: 10),
-        ]), isPushUpFinished: .constant(false))
+        ]), isPushUpFinished: .constant(false), pullUpGoal: .constant(Exercises().pushUp.goal))
     }
 }

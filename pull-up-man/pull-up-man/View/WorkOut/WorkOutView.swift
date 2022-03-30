@@ -35,7 +35,7 @@ struct WorkOutView: View {
                 Text("Push-up")
                     .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
                 NavigationLink {
-                    PushUpView(exercise: exercise.pushUp, pushUpViewModel: pushUpViewModel, pushUpResult: $pushUpResult, isPushUpFinished: $isPushUpFinished)
+                    PushUpView(exercise: exercise.pushUp, pushUpViewModel: pushUpViewModel, pushUpResult: $pushUpResult, isPushUpFinished: $isPushUpFinished, pullUpGoal: $pullUpGoal)
                 } label: {
                     WorkOutListView(exercise: exercise.pushUp)
                 }
@@ -68,6 +68,11 @@ struct WorkOutView: View {
     }
     
     func didDismiss() {
+        if pushUpResult.count != 0 {
+            userViewModel.setPushUpData(pushUpResult, pullUpGoal)
+        } else if pullUpResult.count != 0 {
+            userViewModel.setPullUpData(pullUpResult, pullUpGoal)
+        }
         pushUpResult = []
         pullUpResult = []
         print(pushUpResult)

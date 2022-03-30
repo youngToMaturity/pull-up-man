@@ -14,6 +14,8 @@
 		9B052B5927E5D8950003953C /* PullUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B5827E5D8950003953C /* PullUpViewModel.swift */; };
 		9B052B5B27E5DBC50003953C /* PullUpSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B5A27E5DBC50003953C /* PullUpSet.swift */; };
 		9B42934627F1FD2300AD8B51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */; };
+		9B42934827F2D40500AD8B51 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42934727F2D40500AD8B51 /* Extensions.swift */; };
+		9B42934A27F2F03700AD8B51 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42934927F2F03700AD8B51 /* Result.swift */; };
 		9B54ED2F27EC45CA0031FDD7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9B54ED2E27EC45CA0031FDD7 /* FirebaseAnalytics */; };
 		9B54ED3127EC45CA0031FDD7 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9B54ED3027EC45CA0031FDD7 /* FirebaseAnalyticsSwift-Beta */; };
 		9B54ED3327EC45CA0031FDD7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B54ED3227EC45CA0031FDD7 /* FirebaseAuth */; };
@@ -58,6 +60,8 @@
 		9B052B5827E5D8950003953C /* PullUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpViewModel.swift; sourceTree = "<group>"; };
 		9B052B5A27E5DBC50003953C /* PullUpSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpSet.swift; sourceTree = "<group>"; };
 		9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9B42934727F2D40500AD8B51 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9B42934927F2F03700AD8B51 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9B54ED4B27EC51F00031FDD7 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		9B99D23A27CDE674009F4D31 /* pull-up-man.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pull-up-man.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B99D23D27CDE674009F4D31 /* pull_up_manApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pull_up_manApp.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				9B99D24127CDE674009F4D31 /* Assets.xcassets */,
 				9B99D24827CDE674009F4D31 /* pull_up_man.xcdatamodeld */,
 				9B99D24327CDE674009F4D31 /* Preview Content */,
+				9B42934727F2D40500AD8B51 /* Extensions.swift */,
 			);
 			path = "pull-up-man";
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				9B99D26627D0740D009F4D31 /* Exercise.swift */,
 				9BB75EC827DB8024007D7CFE /* PushUpSet.swift */,
 				9B052B5A27E5DBC50003953C /* PullUpSet.swift */,
+				9B42934927F2F03700AD8B51 /* Result.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,12 +328,14 @@
 				9B99D24727CDE674009F4D31 /* Persistence.swift in Sources */,
 				9B052B5327E323460003953C /* PullUpView.swift in Sources */,
 				9BF40F4227EC5D9D00B5B30A /* FirstView.swift in Sources */,
+				9B42934A27F2F03700AD8B51 /* Result.swift in Sources */,
 				9B99D26927D0D9DF009F4D31 /* PushUpView.swift in Sources */,
 				9B99D26327CDF644009F4D31 /* WorkOutView.swift in Sources */,
 				9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */,
 				9B99D25427CDE7C1009F4D31 /* MainView.swift in Sources */,
 				9BB75EC727DB50C8007D7CFE /* PushUpStopButton.swift in Sources */,
 				9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */,
+				9B42934827F2D40500AD8B51 /* Extensions.swift in Sources */,
 				9B052B5527E4967C0003953C /* PullUpHeaderView.swift in Sources */,
 				9BB4727727E9E980007CD4B4 /* PullUpResultView.swift in Sources */,
 				9B052B5727E4B7EB0003953C /* PullUpButtonsView.swift in Sources */,

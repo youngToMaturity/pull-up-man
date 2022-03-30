@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import SwiftUI
 
 class UserViewModel: ObservableObject {
     let uuid: String
@@ -53,5 +54,27 @@ class UserViewModel: ObservableObject {
                 print("Document successfully written!")
             }
         }
+    }
+    
+    func setPushUpData(_ records: [PushUpSet], _ kind: LocalizedStringKey) {
+        var sets: [Int] = []
+        for i in 0..<records.count {
+            sets.append(records[i].count)
+        }
+        let result = Result(kind.stringKey, sets)
+        db.collection("users").document(self.uuid).collection("result").document(result.subject).setData([
+            "\(result.timeStamp)" : result.sets
+        ], merge: true)
+    }
+    
+    func setPullUpData(_ records: [PullUpSet], _ kind: LocalizedStringKey) {
+        var sets: [Int] = []
+        for i in 0..<records.count {
+            sets.append(records[i].count)
+        }
+        let result = Result(kind.stringKey, sets)
+        db.collection("users").document(self.uuid).collection("result").document(result.subject).setData([
+            "\(result.timeStamp)" : result.sets
+        ], merge: true)
     }
 }
