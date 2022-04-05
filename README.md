@@ -8,15 +8,13 @@
 # 실행 화면
 
 ## 풀업
-  
+
 <div>
   <img src="https://user-images.githubusercontent.com/25719161/161710391-80a3f49a-9d70-495c-b0b4-769d46681139.png" width="180" height="400"/>
   <img src="https://user-images.githubusercontent.com/25719161/161714013-7c9e3c6b-7e83-48a6-8d1f-ba21e076e122.gif" width="180" height="400"/>
-  <img src="https://user-images.githubusercontent.com/25719161/161710510-33a2c13c-fc27-4659-bc93-0aedbb93ea4a.png" width="180" height="400"/>
   <img src="https://user-images.githubusercontent.com/25719161/161714418-cd75aa4c-c662-4bc4-9107-8a8fe61a9478.gif" width="180" height="400"/>
   <img src="https://user-images.githubusercontent.com/25719161/161714941-e0fefb38-f964-4b30-9664-d07d1069f0a9.gif" width="180" height="400"/>
 <div/>
-
 
 ## 첫 화면
 <div>
@@ -32,3 +30,7 @@
   <img src="https://user-images.githubusercontent.com/25719161/161713802-d4abd8d7-79f6-4f32-98eb-b9b56da1faf5.gif" width="180" height="400"/>
   <img src="https://user-images.githubusercontent.com/25719161/161708676-437766c6-4768-493a-9d28-59711dedf7bb.png" width="180" height="400"/>
 <div/>
+
+## Firestore
+
+<img src="https://user-images.githubusercontent.com/25719161/161732020-1e579efc-cc5e-419b-af5a-d4e6245a4f68.png"/>
