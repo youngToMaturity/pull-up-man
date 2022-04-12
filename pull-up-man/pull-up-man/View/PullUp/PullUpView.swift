@@ -49,6 +49,12 @@ struct PullUpView: View {
         }
     }
     
+    func cleanSetNotification() {
+        let current = UNUserNotificationCenter.current()
+        current.removePendingNotificationRequests(withIdentifiers: ["PullUp"])
+        current.removeDeliveredNotifications(withIdentifiers: ["PullUp"])
+    }
+    
     var backButton: some View {
         HStack {
             Image(systemName: "xmark")
@@ -67,6 +73,7 @@ struct PullUpView: View {
             }
             pullUpResult = pullUpViewModel.countList
             pullUpViewModel.finishWorkOut(routine.id)
+            cleanSetNotification()
             self.presentation.wrappedValue.dismiss()
         }
     }
@@ -78,7 +85,7 @@ struct PullUpView: View {
                     .padding(.bottom)
                 VStack {
                     Text(routine.goal)
-                        .font(.title)
+                        .font(.bold(.system(size: 28))())
                     Text(routine.description)
                         .font(.caption)
                         .multilineTextAlignment(.center)

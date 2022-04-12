@@ -16,12 +16,14 @@ struct PullUpHeaderView: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text("Current Set")
+                        .font(.bold(.system(size: 17))())
                     Label("\(String(pullUpViewModel.setNumber))",
                           systemImage: "flame.circle")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Set Interval")
+                        .font(.bold(.system(size: 17))())
                     Label("\(String(pullUpViewModel.term)) s",
                           systemImage: "clock")
                 }

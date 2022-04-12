@@ -86,7 +86,7 @@ struct PushUpView: View {
                         pushUpViewModel: pushUpViewModel)
                     .padding(.top)
                     Text(exercise.goal)
-                        .font(.system(size: 28))
+                        .font(.bold(.system(size: 28))())
                         .padding(.top)
                     Spacer()
                     Spacer()
