@@ -25,8 +25,14 @@ struct PushUpResultView: View {
                 Spacer()
                 ForEach(pushUpResult) { pushUp in
                     HStack {
-                        Text("Set \(pushUp.id)")
-                        Text(": \(pushUp.count)")
+                        Spacer()
+                        Text("Set  \(pushUp.id)")
+                            .font(.bold(.system(size: 17))())
+                        Spacer()
+                        Spacer()
+                        Text("\(pushUp.count)")
+                            .font(.body)
+                        Spacer()
                     }
                     Divider()
                 }

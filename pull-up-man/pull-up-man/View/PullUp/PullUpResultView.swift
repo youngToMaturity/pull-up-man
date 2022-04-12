@@ -26,8 +26,13 @@ struct PullUpResultView: View {
                 Spacer()
                 ForEach(pullUpResult) { result in
                     HStack {
-                        Text("Set \(result.id)")
-                        Text(": \(result.count)")
+                        Spacer()
+                        Text("Set  \(result.id)")
+                            .font(.bold(.system(size: 17))())
+                        Spacer()
+                        Text("\(result.count)")
+                            .font(.body)
+                        Spacer()
                     }
                     Divider()
                 }
