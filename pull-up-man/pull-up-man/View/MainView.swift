@@ -19,7 +19,7 @@ struct MainView: View {
                 Text("Work out")
             }
             .tag(1)
-            test()
+            AlertView()
             .tabItem {
                 Image(systemName: "alarm")
                 Text("Alert")
