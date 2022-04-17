@@ -1,20 +1,20 @@
 //
-//  AlertView.swift
+//  ChartView.swift
 //  pull-up-man
 //
-//  Created by Young Soo Hwang on 2022/04/14.
+//  Created by Young Soo Hwang on 2022/04/17.
 //
 
 import SwiftUI
 
-struct AlertView: View {
+struct ChartView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @EnvironmentObject var notification: NotificationViewModel
     
     var body: some View {
         VStack {
             HStack(alignment: .bottom) {
-                Text("Alert")
+                Text("Chart")
                     .font(.system(size: 34))
                     .padding()
                     .padding(.top)
@@ -31,9 +31,9 @@ struct AlertView: View {
     }
 }
 
-struct AlertView_Previews: PreviewProvider {
+struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertView()
+        ChartView()
             .environmentObject(UserViewModel("8880CD65-302C-4C57-AA26-421AEFC9456C"))
     }
 }

@@ -25,7 +25,7 @@ struct MainView: View {
                 Text("Alert")
             }
             .tag(2)
-            test()
+            ChartView()
             .tabItem {
                 Image(systemName: "chart.bar")
                 Text("Chart")
