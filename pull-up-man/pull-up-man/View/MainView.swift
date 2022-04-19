@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var selection = 1
+    @State private var selection = 2
     @EnvironmentObject var userViewModel: UserViewModel
     
     var body: some View {

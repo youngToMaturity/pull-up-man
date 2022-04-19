@@ -12,22 +12,17 @@ struct AlertView: View {
     @EnvironmentObject var notification: NotificationViewModel
     
     var body: some View {
-        VStack {
-            HStack(alignment: .bottom) {
-                Text("Alert")
-                    .font(.system(size: 34))
-                    .padding()
-                    .padding(.top)
+        NavigationView {
+            ScrollView {
+                AlertButtonsView(title: "Push Up Alert")
+                AlertButtonsView(title: "Pull Up Alert")       
+                Text("Hello, \(userViewModel.nickname)!")
+                    .font(.bold(.system(size: 28))())
+                Text("Comming Soon!")
+                    .font(.subheadline)
                 Spacer()
             }
-            .padding(.top)
-            AlertButtonsView(title: "Push Up Alert")
-            AlertButtonsView(title: "Pull Up Alert")
-            Text("Hello, \(userViewModel.nickname)!")
-                .font(.bold(.system(size: 28))())
-            Text("Comming Soon!")
-                .font(.subheadline)
-            Spacer()
+            .navigationTitle("Alert")
         }
     }
 }

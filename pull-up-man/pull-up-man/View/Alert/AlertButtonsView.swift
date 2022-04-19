@@ -44,10 +44,12 @@ struct AlertButtonsView: View {
                     strongButton
                         .background(Color.myGreen)
                         .cornerRadius(6.0)
+                        .hidden()
                 } else {
                     strongButton
                         .background(Color.gray)
                         .cornerRadius(6.0)
+                        .hidden()
                 }
                 Spacer()
             }
