@@ -77,6 +77,7 @@ struct AlertButtonsView: View {
         .foregroundColor(Color.white)
     }
 }
+
 struct AlertButtonsView_Previews: PreviewProvider {
     static var previews: some View {
         AlertButtonsView(title: "Push Up Alert")

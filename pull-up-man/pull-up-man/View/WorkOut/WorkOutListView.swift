@@ -12,7 +12,7 @@ struct WorkOutListView: View {
     
     var body: some View {
         HStack(alignment: .top) {
-            if exercise.id == 0 {
+            if exercise.id != 1 {
                 exercise.image
                     .font(.system(size: 60))
                     .foregroundColor(.white)
@@ -53,9 +53,17 @@ struct WorkOutListView: View {
 
 struct WorkOutListView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkOutListView(exercise: Exercises().pushUp)
+        WorkOutListView(exercise: Exercises().pullUp[0])
+            .environment(\.locale, .init(identifier: "ko"))
+        WorkOutListView(exercise: Exercises().pullUp[1])
             .environment(\.locale, .init(identifier: "ko"))
         WorkOutListView(exercise: Exercises().pullUp[2])
+            .environment(\.locale, .init(identifier: "ko"))
+        WorkOutListView(exercise: Exercises().pullUp[3])
+            .environment(\.locale, .init(identifier: "ko"))
+        WorkOutListView(exercise: Exercises().pullUp[4])
+            .environment(\.locale, .init(identifier: "ko"))
+        WorkOutListView(exercise: Exercises().pushUp)
             .preferredColorScheme(.dark)
     }
 }
