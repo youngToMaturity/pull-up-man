@@ -41,11 +41,6 @@ struct MainView: View {
     }
 }
 
-//extension Color {
-//    static let myWhite = Color("MyWhite")
-//    static let myGreen = Color("MyGreen")
-//}
-
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()

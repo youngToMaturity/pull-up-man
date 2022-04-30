@@ -37,4 +37,5 @@ struct pull_up_manApp: App {
 extension Color {
     static let myWhite = Color("MyWhite")
     static let myGreen = Color("MyGreen")
+    static let myBlack = Color("MyBlack")
 }
