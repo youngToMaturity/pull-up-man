@@ -17,6 +17,14 @@ struct pull_up_manApp: App {
     
     init() {
         FirebaseApp.configure() // 코드 추가
+        if userViewModel.isFirst {
+            UserDefaults.standard.set([
+                -1, -1, -1, -1, -1, -1, -1
+            ], forKey: "pushup")
+            UserDefaults.standard.set([
+                -1, -1, -1, -1, -1, -1, -1
+            ], forKey: "pullup")
+        }
     }
     
     var body: some Scene {

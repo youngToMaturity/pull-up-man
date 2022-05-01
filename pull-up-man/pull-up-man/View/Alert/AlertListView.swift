@@ -9,19 +9,19 @@ import SwiftUI
 
 struct AlertListView: View {
     let day: String
+    let idx: Int
     
     var body: some View {
         HStack {
             Button(action: {
-                
             }) {
                 Text(day)
                     .frame(width: 180, height: 30, alignment: .leading)
             }
             .accentColor(Color.myBlack)
             Spacer()
-            Text("✔")
-                .foregroundColor(Color.myBlack)
+            Image(systemName: "checkmark")
+                .foregroundColor(Color.blue)
         }
         Divider()
     }
@@ -29,6 +29,6 @@ struct AlertListView: View {
 
 struct AlertListView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertListView(day: "Monday")
+        AlertListView(day: "Monday", idx: 0)
     }
 }

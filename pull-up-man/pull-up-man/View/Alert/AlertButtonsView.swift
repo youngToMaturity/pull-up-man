@@ -12,6 +12,8 @@ struct AlertButtonsView: View {
     @State private var currentDate = Date()
     @State private var isStrong = false
     @State private var isAlert = false
+    @State private var repeatClicked = false
+    
     var title: String
     
     var body: some View {
@@ -30,16 +32,31 @@ struct AlertButtonsView: View {
                     .padding(.leading)
                     .padding(.leading)
                     .padding()
-                Button(action: {
-                    isAlert.toggle()
-                }) {
-                    Text("Repeat")
+                if isAlert {
+                    Button(action: {
+                        withAnimation {
+                            repeatClicked.toggle()}
+                    }) {
+                        Text("Repeat")
+                    }
+                    .frame(width: 80, height: 40)
+                    .font(.system(size: 18))
+                    .foregroundColor(Color.white)
+                    .background(Color.myGreen)
+                    .cornerRadius(6.0)
+                } else {
+                    Button(action: {
+                        withAnimation {
+                            repeatClicked.toggle()}
+                    }) {
+                        Text("Repeat")
+                    }
+                    .frame(width: 80, height: 40)
+                    .font(.system(size: 18))
+                    .foregroundColor(Color.white)
+                    .background(Color.gray)
+                    .cornerRadius(6.0)
                 }
-                .frame(width: 80, height: 40)
-                .font(.system(size: 18))
-                .foregroundColor(Color.white)
-                .background(Color.myGreen)
-                .cornerRadius(6.0)
                 if isStrong {
                     strongButton
                         .background(Color.myGreen)
@@ -53,19 +70,16 @@ struct AlertButtonsView: View {
                 }
                 Spacer()
             }
-            if isAlert {
+            if repeatClicked {
                 ScrollView {
                     VStack(alignment: .leading) {
-                        AlertListView(day: "Everyday")
-                        AlertListView(day: "Weekday")
-                        AlertListView(day: "Weekend")
-                        AlertListView(day: "Monday")
-                        AlertListView(day: "Tuesday")
-                        AlertListView(day: "Wednesday")
-                        AlertListView(day: "Thursday")
-                        AlertListView(day: "Friday")
-                        AlertListView(day: "Saturday")
-                        AlertListView(day: "Sunday")
+                        AlertListView(day: "Monday", idx: 0)
+                        AlertListView(day: "Tuesday", idx: 1)
+                        AlertListView(day: "Wednesday", idx: 2)
+                        AlertListView(day: "Thursday", idx: 3)
+                        AlertListView(day: "Friday", idx: 4)
+                        AlertListView(day: "Saturday", idx: 5)
+                        AlertListView(day: "Sunday", idx: 6)
                     }
                 }
                 .padding(.leading)

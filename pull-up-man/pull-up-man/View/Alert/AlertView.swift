@@ -15,7 +15,7 @@ struct AlertView: View {
         NavigationView {
             ScrollView {
                 AlertButtonsView(title: "Push Up Alert")
-                AlertButtonsView(title: "Pull Up Alert")       
+                AlertButtonsView(title: "Pull Up Alert")
                 Text("Hello, \(userViewModel.nickname)!")
                     .font(.bold(.system(size: 28))())
                 Text("Comming Soon!")
