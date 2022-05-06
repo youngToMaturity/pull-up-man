@@ -17,6 +17,7 @@
 		9B18AED5280C12B600356EFD /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B18AED4280C12B600356EFD /* ChartView.swift */; };
 		9B18AED7280C171300356EFD /* AlertButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B18AED6280C171200356EFD /* AlertButtonsView.swift */; };
 		9B32C030281AC3EE00A99744 /* AlertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B32C02F281AC3EE00A99744 /* AlertListView.swift */; };
+		9B3DB1FC2824E2F8005E4C4F /* AlertDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */; };
 		9B42934627F1FD2300AD8B51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */; };
 		9B42934827F2D40500AD8B51 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42934727F2D40500AD8B51 /* Extensions.swift */; };
 		9B42934A27F2F03700AD8B51 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42934927F2F03700AD8B51 /* Result.swift */; };
@@ -67,6 +68,7 @@
 		9B18AED4280C12B600356EFD /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		9B18AED6280C171200356EFD /* AlertButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonsView.swift; sourceTree = "<group>"; };
 		9B32C02F281AC3EE00A99744 /* AlertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListView.swift; sourceTree = "<group>"; };
+		9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDayView.swift; sourceTree = "<group>"; };
 		9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B42934727F2D40500AD8B51 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9B42934927F2F03700AD8B51 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				9BB75EC427DB5074007D7CFE /* PushUp */,
 				9B99D25527CDE858009F4D31 /* test.swift */,
 				9BF40F4127EC5D9D00B5B30A /* FirstView.swift */,
+				9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				9B99D25627CDE858009F4D31 /* test.swift in Sources */,
 				9BB4727427E82993007CD4B4 /* NotificationViewModel.swift in Sources */,
 				9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */,
+				9B3DB1FC2824E2F8005E4C4F /* AlertDayView.swift in Sources */,
 				9B99D26527CE0335009F4D31 /* WorkOutListView.swift in Sources */,
 				9B54ED4C27EC51F00031FDD7 /* UserViewModel.swift in Sources */,
 				9B99D24727CDE674009F4D31 /* Persistence.swift in Sources */,

@@ -13,6 +13,7 @@ struct AlertButtonsView: View {
     @State private var isStrong = false
     @State private var isAlert = false
     @State private var repeatClicked = false
+    @State private var daySelected = [false, false, false, false, false, false, false]
     
     var title: String
     
@@ -73,13 +74,13 @@ struct AlertButtonsView: View {
             if repeatClicked {
                 ScrollView {
                     VStack(alignment: .leading) {
-                        AlertListView(day: "Monday", idx: 0)
-                        AlertListView(day: "Tuesday", idx: 1)
-                        AlertListView(day: "Wednesday", idx: 2)
-                        AlertListView(day: "Thursday", idx: 3)
-                        AlertListView(day: "Friday", idx: 4)
-                        AlertListView(day: "Saturday", idx: 5)
-                        AlertListView(day: "Sunday", idx: 6)
+                        AlertListView(day: "Monday", idx: $daySelected[0])
+                        AlertListView(day: "Tuesday", idx: $daySelected[1])
+                        AlertListView(day: "Wednesday", idx: $daySelected[2])
+                        AlertListView(day: "Thursday", idx: $daySelected[3])
+                        AlertListView(day: "Friday", idx: $daySelected[4])
+                        AlertListView(day: "Saturday", idx: $daySelected[5])
+                        AlertListView(day: "Sunday", idx: $daySelected[6])
                     }
                 }
                 .padding(.leading)
@@ -89,13 +90,13 @@ struct AlertButtonsView: View {
                 .padding()
             }
             HStack {
-                Text("sun")
-                Text("mon")
-                Text("tue")
-                Text("wed")
-                Text("thu")
-                Text("fri")
-                Text("sat")
+                AlertDayView(state: daySelected[6], day: "sun")
+                AlertDayView(state: daySelected[0], day: "mon")
+                AlertDayView(state: daySelected[1], day: "tue")
+                AlertDayView(state: daySelected[2], day: "wed")
+                AlertDayView(state: daySelected[3], day: "thu")
+                AlertDayView(state: daySelected[4], day: "fri")
+                AlertDayView(state: daySelected[5], day: "sat")
             }
             Divider()
         }
