@@ -12,11 +12,11 @@ struct AlertDayView: View {
     let day: String
     var body: some View {
         if state {
-            Text(day)
+            Text(LocalizedStringKey(day))
                 .fontWeight(.bold)
                 .foregroundColor(.myGreen)
         } else {
-            Text(day)
+            Text(LocalizedStringKey(day))
         }
     }
 }

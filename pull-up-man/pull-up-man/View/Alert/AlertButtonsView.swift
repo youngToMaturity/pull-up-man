@@ -14,17 +14,37 @@ struct AlertButtonsView: View {
     @State private var isAlert = false
     @State private var repeatClicked = false
     @State var daySelected: [Bool]
+    @State var alertTime: String = ""
     
     var title: String
     
     var body: some View {
         VStack {
             HStack {
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(.bold(.system(size: 20))())
                     .padding()
                     .padding(.leading)
                 Spacer()
+            }
+            .onAppear {
+                checkIsAlert()
+                if title == "Push Up Alert" {
+                    alertTime = UserDefaults.standard.string(forKey: "pushupTime") ?? ""
+                } else {
+                    alertTime = UserDefaults.standard.string(forKey: "pullupTime") ?? ""
+                }
+                if alertTime != "" {
+                    let df = DateFormatter()
+                    let df2 = DateFormatter()
+                    let df1 = DateFormatter()
+                    df.dateFormat = "HH:mm"
+                    df2.dateFormat = "YYYY-MM-dd "
+                    df1.dateFormat = "YYYY-MM-dd HH:mm"
+                    alertTime = df2.string(from: Date()) + alertTime
+                    print(alertTime)
+                    currentDate = df1.date(from: alertTime) ?? Date()
+                }
             }
             HStack(alignment: .center) {
                 DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
@@ -33,6 +53,9 @@ struct AlertButtonsView: View {
                     .padding(.leading)
                     .padding(.leading)
                     .padding()
+                    .onChange(of: currentDate, perform: { value in
+                        updateAlertTime(value)
+                    })
                 if isAlert {
                     Button(action: {
                         withAnimation {
@@ -97,17 +120,14 @@ struct AlertButtonsView: View {
                     }
                 }
             }
-            HStack {
-                AlertDayView(state: daySelected[6], day: "sun")
+            HStack(spacing: 20) {
                 AlertDayView(state: daySelected[0], day: "mon")
                 AlertDayView(state: daySelected[1], day: "tue")
                 AlertDayView(state: daySelected[2], day: "wed")
                 AlertDayView(state: daySelected[3], day: "thu")
                 AlertDayView(state: daySelected[4], day: "fri")
                 AlertDayView(state: daySelected[5], day: "sat")
-            }
-            .onAppear {
-                checkIsAlert()
+                AlertDayView(state: daySelected[6], day: "sun")
             }
             Divider()
         }
@@ -122,6 +142,15 @@ struct AlertButtonsView: View {
         }
     }
     
+    func updateAlertTime(_ value: Date) {
+        let df = DateFormatter()
+        df.dateFormat = "HH:mm"
+        if title == "Push Up Alert" {
+            UserDefaults.standard.set(df.string(from: value), forKey: "pushupTime")
+        } else {
+            UserDefaults.standard.set(df.string(from: value), forKey: "pullupTime")
+        }
+    }
     var strongButton: some View {
         Button(action: {
             isStrong.toggle()

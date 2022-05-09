@@ -16,7 +16,7 @@ struct AlertListView: View {
             Button(action: {
                 idx.toggle()
             }) {
-                Text(day)
+                Text(LocalizedStringKey(day))
                     .frame(width: 180, alignment: .leading)
             }
             .accentColor(Color.myBlack)
