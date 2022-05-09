@@ -139,6 +139,7 @@
 				9B18AED128084ED900356EFD /* AlertView.swift */,
 				9B18AED6280C171200356EFD /* AlertButtonsView.swift */,
 				9B32C02F281AC3EE00A99744 /* AlertListView.swift */,
+				9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -218,7 +219,6 @@
 				9BB75EC427DB5074007D7CFE /* PushUp */,
 				9B99D25527CDE858009F4D31 /* test.swift */,
 				9BF40F4127EC5D9D00B5B30A /* FirstView.swift */,
-				9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

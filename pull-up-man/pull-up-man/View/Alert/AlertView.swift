@@ -11,15 +11,27 @@ struct AlertView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @EnvironmentObject var notification: NotificationViewModel
     
+    init() {
+        if UserDefaults.standard.array(forKey: "pushup") == nil {
+            UserDefaults.standard.set([
+                false, false, false, false, false, false, false
+            ], forKey: "pushup")
+        }
+        if UserDefaults.standard.array(forKey: "pullup") == nil {
+            UserDefaults.standard.set([
+                false, false, false, false, false, false, false
+            ], forKey: "pullup")
+        }
+    }
+    
+    var pushUpState = UserDefaults.standard.array(forKey: "pushup") as? [Bool] ?? [false, false, false, false, false, false, false]
+    var pullUpState = UserDefaults.standard.array(forKey: "pullup") as? [Bool] ?? [false, false, false, false, false, false, false]
+    
     var body: some View {
         NavigationView {
             ScrollView {
-                AlertButtonsView(title: "Push Up Alert")
-                AlertButtonsView(title: "Pull Up Alert")
-                Text("Hello, \(userViewModel.nickname)!")
-                    .font(.bold(.system(size: 28))())
-                Text("Comming Soon!")
-                    .font(.subheadline)
+                AlertButtonsView(daySelected: pushUpState, title: "Push Up Alert")
+                AlertButtonsView(daySelected: pullUpState, title: "Pull Up Alert")
                 Spacer()
             }
             .navigationTitle("Alert")

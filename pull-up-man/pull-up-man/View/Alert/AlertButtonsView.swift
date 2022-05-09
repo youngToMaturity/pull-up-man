@@ -13,7 +13,7 @@ struct AlertButtonsView: View {
     @State private var isStrong = false
     @State private var isAlert = false
     @State private var repeatClicked = false
-    @State private var daySelected = [false, false, false, false, false, false, false]
+    @State var daySelected: [Bool]
     
     var title: String
     
@@ -88,6 +88,14 @@ struct AlertButtonsView: View {
                 .padding(.leading)
                 .padding(.trailing)
                 .padding()
+                .onDisappear {
+                    checkIsAlert()
+                    if title == "Push Up Alert" {
+                        UserDefaults.standard.set(daySelected, forKey: "pushup")
+                    } else {
+                        UserDefaults.standard.set(daySelected, forKey: "pullup")
+                    }
+                }
             }
             HStack {
                 AlertDayView(state: daySelected[6], day: "sun")
@@ -98,7 +106,19 @@ struct AlertButtonsView: View {
                 AlertDayView(state: daySelected[4], day: "fri")
                 AlertDayView(state: daySelected[5], day: "sat")
             }
+            .onAppear {
+                checkIsAlert()
+            }
             Divider()
+        }
+    }
+    
+    func checkIsAlert() {
+        isAlert = false
+        for state in daySelected {
+            if state {
+                isAlert = true
+            }
         }
     }
     
@@ -116,6 +136,6 @@ struct AlertButtonsView: View {
 
 struct AlertButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertButtonsView(title: "Push Up Alert")
+        AlertButtonsView(daySelected: [false, false, false, false, false, false, false], title: "Push Up Alert")
     }
 }
