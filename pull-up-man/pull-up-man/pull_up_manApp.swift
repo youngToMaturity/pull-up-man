@@ -17,6 +17,22 @@ struct pull_up_manApp: App {
     
     init() {
         FirebaseApp.configure() // 코드 추가
+        if UserDefaults.standard.array(forKey: "pushup") == nil {
+            UserDefaults.standard.set([
+                false, false, false, false, false, false, false
+            ], forKey: "pushup")
+        }
+        if UserDefaults.standard.string(forKey: "pushupTime") == nil {
+            UserDefaults.standard.set("", forKey: "pushupTime")
+        }
+        if UserDefaults.standard.array(forKey: "pullup") == nil {
+            UserDefaults.standard.set([
+                false, false, false, false, false, false, false
+            ], forKey: "pullup")
+        }
+        if UserDefaults.standard.string(forKey: "pullupTime") == nil {
+            UserDefaults.standard.set("", forKey: "pullupTime")
+        }
     }
     
     var body: some Scene {

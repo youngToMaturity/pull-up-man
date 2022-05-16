@@ -11,25 +11,6 @@ struct AlertView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @EnvironmentObject var notification: NotificationViewModel
     
-    init() {
-        if UserDefaults.standard.array(forKey: "pushup") == nil {
-            UserDefaults.standard.set([
-                false, false, false, false, false, false, false
-            ], forKey: "pushup")
-        }
-        if UserDefaults.standard.string(forKey: "pushupTime") == nil {
-            UserDefaults.standard.set("", forKey: "pushupTime")
-        }
-        if UserDefaults.standard.array(forKey: "pullup") == nil {
-            UserDefaults.standard.set([
-                false, false, false, false, false, false, false
-            ], forKey: "pullup")
-        }
-        if UserDefaults.standard.string(forKey: "pullupTime") == nil {
-            UserDefaults.standard.set("", forKey: "pullupTime")
-        }
-    }
-    
     var pushUpState = UserDefaults.standard.array(forKey: "pushup") as? [Bool] ?? [false, false, false, false, false, false, false]
     var pushUpTime = UserDefaults.standard.string(forKey: "pushupTime") ?? ""
     var pullUpState = UserDefaults.standard.array(forKey: "pullup") as? [Bool] ?? [false, false, false, false, false, false, false]
