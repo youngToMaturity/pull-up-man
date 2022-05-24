@@ -13,9 +13,18 @@ struct SettingView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            VStack {
+                SettingGeneralView()
+                    .padding(.bottom)
                 SettingInfomationView()
+                    .padding(.bottom)
                 Spacer()
+                Text("email: yohwang@student.42seoul.kr")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                Text("instagram: yohwangthegoat")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
             }
             .padding()
             .navigationTitle("Setting")

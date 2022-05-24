@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B0266B5283CBCF4008DBB9E /* SettingGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0266B4283CBCF4008DBB9E /* SettingGeneralView.swift */; };
 		9B052B5027E21A930003953C /* PushUpResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B4F27E21A930003953C /* PushUpResultView.swift */; };
 		9B052B5327E323460003953C /* PullUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B5227E323460003953C /* PullUpView.swift */; };
 		9B052B5527E4967C0003953C /* PullUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B052B5427E4967C0003953C /* PullUpHeaderView.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B0266B4283CBCF4008DBB9E /* SettingGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGeneralView.swift; sourceTree = "<group>"; };
 		9B052B4F27E21A930003953C /* PushUpResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpResultView.swift; sourceTree = "<group>"; };
 		9B052B5227E323460003953C /* PullUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpView.swift; sourceTree = "<group>"; };
 		9B052B5427E4967C0003953C /* PullUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpHeaderView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				9B1BB43D283666A10077B855 /* SettingView.swift */,
 				9B1BB43F28376C7E0077B855 /* SettingInfomationView.swift */,
+				9B0266B4283CBCF4008DBB9E /* SettingGeneralView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */,
 				9B42934827F2D40500AD8B51 /* Extensions.swift in Sources */,
 				9B052B5527E4967C0003953C /* PullUpHeaderView.swift in Sources */,
+				9B0266B5283CBCF4008DBB9E /* SettingGeneralView.swift in Sources */,
 				9BB4727727E9E980007CD4B4 /* PullUpResultView.swift in Sources */,
 				9B052B5727E4B7EB0003953C /* PullUpButtonsView.swift in Sources */,
 				9B18AED7280C171300356EFD /* AlertButtonsView.swift in Sources */,

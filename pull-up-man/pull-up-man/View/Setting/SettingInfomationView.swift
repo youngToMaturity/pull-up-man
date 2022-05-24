@@ -18,15 +18,35 @@ struct SettingInfomationView: View {
             HStack {
                 Text("Infomation")
                     .font(.bold(.system(size: 20))())
-                    .padding()
                 Spacer()
             }
             VStack {
-                HStack {
-                    Text("A")
-                        .padding()
-                    Spacer()
-                }.frame(height: 30, alignment: .leading)
+//                Link(destination: URL(string: "https://velog.io/@loopbackseal")!, label: {
+//                    HStack {
+//                        Text("Appstore")
+//                            .foregroundColor(.myBlack)
+//                            .padding()
+//                        Spacer()
+//                    }.frame(height: 30, alignment: .leading)
+//                })
+//                Divider()
+                Link(destination: URL(string: "https://github.com/loopbackseal")!, label: {
+                    HStack {
+                        Text("Developer github")
+                            .foregroundColor(.myBlack)
+                            .padding()
+                        Spacer()
+                    }.frame(height: 30, alignment: .leading)
+                })
+                Divider()
+                Link(destination: URL(string: "https://velog.io/@loopbackseal")!, label: {
+                    HStack {
+                        Text("Developer blog")
+                            .foregroundColor(.myBlack)
+                            .padding()
+                        Spacer()
+                    }.frame(height: 30, alignment: .leading)
+                })
                 Divider()
             }
         }
