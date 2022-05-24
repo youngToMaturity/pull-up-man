@@ -16,6 +16,8 @@
 		9B18AED228084ED900356EFD /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B18AED128084ED900356EFD /* AlertView.swift */; };
 		9B18AED5280C12B600356EFD /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B18AED4280C12B600356EFD /* ChartView.swift */; };
 		9B18AED7280C171300356EFD /* AlertButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B18AED6280C171200356EFD /* AlertButtonsView.swift */; };
+		9B1BB43E283666A10077B855 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BB43D283666A10077B855 /* SettingView.swift */; };
+		9B1BB44028376C7E0077B855 /* SettingInfomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BB43F28376C7E0077B855 /* SettingInfomationView.swift */; };
 		9B32C030281AC3EE00A99744 /* AlertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B32C02F281AC3EE00A99744 /* AlertListView.swift */; };
 		9B3DB1FC2824E2F8005E4C4F /* AlertDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */; };
 		9B42934627F1FD2300AD8B51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */; };
@@ -41,7 +43,6 @@
 		9B99D24727CDE674009F4D31 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D24627CDE674009F4D31 /* Persistence.swift */; };
 		9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D24827CDE674009F4D31 /* pull_up_man.xcdatamodeld */; };
 		9B99D25427CDE7C1009F4D31 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D25327CDE7C1009F4D31 /* MainView.swift */; };
-		9B99D25627CDE858009F4D31 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D25527CDE858009F4D31 /* test.swift */; };
 		9B99D25927CDF326009F4D31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B99D25B27CDF326009F4D31 /* Localizable.strings */; };
 		9B99D26327CDF644009F4D31 /* WorkOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26227CDF644009F4D31 /* WorkOutView.swift */; };
 		9B99D26527CE0335009F4D31 /* WorkOutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26427CE0335009F4D31 /* WorkOutListView.swift */; };
@@ -67,6 +68,8 @@
 		9B18AED128084ED900356EFD /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		9B18AED4280C12B600356EFD /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		9B18AED6280C171200356EFD /* AlertButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonsView.swift; sourceTree = "<group>"; };
+		9B1BB43D283666A10077B855 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		9B1BB43F28376C7E0077B855 /* SettingInfomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfomationView.swift; sourceTree = "<group>"; };
 		9B32C02F281AC3EE00A99744 /* AlertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListView.swift; sourceTree = "<group>"; };
 		9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDayView.swift; sourceTree = "<group>"; };
 		9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -81,7 +84,6 @@
 		9B99D24627CDE674009F4D31 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9B99D24927CDE674009F4D31 /* pull_up_man.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pull_up_man.xcdatamodel; sourceTree = "<group>"; };
 		9B99D25327CDE7C1009F4D31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		9B99D25527CDE858009F4D31 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		9B99D25A27CDF326009F4D31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B99D26227CDF644009F4D31 /* WorkOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutView.swift; sourceTree = "<group>"; };
 		9B99D26427CE0335009F4D31 /* WorkOutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutListView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,15 @@
 			path = Chart;
 			sourceTree = "<group>";
 		};
+		9B1BB43C2836666B0077B855 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				9B1BB43D283666A10077B855 /* SettingView.swift */,
+				9B1BB43F28376C7E0077B855 /* SettingInfomationView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		9B99D23127CDE674009F4D31 = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +228,7 @@
 				9B99D25327CDE7C1009F4D31 /* MainView.swift */,
 				9BB75EC527DB5082007D7CFE /* WorkOut */,
 				9BB75EC427DB5074007D7CFE /* PushUp */,
-				9B99D25527CDE858009F4D31 /* test.swift */,
+				9B1BB43C2836666B0077B855 /* Setting */,
 				9BF40F4127EC5D9D00B5B30A /* FirstView.swift */,
 			);
 			path = View;
@@ -348,12 +359,13 @@
 				9B052B5B27E5DBC50003953C /* PullUpSet.swift in Sources */,
 				9B052B5927E5D8950003953C /* PullUpViewModel.swift in Sources */,
 				9B18AED228084ED900356EFD /* AlertView.swift in Sources */,
+				9B1BB44028376C7E0077B855 /* SettingInfomationView.swift in Sources */,
 				9B18AED5280C12B600356EFD /* ChartView.swift in Sources */,
 				9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */,
+				9B1BB43E283666A10077B855 /* SettingView.swift in Sources */,
 				9BB75EC927DB8024007D7CFE /* PushUpSet.swift in Sources */,
 				9B052B5027E21A930003953C /* PushUpResultView.swift in Sources */,
 				9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */,
-				9B99D25627CDE858009F4D31 /* test.swift in Sources */,
 				9BB4727427E82993007CD4B4 /* NotificationViewModel.swift in Sources */,
 				9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */,
 				9B3DB1FC2824E2F8005E4C4F /* AlertDayView.swift in Sources */,

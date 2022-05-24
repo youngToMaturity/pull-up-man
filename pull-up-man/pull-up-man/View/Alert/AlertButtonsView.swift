@@ -247,6 +247,7 @@ struct AlertButtonsView: View {
 struct AlertButtonsView_Previews: PreviewProvider {
     static var previews: some View {
         AlertButtonsView(daySelected: [false, false, false, false, false, false, false], title: "Push Up Alert")
+            .environmentObject(NotificationViewModel())
     }
 }
 
