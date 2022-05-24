@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingGeneralView: View {
-    @State var isFirst = true
+    @Binding var isFirstMain: Bool
     var body: some View {
         VStack {
             HStack {
@@ -17,13 +17,14 @@ struct SettingGeneralView: View {
                 Spacer()
             }
             HStack {
-                Text("Onboarding view")
+                Text("Show Onboarding view")
                     .allowsTightening(true)
                     .foregroundColor(.myBlack)
                     .padding()
-                Toggle("", isOn: $isFirst)
-                    .toggleStyle(SwitchToggleStyle(tint: Color.myGreen))
-                    .controlSize(.mini)
+                    .onTapGesture {
+                        isFirstMain.toggle()
+                    }
+                Spacer()
             }.frame(height: 30, alignment: .leading)
             Divider()
             HStack {
@@ -44,6 +45,6 @@ struct SettingGeneralView: View {
 
 struct SettingGeneralView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingGeneralView()
+        SettingGeneralView(isFirstMain: .constant(false))
     }
 }

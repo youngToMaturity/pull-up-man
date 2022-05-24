@@ -9,34 +9,38 @@ import SwiftUI
 
 struct MainView: View {
     @State private var selection = 1
+    @AppStorage("_isFirstMain") var isFirstMain: Bool = true
     @EnvironmentObject var userViewModel: UserViewModel
     
     var body: some View {
         TabView(selection: $selection) {
             WorkOutView()
-            .tabItem {
-                Image(systemName: "flame")
-                Text("Work out")
-            }
-            .tag(1)
+                .tabItem {
+                    Image(systemName: "flame")
+                    Text("Work out")
+                }
+                .tag(1)
             AlertView()
-            .tabItem {
-                Image(systemName: "alarm")
-                Text("Alert")
-            }
-            .tag(2)
+                .tabItem {
+                    Image(systemName: "alarm")
+                    Text("Alert")
+                }
+                .tag(2)
             ChartView()
-            .tabItem {
-                Image(systemName: "chart.bar")
-                Text("Chart")
-            }
-            .tag(3)
-            SettingView()
-            .tabItem {
-                Image(systemName: "gearshape")
-                Text("Setting")
-            }
-            .tag(4)
+                .tabItem {
+                    Image(systemName: "chart.bar")
+                    Text("Chart")
+                }
+                .tag(3)
+            SettingView(isFirstMain: $isFirstMain)
+                .tabItem {
+                    Image(systemName: "gearshape")
+                    Text("Setting")
+                }
+                .tag(4)
+        }
+        .fullScreenCover(isPresented: $isFirstMain) {
+            OnboardingTabView(isFirstMain: $isFirstMain)
         }
     }
 }

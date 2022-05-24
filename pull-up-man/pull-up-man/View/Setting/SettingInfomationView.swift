@@ -6,22 +6,17 @@
 //
 
 import SwiftUI
-// 정보
-// - 리뷰
-// - 깃헙
-// - 벨로그
-// - 이메일
 
 struct SettingInfomationView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Infomation")
+                Text("Information")
                     .font(.bold(.system(size: 20))())
                 Spacer()
             }
             VStack {
-//                Link(destination: URL(string: "https://velog.io/@loopbackseal")!, label: {
+//                Link(destination: URL(string: "앱스토어 주소?")!, label: {
 //                    HStack {
 //                        Text("Appstore")
 //                            .foregroundColor(.myBlack)

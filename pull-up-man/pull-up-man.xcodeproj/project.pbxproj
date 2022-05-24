@@ -37,6 +37,9 @@
 		9B54ED4327EC45CA0031FDD7 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 9B54ED4227EC45CA0031FDD7 /* FirebasePerformance */; };
 		9B54ED4527EC45CA0031FDD7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B54ED4427EC45CA0031FDD7 /* FirebaseStorage */; };
 		9B54ED4C27EC51F00031FDD7 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B54ED4B27EC51F00031FDD7 /* UserViewModel.swift */; };
+		9B738B7A283CF2D00008E91D /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B738B79283CF2D00008E91D /* OnboardingTabView.swift */; };
+		9B738B7D283D04200008E91D /* OnboardingLastPageview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B738B7C283D04200008E91D /* OnboardingLastPageview.swift */; };
+		9B738B7F283D049B0008E91D /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B738B7E283D049A0008E91D /* OnboardingPageView.swift */; };
 		9B99D23E27CDE674009F4D31 /* pull_up_manApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D23D27CDE674009F4D31 /* pull_up_manApp.swift */; };
 		9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D23F27CDE674009F4D31 /* ContentView.swift */; };
 		9B99D24227CDE674009F4D31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B99D24127CDE674009F4D31 /* Assets.xcassets */; };
@@ -78,6 +81,9 @@
 		9B42934727F2D40500AD8B51 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9B42934927F2F03700AD8B51 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9B54ED4B27EC51F00031FDD7 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		9B738B79283CF2D00008E91D /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
+		9B738B7C283D04200008E91D /* OnboardingLastPageview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastPageview.swift; sourceTree = "<group>"; };
+		9B738B7E283D049A0008E91D /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		9B99D23A27CDE674009F4D31 /* pull-up-man.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pull-up-man.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B99D23D27CDE674009F4D31 /* pull_up_manApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pull_up_manApp.swift; sourceTree = "<group>"; };
 		9B99D23F27CDE674009F4D31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,6 +172,16 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		9B738B7B283CF2DE0008E91D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9B738B79283CF2D00008E91D /* OnboardingTabView.swift */,
+				9B738B7C283D04200008E91D /* OnboardingLastPageview.swift */,
+				9B738B7E283D049A0008E91D /* OnboardingPageView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		9B99D23127CDE674009F4D31 = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +245,7 @@
 				9B18AED028084E9C00356EFD /* Alert */,
 				9B052B5127E323190003953C /* PullUp */,
 				9B99D25327CDE7C1009F4D31 /* MainView.swift */,
+				9B738B7B283CF2DE0008E91D /* Onboarding */,
 				9BB75EC527DB5082007D7CFE /* WorkOut */,
 				9BB75EC427DB5074007D7CFE /* PushUp */,
 				9B1BB43C2836666B0077B855 /* Setting */,
@@ -365,12 +382,14 @@
 				9B1BB44028376C7E0077B855 /* SettingInfomationView.swift in Sources */,
 				9B18AED5280C12B600356EFD /* ChartView.swift in Sources */,
 				9B99D24A27CDE674009F4D31 /* pull_up_man.xcdatamodeld in Sources */,
+				9B738B7F283D049B0008E91D /* OnboardingPageView.swift in Sources */,
 				9B1BB43E283666A10077B855 /* SettingView.swift in Sources */,
 				9BB75EC927DB8024007D7CFE /* PushUpSet.swift in Sources */,
 				9B052B5027E21A930003953C /* PushUpResultView.swift in Sources */,
 				9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */,
 				9BB4727427E82993007CD4B4 /* NotificationViewModel.swift in Sources */,
 				9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */,
+				9B738B7D283D04200008E91D /* OnboardingLastPageview.swift in Sources */,
 				9B3DB1FC2824E2F8005E4C4F /* AlertDayView.swift in Sources */,
 				9B99D26527CE0335009F4D31 /* WorkOutListView.swift in Sources */,
 				9B54ED4C27EC51F00031FDD7 /* UserViewModel.swift in Sources */,
@@ -378,6 +397,7 @@
 				9B052B5327E323460003953C /* PullUpView.swift in Sources */,
 				9BF40F4227EC5D9D00B5B30A /* FirstView.swift in Sources */,
 				9B42934A27F2F03700AD8B51 /* Result.swift in Sources */,
+				9B738B7A283CF2D00008E91D /* OnboardingTabView.swift in Sources */,
 				9B99D26927D0D9DF009F4D31 /* PushUpView.swift in Sources */,
 				9B99D26327CDF644009F4D31 /* WorkOutView.swift in Sources */,
 				9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */,
