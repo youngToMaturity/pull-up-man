@@ -17,18 +17,18 @@ struct OnboardingPageView: View {
                 .frame(width: 150, height: 150)
                 .cornerRadius(20)
                 .padding()
-            Text("풀업맨")
+            Text("Pull-Up-Man")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
-            Text("풀업맨에 오신 것을 환영합니다!\n화면을 슬라이드 하여\n각 탭의 소개를 볼 수 있습니다")
+            Text("Welcome to Pull-Up-Man!\nYou can slide the screen to see the introduction of each tab")
                 .font(.system(size: 20))
                 .lineSpacing(10)
                 .multilineTextAlignment(.center)
             Spacer()
             HStack {
                 Image(systemName: "arrow.left.arrow.right")
-                Text("옆으로 슬라이드")
+                Text("Slide to the side")
             }
             Spacer()
         }

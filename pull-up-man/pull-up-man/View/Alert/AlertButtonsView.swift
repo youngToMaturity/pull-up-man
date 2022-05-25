@@ -204,7 +204,7 @@ struct AlertButtonsView: View {
                     dateComponents.second = 0
                     dateComponents.timeZone = TimeZone.current
                     let content = UNMutableNotificationContent()
-                    content.title = NSLocalizedString("Time to push up🔥", comment: "")
+                    content.title = NSLocalizedString("Time to pull up🔥", comment: "")
                     content.body = NSLocalizedString("You can do it! Cheer up!⚡️", comment: "")
                     content.sound = UNNotificationSound.default
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)

@@ -13,6 +13,7 @@
 "Setting" = "설정";
 //"Push-up" = "푸시업";
 //"Pull-up" = "풀업";
+
 "Open Goal (Push Up)" = "자유 목표 (푸시업)";
 "Open Goal (Pull Up)" = "자유 목표 (풀업)";
 "Put your phone on floor,\npush up your nose to get closer to phone"
@@ -36,12 +37,18 @@
 "Thursday Routine,\nSame number as Wednesday routine, Repeat as many sets as possible, Add number from next week when achieving 9 sets"
 = "목요일 루틴,\n수요일 루틴과 같은 횟수,\n최대한 많은 세트 반복,\n9세트 달성시 다음주부터 횟수 추가";
 "Do the hardest Routine of week again" = "금요일 루틴,\n월~목요일 루틴 중 가장 힘들었던 루틴 반복";
+
 "Hello, %@!" = "%@님, 안녕하세요!";
 "Comming Soon!" = "해당 기능은 준비중입니다!";
 "Good job, %@!" = "%@님, 수고하셨습니다!";
 "Push-up result" = "푸시업 결과";
+
 "Time's Up!👍" = "휴식이 끝났습니다!👍";
 "New Set Begin!! You can do it!🔥" = "새로운 세트가 시작됩니다! 할 수 있어요!🔥";
+"Time to push up🔥" = "Push up 시간입니다🔥";
+"Time to pull up🔥" = "Pull up 시간입니다🔥";
+"You can do it! Cheer up!⚡️" = "할 수 있어요! 화이팅!⚡️";
+
 "Repeat" = "반복";
 "sun" = "일";
 "mon" = "월";
@@ -57,13 +64,21 @@
 "Friday" = "금요일";
 "Saturday" = "토요일";
 "Sunday" = "일요일";
+
 "General" = "일반";
 "Show Onboarding view" = "사용 방법 다시보기";
 "Authorization" = "권한 설정";
 "Information" = "정보";
 "Developer github" = "개발자 github";
 "Developer blog" = "개발자 velog";
-"Composed of Push-up and Pull-up\nPush-up runs every morning\nPull-up runs in the routine of\neach day of the week\nAfter you finish exercising,\ntap Finish Exercise to record!" = "Push-up과 Pull-up으로 구성됩니다\nPush-up은 아침마다\nPull-up은 각 요일의 루틴으로 진행합니다\n운동을 마친 후\n운동 종료하기를 탭하여 기록을 남겨보세요!";
+
+"Pull-Up-Man" = "풀업맨";
+"Welcome to Pull-Up-Man!\nYou can slide the screen to see the introduction of each tab" = "풀업맨에 오신 것을 환영합니다!\n화면을 슬라이드 하여\n각 탭의 소개를 볼 수 있습니다";
+"Slide to the side" = "옆으로 슬라이드";
+"Composed of Push-up and Pull-up\nPush-up runs every morning\nPull-up runs in the routine of\neach day of the week\nAfter you finish exercising,\ntap stop work out to record!" = "Push-up과 Pull-up으로 구성됩니다\nPush-up은 아침마다\nPull-up은 각 요일의 루틴으로 진행합니다\n운동을 마친 후\n운동 종료하기를 탭하여 기록을 남겨보세요!";
 "Set push-up and pull-up notifications\nIf you select the desired day and time,\n you will be notified\nwhen the conditions are met\nDo exercise on time for notification!" = "Push-up과 Pull-up 알림을 설정합니다\n원하는 요일과 시간을 선택하면\n해당 조건이 충족될 때 알림이 옵니다\n알림 시간에 맞춰 운동을 진행해보세요!";
 "Chart tab is being prepared\nYou can check the exercise records of\neach event at a glance\nWe'll be back soon!" = "통계 탭은 준비중입니다\n종목별 운동기록을 한눈에 확인할 수 있어요\n빠른 시일 내에 찾아올 예정입니다!";
 "Setting tab allows you to set\npermission to receive notifications\nand re-view how to use\nLink to developer's github and blog\nYou can report inquiries or errors\nThere is also email and Instagram!" = "설정 탭에서는 알림을 받기 위한 권한 설정과\n사용 방법을 다시 볼 수 있습니다\n개발자의 github과 블로그의 링크\n 문의나 오류를 제보할 수 있는\n이메일과 인스타그램도 있습니다!";
+"Everything is ready!" = "모든 준비가 끝났습니다!";
+"Until the day you become\nan iron bar king!\nStart your journey" = "철봉왕이 되는 그날까지!\n여정을 시작해보세요";
+"Get started" = "시작하기";

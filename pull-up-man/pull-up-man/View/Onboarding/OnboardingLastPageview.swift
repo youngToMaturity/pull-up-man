@@ -17,11 +17,11 @@ struct OnboardingLastPageview: View {
                 .foregroundColor(.myGreen)
                 .font(.system(size: 100))
                 .padding()
-            Text("모든 준비가 끝났습니다!")
+            Text("Everything is ready!")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
-            Text("철봉왕이 되는 그날까지!\n여정을 시작해보세요")
+            Text("Until the day you become\nan iron bar king!\nStart your journey")
                 .font(.system(size: 20))
                 .lineSpacing(10)
                 .multilineTextAlignment(.center)
@@ -29,7 +29,7 @@ struct OnboardingLastPageview: View {
             Button(action: {
                 isFirstMain.toggle()
             }) {
-                Text("시작하기")
+                Text("Get started")
             }
             .frame(width: 230, height: 45)
             .font(.system(size: 18))
