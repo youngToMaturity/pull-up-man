@@ -55,6 +55,7 @@ struct AlertButtonsView: View {
                     .padding()
                     .onChange(of: currentDate, perform: { value in
                         updateAlertTime(value)
+                        makeAlert()
                     })
                 if isAlert {
                     Button(action: {
@@ -112,18 +113,7 @@ struct AlertButtonsView: View {
                 .padding(.trailing)
                 .padding()
                 .onDisappear {
-                    checkIsAlert()
-                    if title == "Push Up Alert" {
-                        UserDefaults.standard.set(daySelected, forKey: "pushup")
-                        if isAlert {
-                            setAlert("pushup")
-                        }
-                    } else {
-                        UserDefaults.standard.set(daySelected, forKey: "pullup")
-                        if isAlert {
-                            setAlert("pullup")
-                        }
-                    }
+                    makeAlert()
                 }
             }
             HStack(spacing: 20) {
@@ -136,6 +126,21 @@ struct AlertButtonsView: View {
                 AlertDayView(state: daySelected[0], day: "sun")
             }
             Divider()
+        }
+    }
+    
+    func makeAlert() {
+        checkIsAlert()
+        if title == "Push Up Alert" {
+            UserDefaults.standard.set(daySelected, forKey: "pushup")
+            if isAlert {
+                setAlert("pushup")
+            }
+        } else {
+            UserDefaults.standard.set(daySelected, forKey: "pullup")
+            if isAlert {
+                setAlert("pullup")
+            }
         }
     }
     
