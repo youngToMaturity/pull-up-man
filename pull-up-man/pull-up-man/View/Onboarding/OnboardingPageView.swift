@@ -9,7 +9,29 @@ import SwiftUI
 
 struct OnboardingPageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            Spacer()
+            Image("pull-up")
+                .resizable()
+                .frame(width: 150, height: 150)
+                .cornerRadius(20)
+                .padding()
+            Text("풀업맨")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding()
+            Text("풀업맨에 오신 것을 환영합니다!\n화면을 슬라이드 하여\n각 탭의 소개를 볼 수 있습니다")
+                .font(.system(size: 20))
+                .lineSpacing(10)
+                .multilineTextAlignment(.center)
+            Spacer()
+            HStack {
+                Image(systemName: "arrow.left.arrow.right")
+                Text("옆으로 슬라이드")
+            }
+            Spacer()
+        }
     }
 }
 

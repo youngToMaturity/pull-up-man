@@ -15,7 +15,7 @@
 //"Pull-up" = "풀업";
 "Open Goal (Push Up)" = "자유 목표 (푸시업)";
 "Open Goal (Pull Up)" = "자유 목표 (풀업)";
-"Let your phone on floor,\nDo push-up to touch your nose to phone"
+"Put your phone on floor,\npush up your nose to get closer to phone"
 = "핸드폰을 바닥에 두고,\n코가 핸드폰과 가까워지도록 푸시업을 진행";
 "pull-up" = "풀업";
 "Do the best as you can" = "실패지점까지";
@@ -27,13 +27,13 @@
 "Do at least one" = "1회 이상 완료하세요";
 "Monday Routine, 5 sets" = "월요일 루틴, 5세트";
 "Pyramid set" = "피라미드 세트";
-"Tuesday Routine,\nstart from 1, rest 10s,\nRepeat peak 2 times"
+"Tuesday Routine,\nstart from 1, rest 10s,\nRepeat peak twice"
 = "화요일 루틴,\n1회부터 시작, 10초 휴식\n피크 세트를 두번 반복";
 "3 Grips" = "3 그립";
-"Wednesday Routine,\nRepeat half of Monday Routine's 1set,\npull-up / chin-up / wide-pull-up each grip 3 sets"
+"Wednesday Routine,\nHalf of Monday Routine's 1set,\nPull-up / Chin-up / Wide-pull-up 3 sets each"
 = "수요일 루틴,\n월요일 1세트 횟수의 절반만큼,\n풀업 / 친업 / 와이드 풀업 각 3세트";
 "Maximum sets" = "최대 세트";
-"Thursday Routine,\nDo Wednesday's count per set,\nDo Maximum sets repeat"
+"Thursday Routine,\nSame number as Wednesday routine, Repeat as many sets as possible, Add number from next week when achieving 9 sets"
 = "목요일 루틴,\n수요일 루틴과 같은 횟수,\n최대한 많은 세트 반복,\n9세트 달성시 다음주부터 횟수 추가";
 "Do the hardest Routine of week again" = "금요일 루틴,\n월~목요일 루틴 중 가장 힘들었던 루틴 반복";
 "Hello, %@!" = "%@님, 안녕하세요!";
@@ -63,3 +63,7 @@
 "Information" = "정보";
 "Developer github" = "개발자 github";
 "Developer blog" = "개발자 velog";
+"Composed of Push-up and Pull-up\nPush-up runs every morning\nPull-up runs in the routine of\neach day of the week\nAfter you finish exercising,\ntap Finish Exercise to record!" = "Push-up과 Pull-up으로 구성됩니다\nPush-up은 아침마다\nPull-up은 각 요일의 루틴으로 진행합니다\n운동을 마친 후\n운동 종료하기를 탭하여 기록을 남겨보세요!";
+"Set push-up and pull-up notifications\nIf you select the desired day and time,\n you will be notified\nwhen the conditions are met\nDo exercise on time for notification!" = "Push-up과 Pull-up 알림을 설정합니다\n원하는 요일과 시간을 선택하면\n해당 조건이 충족될 때 알림이 옵니다\n알림 시간에 맞춰 운동을 진행해보세요!";
+"Chart tab is being prepared\nYou can check the exercise records of\neach event at a glance\nWe'll be back soon!" = "통계 탭은 준비중입니다\n종목별 운동기록을 한눈에 확인할 수 있어요\n빠른 시일 내에 찾아올 예정입니다!";
+"Setting tab allows you to set\npermission to receive notifications\nand re-view how to use\nLink to developer's github and blog\nYou can report inquiries or errors\nThere is also email and Instagram!" = "설정 탭에서는 알림을 받기 위한 권한 설정과\n사용 방법을 다시 볼 수 있습니다\n개발자의 github과 블로그의 링크\n 문의나 오류를 제보할 수 있는\n이메일과 인스타그램도 있습니다!";
