@@ -21,7 +21,7 @@ struct OnboardingLastPageview: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
-            Text("Until the day you become\nan iron bar king!\nStart your journey")
+            Text("Start your journey and\nchallenge yourself to become\na pull up master")
                 .font(.system(size: 20))
                 .lineSpacing(10)
                 .multilineTextAlignment(.center)
