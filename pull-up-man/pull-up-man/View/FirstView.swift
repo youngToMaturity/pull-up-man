@@ -54,7 +54,7 @@ struct FirstView: View {
                     Text("How many pull-ups you can do 1RM?")
                         .font(.subheadline)
                         .padding(.bottom)
-                    Text("Pick 0 if you don't know,\nPick 10 if you can do over 10.")
+                    Text("Pick 0 if you don't know,\nPick 10 if you can do over 10")
                         .font(.caption)
                     Picker(selection: $selectedCount, label: Text("")) {
                         ForEach(0 ..< counts.count, id:\.self) {
@@ -99,5 +99,6 @@ struct FirstView: View {
 struct FirstView_Previews: PreviewProvider {
     static var previews: some View {
         FirstView()
+            .environment(\.locale, .init(identifier: "ko"))
     }
 }

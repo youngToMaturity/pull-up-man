@@ -82,3 +82,14 @@
 "Everything is ready!" = "모든 준비가 끝났습니다!";
 "Start your journey and\nchallenge yourself to become\na pull up master" = "철봉왕이 되는 그날까지!\n여정을 시작해보세요";
 "Get started" = "시작하기";
+
+"Let me know yourself!" = "초기 정보 입력";
+"How should i call you?" = "별명을 입력하세요";
+"Nickname" = "별명";
+"Nickname is Necessary" = "별명은 필수입력 사항입니다";
+"How old are you?" = "나이를 입력하세요";
+"Age" = "나이";
+"Age is Necessary" = "나이는 필수입력 사항입니다";
+"How many pull-ups you can do 1RM?" = "1회에 최대 몇개의 풀업이 가능한가요?";
+"Pick 0 if you don't know,\nPick 10 if you can do over 10" = "모른다면 0을, 10개 이상인 경우 10을 입력하세요";
+"Submit" = "제출하기";
