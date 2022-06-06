@@ -18,9 +18,9 @@ struct AlertListView: View {
             }) {
                 Text(LocalizedStringKey(day))
                     .frame(width: 180, alignment: .leading)
+                Spacer()
             }
             .accentColor(Color.myBlack)
-            Spacer()
             if idx {
                 Image(systemName: "checkmark")
                     .foregroundColor(Color.blue)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FirstView: View {
     @EnvironmentObject var userViewModel: UserViewModel
+    @AppStorage("_isFirstMain") var isFirstMain: Bool = true
     @State var nickname: String = ""
     @State var age: String = ""
     let counts = ["0","1","2","3","4","5","6","7","8","9","10"]

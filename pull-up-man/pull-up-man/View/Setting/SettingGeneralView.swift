@@ -21,11 +21,13 @@ struct SettingGeneralView: View {
                     .allowsTightening(true)
                     .foregroundColor(.myBlack)
                     .padding()
-                    .onTapGesture {
-                        isFirstMain.toggle()
-                    }
                 Spacer()
-            }.frame(height: 30, alignment: .leading)
+            }
+            .frame(height: 30, alignment: .leading)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                isFirstMain.toggle()
+            }
             Divider()
             HStack {
                 Text("Authorization")
@@ -33,6 +35,7 @@ struct SettingGeneralView: View {
                     .padding()
                 Spacer()
             }.frame(height: 30, alignment: .leading)
+            .contentShape(Rectangle())
             .onTapGesture {
                 if let appSettings = URL(string: UIApplication.openSettingsURLString){
                     UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
