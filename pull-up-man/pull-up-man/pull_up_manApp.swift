@@ -14,6 +14,7 @@ struct pull_up_manApp: App {
     
     @StateObject var userViewModel = UserViewModel(UIDevice.current.identifierForVendor!.uuidString)
     @StateObject var notification = NotificationViewModel()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     init() {
         FirebaseApp.configure() // 코드 추가
@@ -47,6 +48,15 @@ struct pull_up_manApp: App {
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+         
+    static var orientationLock = UIInterfaceOrientationMask.all //By default you want all your views to rotate freely
+ 
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return AppDelegate.orientationLock
     }
 }
 
