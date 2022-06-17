@@ -11,7 +11,7 @@ import Firebase
 @main
 struct pull_up_manApp: App {
     let persistenceController = PersistenceController.shared
-    
+    @AppStorage("_isFirstMain") var isFirstMain: Bool = false
     @StateObject var userViewModel = UserViewModel(UIDevice.current.identifierForVendor!.uuidString)
     @StateObject var notification = NotificationViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -39,10 +39,10 @@ struct pull_up_manApp: App {
     var body: some Scene {
         WindowGroup {
             if userViewModel.isFirst {
-                FirstView()
+                FirstView(isFirstMain: $isFirstMain)
                     .environmentObject(userViewModel)
             } else {
-                MainView()
+                MainView(isFirstMain: $isFirstMain)
                     .environmentObject(notification)
                     .environmentObject(userViewModel)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
