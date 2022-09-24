@@ -21,13 +21,16 @@
 "pull-up" = "풀업";
 "Do the best as you can" = "실패지점까지";
 "Current Set" = "현재 세트";
+"Goal Set" = "목표 세트";
 "Set Interval" = "세트 간격";
 "Counts" = "푸시업 횟수";
+"Total Count" = "총 갯수";
 "Stop Work Out" = "운동 종료하기";
 "Finish Set" = "세트 완료하기";
 "Do at least one" = "1회 이상 완료하세요";
 "Monday Routine, 5 sets" = "월요일 루틴, 5세트";
 "Pyramid set" = "피라미드 세트";
+"Peak Set" = "피크 세트";
 "Tuesday Routine,\nstart from 1, rest 10s,\nRepeat peak twice"
 = "화요일 루틴,\n1회부터 시작, 10초 휴식\n피크 세트를 두번 반복";
 "3 Grips" = "3 그립";
@@ -93,3 +96,4 @@
 "How many pull-ups you can do 1RM?" = "1회에 최대 몇개의 풀업이 가능한가요?";
 "Pick 0 if you don't know,\nPick 10 if you can do over 10" = "모른다면 0을, 10개 이상인 경우 10을 입력하세요";
 "Submit" = "제출하기";
+"Close" = "닫기";

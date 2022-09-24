@@ -19,7 +19,7 @@ struct SettingView: View {
                 SettingInfomationView()
                     .padding(.bottom)
                 Spacer()
-                Text("email: yohwang@student.42seoul.kr")
+                Text("email: young961027@gmail.com")
                     .font(.footnote)
                     .foregroundColor(.gray)
                 Text("instagram: yohwangthegoat")
