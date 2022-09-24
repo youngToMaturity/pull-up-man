@@ -53,6 +53,11 @@
 		9B99D26727D0740D009F4D31 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26627D0740D009F4D31 /* Exercise.swift */; };
 		9B99D26927D0D9DF009F4D31 /* PushUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26827D0D9DE009F4D31 /* PushUpView.swift */; };
 		9B99D26B27D0DF6E009F4D31 /* PushUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */; };
+		9BA99FEC28DF1C4000A08A0A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA99FEB28DF1C4000A08A0A /* WidgetKit.framework */; };
+		9BA99FEE28DF1C4000A08A0A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA99FED28DF1C4000A08A0A /* SwiftUI.framework */; };
+		9BA99FF128DF1C4000A08A0A /* pull_up_manWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA99FF028DF1C4000A08A0A /* pull_up_manWidget.swift */; };
+		9BA99FF328DF1C4200A08A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA99FF228DF1C4200A08A0A /* Assets.xcassets */; };
+		9BA99FF728DF1C4200A08A0A /* pull-up-manWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9BA99FE928DF1C4000A08A0A /* pull-up-manWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9BB4727427E82993007CD4B4 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4727327E82993007CD4B4 /* NotificationViewModel.swift */; };
 		9BB4727727E9E980007CD4B4 /* PullUpResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4727627E9E980007CD4B4 /* PullUpResultView.swift */; };
 		9BB75EC727DB50C8007D7CFE /* PushUpStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB75EC627DB50C8007D7CFE /* PushUpStopButton.swift */; };
@@ -62,6 +67,30 @@
 		9BCEB29727D6EDB8008FDAA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */; };
 		9BF40F4227EC5D9D00B5B30A /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF40F4127EC5D9D00B5B30A /* FirstView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BA99FF528DF1C4200A08A0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B99D23227CDE674009F4D31 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BA99FE828DF1C4000A08A0A;
+			remoteInfo = "pull-up-manWidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9BA99FF828DF1C4200A08A0A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9BA99FF728DF1C4200A08A0A /* pull-up-manWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9B0266B4283CBCF4008DBB9E /* SettingGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGeneralView.swift; sourceTree = "<group>"; };
@@ -100,6 +129,12 @@
 		9B99D26627D0740D009F4D31 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		9B99D26827D0D9DE009F4D31 /* PushUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpView.swift; sourceTree = "<group>"; };
 		9B99D26A27D0DF6E009F4D31 /* PushUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUpViewModel.swift; sourceTree = "<group>"; };
+		9BA99FE928DF1C4000A08A0A /* pull-up-manWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "pull-up-manWidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BA99FEB28DF1C4000A08A0A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		9BA99FED28DF1C4000A08A0A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		9BA99FF028DF1C4000A08A0A /* pull_up_manWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pull_up_manWidget.swift; sourceTree = "<group>"; };
+		9BA99FF228DF1C4200A08A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BA99FF428DF1C4200A08A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BB4727327E82993007CD4B4 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		9BB4727527E8309A007CD4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9BB4727627E9E980007CD4B4 /* PullUpResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpResultView.swift; sourceTree = "<group>"; };
@@ -129,6 +164,15 @@
 				9B54ED4127EC45CA0031FDD7 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				9B54ED3B27EC45CA0031FDD7 /* FirebaseDatabaseSwift-Beta in Frameworks */,
 				9B54ED3527EC45CA0031FDD7 /* FirebaseAuthCombine-Community in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BA99FE628DF1C4000A08A0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BA99FEE28DF1C4000A08A0A /* SwiftUI.framework in Frameworks */,
+				9BA99FEC28DF1C4000A08A0A /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +236,8 @@
 				9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */,
 				9B99D25B27CDF326009F4D31 /* Localizable.strings */,
 				9B99D23C27CDE674009F4D31 /* pull-up-man */,
+				9BA99FEF28DF1C4000A08A0A /* pull-up-manWidget */,
+				9BA99FEA28DF1C4000A08A0A /* Frameworks */,
 				9B99D23B27CDE674009F4D31 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				9B99D23A27CDE674009F4D31 /* pull-up-man.app */,
+				9BA99FE928DF1C4000A08A0A /* pull-up-manWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +317,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9BA99FEA28DF1C4000A08A0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BA99FEB28DF1C4000A08A0A /* WidgetKit.framework */,
+				9BA99FED28DF1C4000A08A0A /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BA99FEF28DF1C4000A08A0A /* pull-up-manWidget */ = {
+			isa = PBXGroup;
+			children = (
+				9BA99FF028DF1C4000A08A0A /* pull_up_manWidget.swift */,
+				9BA99FF228DF1C4200A08A0A /* Assets.xcassets */,
+				9BA99FF428DF1C4200A08A0A /* Info.plist */,
+			);
+			path = "pull-up-manWidget";
+			sourceTree = "<group>";
+		};
 		9BB75EC427DB5074007D7CFE /* PushUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,10 +366,12 @@
 				9B99D23627CDE674009F4D31 /* Sources */,
 				9B99D23727CDE674009F4D31 /* Frameworks */,
 				9B99D23827CDE674009F4D31 /* Resources */,
+				9BA99FF828DF1C4200A08A0A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9BA99FF628DF1C4200A08A0A /* PBXTargetDependency */,
 			);
 			name = "pull-up-man";
 			packageProductDependencies = (
@@ -324,6 +392,23 @@
 			productReference = 9B99D23A27CDE674009F4D31 /* pull-up-man.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9BA99FE828DF1C4000A08A0A /* pull-up-manWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BA99FFB28DF1C4200A08A0A /* Build configuration list for PBXNativeTarget "pull-up-manWidgetExtension" */;
+			buildPhases = (
+				9BA99FE528DF1C4000A08A0A /* Sources */,
+				9BA99FE628DF1C4000A08A0A /* Frameworks */,
+				9BA99FE728DF1C4000A08A0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pull-up-manWidgetExtension";
+			productName = "pull-up-manWidgetExtension";
+			productReference = 9BA99FE928DF1C4000A08A0A /* pull-up-manWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -331,11 +416,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					9B99D23927CDE674009F4D31 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					9BA99FE828DF1C4000A08A0A = {
+						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
@@ -357,6 +445,7 @@
 			projectRoot = "";
 			targets = (
 				9B99D23927CDE674009F4D31 /* pull-up-man */,
+				9BA99FE828DF1C4000A08A0A /* pull-up-manWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -371,6 +460,14 @@
 				9B42934627F1FD2300AD8B51 /* GoogleService-Info.plist in Resources */,
 				9B99D25927CDF326009F4D31 /* Localizable.strings in Resources */,
 				9B99D24227CDE674009F4D31 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BA99FE728DF1C4000A08A0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BA99FF328DF1C4200A08A0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +518,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9BA99FE528DF1C4000A08A0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BA99FF128DF1C4000A08A0A /* pull_up_manWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BA99FF628DF1C4200A08A0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BA99FE828DF1C4000A08A0A /* pull-up-manWidgetExtension */;
+			targetProxy = 9BA99FF528DF1C4200A08A0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9B99D25B27CDF326009F4D31 /* Localizable.strings */ = {
@@ -488,7 +601,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -544,7 +657,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -557,27 +670,29 @@
 		9B99D24E27CDE674009F4D31 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = MyGreen;
 				CODE_SIGN_ENTITLEMENTS = "pull-up-man/pull-up-man.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"pull-up-man/Preview Content\"";
 				DEVELOPMENT_TEAM = P25FRW9M7Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "pull-up-man/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yohwang.pull-up-man";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -589,31 +704,92 @@
 		9B99D24F27CDE674009F4D31 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = MyGreen;
 				CODE_SIGN_ENTITLEMENTS = "pull-up-man/pull-up-man.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"pull-up-man/Preview Content\"";
 				DEVELOPMENT_TEAM = P25FRW9M7Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "pull-up-man/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yohwang.pull-up-man";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9BA99FF928DF1C4200A08A0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P25FRW9M7Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "pull-up-manWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "pull-up-manWidget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yohwang.pull-up-man.pull-up-manWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9BA99FFA28DF1C4200A08A0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P25FRW9M7Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "pull-up-manWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "pull-up-manWidget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yohwang.pull-up-man.pull-up-manWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -637,6 +813,15 @@
 			buildConfigurations = (
 				9B99D24E27CDE674009F4D31 /* Debug */,
 				9B99D24F27CDE674009F4D31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BA99FFB28DF1C4200A08A0A /* Build configuration list for PBXNativeTarget "pull-up-manWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BA99FF928DF1C4200A08A0A /* Debug */,
+				9BA99FFA28DF1C4200A08A0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
