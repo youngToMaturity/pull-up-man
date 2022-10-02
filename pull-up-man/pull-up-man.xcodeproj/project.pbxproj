@@ -19,6 +19,10 @@
 		9B18AED7280C171300356EFD /* AlertButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B18AED6280C171200356EFD /* AlertButtonsView.swift */; };
 		9B1BB43E283666A10077B855 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BB43D283666A10077B855 /* SettingView.swift */; };
 		9B1BB44028376C7E0077B855 /* SettingInfomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BB43F28376C7E0077B855 /* SettingInfomationView.swift */; };
+		9B32383128E9B40E00E6B86B /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9B32383028E9B40E00E6B86B /* Development.xcconfig */; };
+		9B32383228E9B40E00E6B86B /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9B32383028E9B40E00E6B86B /* Development.xcconfig */; };
+		9B32383428E9B42A00E6B86B /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9B32383328E9B41B00E6B86B /* Release.xcconfig */; };
+		9B32383528E9B42B00E6B86B /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9B32383328E9B41B00E6B86B /* Release.xcconfig */; };
 		9B32C030281AC3EE00A99744 /* AlertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B32C02F281AC3EE00A99744 /* AlertListView.swift */; };
 		9B3DB1FC2824E2F8005E4C4F /* AlertDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */; };
 		9B42934627F1FD2300AD8B51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */; };
@@ -81,14 +85,14 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		9BA99FF828DF1C4200A08A0A /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 				9BA99FF728DF1C4200A08A0A /* pull-up-manWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -105,6 +109,8 @@
 		9B18AED6280C171200356EFD /* AlertButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonsView.swift; sourceTree = "<group>"; };
 		9B1BB43D283666A10077B855 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9B1BB43F28376C7E0077B855 /* SettingInfomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfomationView.swift; sourceTree = "<group>"; };
+		9B32383028E9B40E00E6B86B /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		9B32383328E9B41B00E6B86B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		9B32C02F281AC3EE00A99744 /* AlertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListView.swift; sourceTree = "<group>"; };
 		9B3DB1FB2824E2F8005E4C4F /* AlertDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDayView.swift; sourceTree = "<group>"; };
 		9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -233,6 +239,8 @@
 		9B99D23127CDE674009F4D31 = {
 			isa = PBXGroup;
 			children = (
+				9B32383328E9B41B00E6B86B /* Release.xcconfig */,
+				9B32383028E9B40E00E6B86B /* Development.xcconfig */,
 				9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */,
 				9B99D25B27CDF326009F4D31 /* Localizable.strings */,
 				9B99D23C27CDE674009F4D31 /* pull-up-man */,
@@ -455,10 +463,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B32383128E9B40E00E6B86B /* Development.xcconfig in Resources */,
 				9B99D24527CDE674009F4D31 /* Preview Assets.xcassets in Resources */,
 				9BCEB29727D6EDB8008FDAA1 /* InfoPlist.strings in Resources */,
 				9B42934627F1FD2300AD8B51 /* GoogleService-Info.plist in Resources */,
 				9B99D25927CDF326009F4D31 /* Localizable.strings in Resources */,
+				9B32383428E9B42A00E6B86B /* Release.xcconfig in Resources */,
 				9B99D24227CDE674009F4D31 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +477,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B32383228E9B40E00E6B86B /* Development.xcconfig in Resources */,
 				9BA99FF328DF1C4200A08A0A /* Assets.xcassets in Resources */,
+				9B32383528E9B42B00E6B86B /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +563,7 @@
 /* Begin XCBuildConfiguration section */
 		9B99D24B27CDE674009F4D31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B32383028E9B40E00E6B86B /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -613,6 +626,7 @@
 		};
 		9B99D24C27CDE674009F4D31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B32383328E9B41B00E6B86B /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -669,9 +683,10 @@
 		};
 		9B99D24E27CDE674009F4D31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B32383028E9B40E00E6B86B /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDev;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = MyGreen;
 				CODE_SIGN_ENTITLEMENTS = "pull-up-man/pull-up-man.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -693,7 +708,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yohwang.pull-up-man";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yohwang.pull-up-man.dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -703,6 +718,7 @@
 		};
 		9B99D24F27CDE674009F4D31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B32383328E9B41B00E6B86B /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -739,6 +755,7 @@
 		};
 		9BA99FF928DF1C4200A08A0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B32383028E9B40E00E6B86B /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -768,6 +785,7 @@
 		};
 		9BA99FFA28DF1C4200A08A0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B32383328E9B41B00E6B86B /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;

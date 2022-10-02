@@ -42,7 +42,10 @@ struct pull_up_manWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        ZStack {
+            Color("WidgetBackground")
+            Text(entry.date, style: .time)
+        }
     }
 }
 
@@ -63,5 +66,6 @@ struct pull_up_manWidget_Previews: PreviewProvider {
     static var previews: some View {
         pull_up_manWidgetEntryView(entry: SimpleEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .preferredColorScheme(.dark)
     }
 }
