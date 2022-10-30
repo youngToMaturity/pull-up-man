@@ -38,13 +38,30 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
 }
 
+
 struct pull_up_manWidgetEntryView : View {
+    let screenWidth = {
+        switch UIScreen.main.bounds.size {
+        case CGSize(width: 428, height: 926):   return 170
+        case CGSize(width: 414, height: 896):   return 169
+        case CGSize(width: 414, height: 736):   return 159
+        case CGSize(width: 390, height: 844):   return 158
+        case CGSize(width: 375, height: 812):   return 155
+        case CGSize(width: 375, height: 667):   return 148
+        case CGSize(width: 360, height: 780):   return 155
+        case CGSize(width: 320, height: 568):   return 141
+        default:                                return 155
+        }
+    }
+
     var entry: Provider.Entry
 
     var body: some View {
         ZStack {
             Color("WidgetBackground")
-            Text(entry.date, style: .time)
+            Image("pull-up-man-white")
+                .resizable()
+                .frame(width: CGFloat(screenWidth() / 2), height: CGFloat(screenWidth() / 2))
         }
     }
 }
