@@ -25,7 +25,7 @@ struct SettingInfomationView: View {
 //                    }.frame(height: 30, alignment: .leading)
 //                })
 //                Divider()
-                Link(destination: URL(string: "https://github.com/loopbackseal")!, label: {
+                Link(destination: URL(string: "https://github.com/youngToMaturity")!, label: {
                     HStack {
                         Text("Developer github")
                             .foregroundColor(.myBlack)

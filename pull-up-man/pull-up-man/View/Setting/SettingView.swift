@@ -22,7 +22,7 @@ struct SettingView: View {
                 Text("email: young961027@gmail.com")
                     .font(.footnote)
                     .foregroundColor(.gray)
-                Text("instagram: yohwangthegoat")
+                Text("instagram: youngtomaturity")
                     .font(.footnote)
                     .foregroundColor(.gray)
             }
