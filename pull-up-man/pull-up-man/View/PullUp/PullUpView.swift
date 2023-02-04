@@ -138,7 +138,8 @@ struct PullUpView: View {
                     Circle()
                         .trim(from:  CGFloat(seconds) / CGFloat(initSeconds), to: 1)
                         .stroke(Color.myGreen, style: StrokeStyle(lineWidth: 30))
-                        .rotationEffect(.init(degrees: -90))
+                        .rotationEffect(Angle(degrees: 90))
+                        .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0))
                         .animation(.easeIn, value: seconds)
                         .padding(.init(top: 60, leading: 50, bottom: 50, trailing: 50))
                 }
