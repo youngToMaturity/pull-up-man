@@ -24,6 +24,7 @@
 		9B42934627F1FD2300AD8B51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B42934527F1FD2300AD8B51 /* GoogleService-Info.plist */; };
 		9B42934827F2D40500AD8B51 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42934727F2D40500AD8B51 /* Extensions.swift */; };
 		9B42934A27F2F03700AD8B51 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42934927F2F03700AD8B51 /* Result.swift */; };
+		9B497EBD29BC3FB200A288E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B99D24127CDE674009F4D31 /* Assets.xcassets */; };
 		9B54ED2F27EC45CA0031FDD7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9B54ED2E27EC45CA0031FDD7 /* FirebaseAnalytics */; };
 		9B54ED3127EC45CA0031FDD7 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9B54ED3027EC45CA0031FDD7 /* FirebaseAnalyticsSwift-Beta */; };
 		9B54ED3327EC45CA0031FDD7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B54ED3227EC45CA0031FDD7 /* FirebaseAuth */; };
@@ -42,7 +43,6 @@
 		9B55BAD52972EAD200FDF26C /* pull_up_WidgetExtentionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55BAD42972EAD200FDF26C /* pull_up_WidgetExtentionBundle.swift */; };
 		9B55BAD72972EAD200FDF26C /* pull_up_WidgetExtentionLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55BAD62972EAD200FDF26C /* pull_up_WidgetExtentionLiveActivity.swift */; };
 		9B55BAD92972EAD200FDF26C /* pull_up_WidgetExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55BAD82972EAD200FDF26C /* pull_up_WidgetExtention.swift */; };
-		9B55BADC2972EAD300FDF26C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B55BADB2972EAD300FDF26C /* Assets.xcassets */; };
 		9B55BADE2972EAD300FDF26C /* pull_up_WidgetExtention.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9B55BADA2972EAD200FDF26C /* pull_up_WidgetExtention.intentdefinition */; };
 		9B55BADF2972EAD300FDF26C /* pull_up_WidgetExtention.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9B55BADA2972EAD200FDF26C /* pull_up_WidgetExtention.intentdefinition */; };
 		9B55BAE22972EAD300FDF26C /* pull-up-WidgetExtentionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9B55BACD2972EAD200FDF26C /* pull-up-WidgetExtentionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -125,7 +125,6 @@
 		9B55BAD62972EAD200FDF26C /* pull_up_WidgetExtentionLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pull_up_WidgetExtentionLiveActivity.swift; sourceTree = "<group>"; };
 		9B55BAD82972EAD200FDF26C /* pull_up_WidgetExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pull_up_WidgetExtention.swift; sourceTree = "<group>"; };
 		9B55BADA2972EAD200FDF26C /* pull_up_WidgetExtention.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = pull_up_WidgetExtention.intentdefinition; sourceTree = "<group>"; };
-		9B55BADB2972EAD300FDF26C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B55BADD2972EAD300FDF26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B738B79283CF2D00008E91D /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
 		9B738B7C283D04200008E91D /* OnboardingLastPageview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLastPageview.swift; sourceTree = "<group>"; };
@@ -244,7 +243,6 @@
 				9B55BAD62972EAD200FDF26C /* pull_up_WidgetExtentionLiveActivity.swift */,
 				9B55BAD82972EAD200FDF26C /* pull_up_WidgetExtention.swift */,
 				9B55BADA2972EAD200FDF26C /* pull_up_WidgetExtention.intentdefinition */,
-				9B55BADB2972EAD300FDF26C /* Assets.xcassets */,
 				9B55BADD2972EAD300FDF26C /* Info.plist */,
 			);
 			path = "pull-up-WidgetExtention";
@@ -467,7 +465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B55BADC2972EAD300FDF26C /* Assets.xcassets in Resources */,
+				9B497EBD29BC3FB200A288E1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +568,7 @@
 		9B55BAE42972EAD300FDF26C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = MyGreen;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
@@ -599,7 +597,7 @@
 		9B55BAE52972EAD300FDF26C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = MyGreen;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";

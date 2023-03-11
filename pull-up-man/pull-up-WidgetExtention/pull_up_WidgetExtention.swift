@@ -50,7 +50,7 @@ struct pull_up_WidgetExtentionEntryView : View {
         switch family {
         case .systemSmall:
             ZStack {
-                Color("Mygreen")
+                Color("MyGreen")
                 VStack {
                     Image("pull-up_png")
                         .resizable()
@@ -112,4 +112,3 @@ struct pull_up_WidgetExtention_Preview: PreviewProvider {
         }
     }
 }
-
