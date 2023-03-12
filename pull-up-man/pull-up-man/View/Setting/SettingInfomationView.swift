@@ -34,7 +34,7 @@ struct SettingInfomationView: View {
                     }.frame(height: 30, alignment: .leading)
                 })
                 Divider()
-                Link(destination: URL(string: "https://velog.io/@loopbackseal")!, label: {
+                Link(destination: URL(string: "https://medium.com/@youngtomaturity")!, label: {
                     HStack {
                         Text("Developer blog")
                             .foregroundColor(.myBlack)
