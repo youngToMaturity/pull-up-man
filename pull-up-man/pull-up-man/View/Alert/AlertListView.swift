@@ -23,7 +23,7 @@ struct AlertListView: View {
             .accentColor(Color.myBlack)
             if idx {
                 Image(systemName: "checkmark")
-                    .foregroundColor(Color.blue)
+                    .foregroundColor(Color.myGreen)
             }
         }
         Divider()

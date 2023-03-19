@@ -41,7 +41,7 @@ struct PullUpResultView: View {
                 Button(action: {
                     isPullUpFinished = false
                 }) {
-                    Text("Close")
+                    Text("Close").fontWeight(.bold)
                 }
             }
         }

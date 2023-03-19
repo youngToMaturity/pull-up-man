@@ -75,8 +75,6 @@ struct WorkOutView: View {
         }
         pushUpResult = []
         pullUpResult = []
-        print(pushUpResult)
-        print(isPushUpFinished)
     }
 }
 

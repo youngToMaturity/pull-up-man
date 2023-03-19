@@ -25,7 +25,6 @@ struct PushUpView: View {
     
     // MARK: - Activate && Deactivate Proximity Sensor to count Push Up
     func activateProximitySensor() {
-        print("ExerciseView :: activateProximitySensor")
         UIDevice.current.isProximityMonitoringEnabled = true
         if UIDevice.current.isProximityMonitoringEnabled {
             NotificationCenter.default.addObserver(pushUpViewModel, selector: #selector(pushUpViewModel.didChange), name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
@@ -33,7 +32,6 @@ struct PushUpView: View {
     }
     
     func deactivateProximitySensor() {
-        print("ExerciseView :: deactivateProximitySensor")
         UIDevice.current.isProximityMonitoringEnabled = false
         NotificationCenter.default.removeObserver(pushUpViewModel, name: UIDevice.proximityStateDidChangeNotification, object: UIDevice.current)
     }
@@ -44,8 +42,6 @@ struct PushUpView: View {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             seconds -= 1
             timerCount += 1
-            print("I'm alive")
-            print(seconds)
             if timerCount >= initSeconds + 1 || isPushUpFinished == true || isSkipped == true {
                 isStarted = false
                 timer.invalidate()
@@ -71,7 +67,6 @@ struct PushUpView: View {
             }
             pullUpGoal = exercise.goal
             pushUpResult = pushUpViewModel.countList
-            print(pushUpViewModel.countList)
             pushUpViewModel.finishWorkOut()
             self.presentation.wrappedValue.dismiss()
         }

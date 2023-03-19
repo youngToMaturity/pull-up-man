@@ -52,7 +52,6 @@ class PullUpViewModel: ObservableObject {
         )
         countList.append(pullUpSet)
         totalCount += count
-        print(countList)
         setNumber += 1
         count = 0
         if id == 2 {
@@ -72,8 +71,7 @@ class PullUpViewModel: ObservableObject {
                 term = setNumber * 10
             }
         }
-//        count = term / 10
+        // count = term / 10
         // count를 하는것 대신에 목표 count를 표시해주는게 어떨지?
-        print(term)
     }
 }
