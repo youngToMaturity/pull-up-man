@@ -58,13 +58,28 @@ class UserViewModel: ObservableObject {
     
     func setPushUpData(_ records: [PushUpSet], _ kind: LocalizedStringKey) {
         var sets: [Int] = []
+        var count: Int = 0
+        var totalCount: Int = 0
         for i in 0..<records.count {
+            count += records[i].count
             sets.append(records[i].count)
         }
         let result = Result(kind.stringKey, sets)
         db.collection("users").document(self.uuid).collection("result").document(result.subject).setData([
             "\(result.timeStamp)" : result.sets
         ], merge: true)
+
+        if count != 0 {
+            db.collection("users").document(self.uuid).collection("counts").document(result.subject).getDocument { doc, err in
+                if let totalPushUp = doc?.data()?["total_pushUp"] as? Int {
+                    totalCount = totalPushUp
+                }
+                self.db.collection("users").document(self.uuid).collection("counts").document(result.subject).setData([
+                    "recent_pushUp": count,
+                    "total_pushUp": count + totalCount
+                ], merge: true)
+            }
+        }
     }
     
     func setPullUpData(_ records: [PullUpSet], _ kind: LocalizedStringKey) {
