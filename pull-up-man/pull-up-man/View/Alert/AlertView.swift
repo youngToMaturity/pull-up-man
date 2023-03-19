@@ -23,7 +23,7 @@ struct AlertView: View {
                 AlertButtonsView(daySelected: pullUpState, title: "Pull Up Alert")
                 Spacer()
             }
-            .navigationTitle("Alert")
+            .navigationTitle(Text("Alert").font(.title.bold()))
         }
     }
 }

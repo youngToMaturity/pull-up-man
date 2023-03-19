@@ -23,7 +23,7 @@ struct AlertListView: View {
             .accentColor(Color.myBlack)
             if idx {
                 Image(systemName: "checkmark")
-                    .foregroundColor(Color.blue)
+                    .foregroundColor(Color.myGreen)
             }
         }
         Divider()
@@ -32,6 +32,6 @@ struct AlertListView: View {
 
 struct AlertListView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertListView(day: "Monday", idx: .constant(false))
+        AlertListView(day: "Monday", idx: .constant(true))
     }
 }

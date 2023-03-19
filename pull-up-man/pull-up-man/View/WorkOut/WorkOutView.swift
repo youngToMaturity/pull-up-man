@@ -26,38 +26,48 @@ struct WorkOutView: View {
     init() {
         UITableView.appearance().backgroundColor = UIColor(named: "MyWhite")
         UINavigationBar.appearance().largeTitleTextAttributes =
-        [.font: UIFont.systemFont(ofSize: 34, weight: .regular)]
+        [.font: UIFont.systemFont(ofSize: 34, weight: .bold)]
     }
     
     var body: some View {
         NavigationView {
-            List {
-                Text("Push-up")
-                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
-                NavigationLink {
-                    PushUpView(exercise: exercise.pushUp, pushUpViewModel: pushUpViewModel, pushUpResult: $pushUpResult, isPushUpFinished: $isPushUpFinished, pullUpGoal: $pullUpGoal)
-                } label: {
-                    WorkOutListView(exercise: exercise.pushUp)
+            VStack(spacing: 0) {
+                HStack {
+                    Text("Push-up")
+                        .font(.body.weight(.bold))
+                        .padding(20)
+                    Spacer()
                 }
-                .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
-                Text("Pull-up")
-                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
-                ForEach(exercise.pullUp) { routine in
-                    NavigationLink {
-                        PullUpView(routine: routine, pullUpViewModel: pullUpViewModels.array[routine.id - 1], pullUpResult: $pullUpResult, isPullUpFinished: $isPullUpFinished, pullUpGoal: $pullUpGoal)
-                    } label: {
-                        WorkOutListView(exercise: routine)
-                    }
-                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
-                }
+                Spacer()
             }
+            .padding(.top, 20)
+//            List {
+//                Text("Push-up")
+//                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
+//                NavigationLink {
+//                    PushUpView(exercise: exercise.pushUp, pushUpViewModel: pushUpViewModel, pushUpResult: $pushUpResult, isPushUpFinished: $isPushUpFinished, pullUpGoal: $pullUpGoal)
+//                } label: {
+//                    WorkOutListView(exercise: exercise.pushUp)
+//                }
+//                .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
+//                Text("Pull-up")
+//                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
+//                ForEach(exercise.pullUp) { routine in
+//                    NavigationLink {
+//                        PullUpView(routine: routine, pullUpViewModel: pullUpViewModels.array[routine.id - 1], pullUpResult: $pullUpResult, isPullUpFinished: $isPullUpFinished, pullUpGoal: $pullUpGoal)
+//                    } label: {
+//                        WorkOutListView(exercise: routine)
+//                    }
+//                    .listRowInsets(EdgeInsets(.init(top: 0, leading: 10, bottom: 0, trailing: 0)))
+//                }
+//            }
             .sheet(isPresented: $isPushUpFinished, onDismiss: didDismiss) {
                 PushUpResultView(isPushUpFinished: $isPushUpFinished, pushUpResult: $pushUpResult)
             }
             .sheet(isPresented: $isPullUpFinished, onDismiss: didDismiss) {
                 PullUpResultView(isPullUpFinished: $isPullUpFinished, pullUpResult: $pullUpResult, pullUpGoal: $pullUpGoal)
             }
-            .navigationBarTitle("Start Work out")
+            .navigationBarTitle(Text("Start Work out").font(.title.weight(.bold)))
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
