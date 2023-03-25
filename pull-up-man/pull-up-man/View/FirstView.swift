@@ -75,7 +75,9 @@ struct FirstView: View {
                 if nickname != "" && age != "" {
                     isInvalidNickname = false
                     isInvalidAge = false
-                    userViewModel.updateInfo(nickname, age, selectedCount)
+                    Task {
+                        await userViewModel.updateInfo(nickname, age, selectedCount)
+                    }
                     isFirstMain = true
                 } else {
                     if nickname == "" {
