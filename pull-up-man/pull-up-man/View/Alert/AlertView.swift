@@ -31,7 +31,7 @@ struct AlertView: View {
 struct AlertView_Previews: PreviewProvider {
     static var previews: some View {
         AlertView()
-            .environmentObject(UserViewModel("8880CD65-302C-4C57-AA26-421AEFC9456C"))
+            .environmentObject(UserViewModel(UUID(uuidString: "8880CD65-302C-4C57-AA26-421AEFC9456C")!))
             .environmentObject(NotificationViewModel())
             .environment(\.locale, .init(identifier: "ko"))
     }

@@ -10,49 +10,56 @@ import Firebase
 import SwiftUI
 
 class UserViewModel: ObservableObject {
-    let uuid: String
+    let uuid: UUID
     let db = Firestore.firestore()
     
     @Published var isFirst = false
-    @Published var nickname: String
-    @Published var age: String
-    @Published var id: String
-    @Published var record: String
-    
-    init(_ uuid: String) {
+    var user: User?
+
+    init(_ uuid: UUID) {
         self.uuid = uuid
-        self.nickname = ""
-        self.age = ""
-        self.id = "undefined"
-        self.record = ""
-        db.collection("users").document(uuid).getDocument { document, error in
-            guard error == nil, let document = document, document.exists, let nickname = document.get("nickname") as? String,
-                  let age = document.get("age") as? String, let record = document.get("record") as? String
-            else {
-                self.isFirst = true
-                return
+        var user: User?
+        if let userData = UserDefaults.standard.object(forKey: "user") as? Data {
+            user = try? JSONDecoder().decode(User.self, from: userData)
+        }
+        if let user {
+            self.user = user
+        } else {
+            db.collection("users").document(uuid.uuidString).getDocument { document, error in
+                guard error == nil,
+                      let document = document, document.exists,
+                      let nickname = document.get("nickname") as? String,
+                      let age = document.get("age") as? String
+                else {
+                    self.isFirst = true
+                    return
+                }
+                self.user = User(uuid: uuid, nickname: nickname, age: age)
+                if let user = try? JSONEncoder().encode(self.user) {
+                    UserDefaults.standard.set(user, forKey: "user")
+                    UserDefaults.standard.synchronize()
+                }
             }
-            self.nickname = nickname
-            self.age = age
-            self.record = record
         }
     }
     
     func updateInfo(_ nickname: String, _ age: String, _ record: String) {
-        self.nickname = nickname
-        self.age = age
-        self.record = record
+        self.user = User(uuid: uuid, nickname: nickname, age: age)
         self.isFirst = false
-        db.collection("users").document(self.uuid).setData([
-            "nickname": self.nickname,
-            "age": self.age,
-            "record": self.record
+        db.collection("users").document(uuid.uuidString).setData([
+            "nickname": nickname,
+            "age": age,
+            "record": record
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
             }
+        }
+        if let user {
+            UserDefaults.standard.set(user, forKey: "user")
+            UserDefaults.standard.synchronize()
         }
     }
     
@@ -65,19 +72,19 @@ class UserViewModel: ObservableObject {
             sets.append(records[i].count)
         }
         let result = Result(kind.stringKey, sets)
-        db.collection("users").document(self.uuid).collection("result").document(result.subject).setData([
+        db.collection("users").document(uuid.uuidString).collection("result").document(result.subject).setData([
             "\(result.timeStamp)" : result.sets
         ], merge: true)
 
         if count != 0 {
-            db.collection("users").document(self.uuid).collection("counts").document(result.subject).getDocument { doc, err in
+            db.collection("users").document(uuid.uuidString).collection("counts").document(result.subject).getDocument { doc, err in
                 if let totalPushUp = doc?.data()?["total_pushUp"] as? Int {
                     totalCount = totalPushUp
                 }
-                self.db.collection("users").document(self.uuid).collection("counts").document(result.subject).setData([
+                self.db.collection("users").document(self.uuid.uuidString).collection("counts").document(result.subject).setData([
                     "recent_pushUp": count,
                     "total_pushUp": count + totalCount
-                ], merge: true)
+                ])
             }
         }
     }
@@ -88,7 +95,7 @@ class UserViewModel: ObservableObject {
             sets.append(records[i].count)
         }
         let result = Result(kind.stringKey, sets)
-        db.collection("users").document(self.uuid).collection("result").document(result.subject).setData([
+        db.collection("users").document(uuid.uuidString).collection("result").document(result.subject).setData([
             "\(result.timeStamp)" : result.sets
         ], merge: true)
     }

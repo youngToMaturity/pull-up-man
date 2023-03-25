@@ -72,6 +72,7 @@
 		9BCEB28F27D4FE23008FDAA1 /* PushUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEB28E27D4FE23008FDAA1 /* PushUpHeaderView.swift */; };
 		9BCEB29727D6EDB8008FDAA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */; };
 		9BF40F4227EC5D9D00B5B30A /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF40F4127EC5D9D00B5B30A /* FirstView.swift */; };
+		9BFD954729CECAD800B85DB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD954629CECAD800B85DB6 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		9BCEB29127D5D2DB008FDAA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BCEB29627D6EDB8008FDAA1 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		9BF40F4127EC5D9D00B5B30A /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		9BFD954629CECAD800B85DB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 				9BB75EC827DB8024007D7CFE /* PushUpSet.swift */,
 				9B052B5A27E5DBC50003953C /* PullUpSet.swift */,
 				9B42934927F2F03700AD8B51 /* Result.swift */,
+				9BFD954629CECAD800B85DB6 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				9B738B7A283CF2D00008E91D /* OnboardingTabView.swift in Sources */,
 				9B99D26927D0D9DF009F4D31 /* PushUpView.swift in Sources */,
 				9B99D26327CDF644009F4D31 /* WorkOutView.swift in Sources */,
+				9BFD954729CECAD800B85DB6 /* User.swift in Sources */,
 				9B99D24027CDE674009F4D31 /* ContentView.swift in Sources */,
 				9B99D25427CDE7C1009F4D31 /* MainView.swift in Sources */,
 				9B32C030281AC3EE00A99744 /* AlertListView.swift in Sources */,

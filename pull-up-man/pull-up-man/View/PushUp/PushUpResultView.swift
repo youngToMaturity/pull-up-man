@@ -20,7 +20,7 @@ struct PushUpResultView: View {
                 Text("Push-up result")
                     .font(.bold(.system(size: 28))())
                     .padding(.top, 50)
-                Text("Good job, \(userViewModel.nickname)!")
+                Text("Good job, \(userViewModel.user!.nickname)!")
                     .padding(.bottom, 50)
                 Spacer()
                 ForEach(pushUpResult) { pushUp in
@@ -55,6 +55,6 @@ struct PushUpResultView_Previews: PreviewProvider {
             PushUpSet(id: 3, count: 14),
             PushUpSet(id: 4, count: 10),
         ]))
-        .environmentObject(UserViewModel("8880CD65-302C-4C57-AA26-421AEFC9456C"))
+        .environmentObject(UserViewModel(UUID(uuidString: "8880CD65-302C-4C57-AA26-421AEFC9456C")!))
     }
 }

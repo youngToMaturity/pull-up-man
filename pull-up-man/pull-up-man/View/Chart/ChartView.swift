@@ -14,8 +14,10 @@ struct ChartView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                Text("Hello, \(userViewModel.nickname)!")
-                    .font(.bold(.system(size: 28))())
+                if let nickname = userViewModel.user?.nickname {
+                    Text("Hello, \(nickname)!")
+                        .font(.bold(.system(size: 28))())
+                }
                 Text("Comming Soon!")
                     .font(.subheadline)
                 Spacer()
@@ -29,6 +31,6 @@ struct ChartView: View {
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
         ChartView()
-            .environmentObject(UserViewModel("8880CD65-302C-4C57-AA26-421AEFC9456C"))
+            .environmentObject(UserViewModel(UUID(uuidString: "8880CD65-302C-4C57-AA26-421AEFC9456C")!))
     }
 }

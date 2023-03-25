@@ -12,7 +12,7 @@ import Firebase
 struct pull_up_manApp: App {
     let persistenceController = PersistenceController.shared
     @AppStorage("_isFirstMain") var isFirstMain: Bool = false
-    @StateObject var userViewModel = UserViewModel(UIDevice.current.identifierForVendor!.uuidString)
+    @StateObject var userViewModel = UserViewModel(UIDevice.current.identifierForVendor!)
     @StateObject var notification = NotificationViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
@@ -53,7 +53,7 @@ struct pull_up_manApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
          
-    static var orientationLock = UIInterfaceOrientationMask.all //By default you want all your views to rotate freely
+    static var orientationLock = UIInterfaceOrientationMask.portrait //By default you want all your views to rotate freely
  
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return AppDelegate.orientationLock
