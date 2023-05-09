@@ -40,8 +40,6 @@ struct PullUpView: View {
                 timerCount -= backgroundSeconds
                 backgroundSeconds = 0
             }
-            print("I'm alive")
-            print(seconds)
             if timerCount >= initSeconds + 1 || isPullUpFinished == true {
                 isStarted = false
                 timer.invalidate()
@@ -119,13 +117,10 @@ struct PullUpView: View {
                                     print(backgroundSeconds)
                                     wasBackground = false
                                 }
-                                print("Active")
                             } else if newPhase == .inactive {
-                                print("Inactive")
                             } else if newPhase == .background {
                                 wasBackground = true
                                 backgroundDate = Date()
-                                print("Background")
                             }
                         }
                 }
