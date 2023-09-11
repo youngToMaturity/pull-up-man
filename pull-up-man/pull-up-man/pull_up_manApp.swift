@@ -59,9 +59,3 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return AppDelegate.orientationLock
     }
 }
-
-extension Color {
-    static let myWhite = Color("MyWhite")
-    static let myGreen = Color("MyGreen")
-    static let myBlack = Color("MyBlack")
-}

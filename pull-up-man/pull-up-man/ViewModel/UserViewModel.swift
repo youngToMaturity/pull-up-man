@@ -123,7 +123,7 @@ class UserViewModel: ObservableObject {
         ], merge: true)
         if count != 0 {
             let countTable = pullUpTable.document("counts")
-            var totalCount = UserDefaults.standard.integer(forKey: "\(result.subject)_count") + count
+            let totalCount = UserDefaults.standard.integer(forKey: "\(result.subject)_count") + count
             countTable.setData([
                 "recent_count": count,
                 "total_count": totalCount
